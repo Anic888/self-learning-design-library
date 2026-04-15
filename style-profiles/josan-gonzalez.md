@@ -65,5 +65,22 @@ Energetic, overstimulating, nostalgic for neon futures. Ближе к manga/comi
 - Main: thefuturejsn.com
 - See `sources/designers/josan-gonzalez.md`
 
+## Notes from live verification (2026-04-15)
+
+Web search + direct navigation corrections to seed:
+
+- **Pseudonym: "Death Burger"** — he operates professionally under this name. Instagram: @deathburger (not @josangonzalez). Kickstarter handle: "deathburger". This matters for attribution and discovery.
+- **Location:** Barcelona, Spain (seed said Ciudad Real — correcting)
+- **Publishing:** Both "The Future is Now" Vol 1 and Vol 2 are **self-published via Kickstarter** (not conventional publisher). He controls production personally — artist-run business.
+- **Subject matter confirmed and expanded:** cyborgs, outlaws with advanced prosthetics, dense urban dystopia, Japanese-Western cultural mashup.
+- **Cultural reach:** his style is distinct enough that **Midjourney has a named style preset** for "Josan Gonzalez" — users can generate in his aesthetic directly. (Useful cultural marker for how recognizable the style is.)
+- **Toy collaboration:** 52TOYS x Deathburger released "Sai Zhang The Sorceress" figure — his work extends to designer toys, not just illustration.
+
+Implications for profile:
+- Use **"Death Burger"** as pseudonym alongside real name — discoverability
+- Add **designer-toy** as applicable medium (tactical: character-first design translates to 3D collectible)
+- Correct Barcelona location
+- Note **self-publishing + Kickstarter** as business approach — different from typical illustrator-for-hire workflow
+
 ## Last sync
-2026-04-15 (seed profile — verify via book scans / Behance)
+2026-04-15 (LIVE verified via web search + Instagram navigation — pseudonym "Death Burger" confirmed, location corrected to Barcelona, Kickstarter self-publishing model noted, designer-toy extension added, Midjourney style preset noted as cultural marker.)

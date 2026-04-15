@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  SHOWCASE 07 / SYD MEAD STYLE
+  "ARRIVAL — SECTOR 12" — fictional industrial sci-fi concept art
+  8.5" x 11" vertical (612 x 792 @ 72dpi)
+
+  Style profile applied: style-profiles/syd-mead.md
+  Tactical rules enforced:
+    - Amber + deep blue + metallic grey palette (warm/cold dichotomy)
+    - ONE hero subject center-frame (landing craft)
+    - Atmospheric haze distance (aerial perspective)
+    - Volumetric light rays from strong source (engine/sun)
+    - Wet reflective ground plane
+    - Tiny human figures for scale
+    - Painterly gradient rendering (no flat vector shapes)
+    - Minimal typography (tech labels only)
+    - Cinematic wide horizon composition
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="8.5in" height="11in"
+     viewBox="0 0 612 792"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Sky gradient: deep navy top → amber horizon -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#0F2744"/>
+      <stop offset="0.3"  stop-color="#1A3B5C"/>
+      <stop offset="0.6"  stop-color="#3A5878"/>
+      <stop offset="0.85" stop-color="#8B7450"/>
+      <stop offset="1"    stop-color="#E89C4A"/>
+    </linearGradient>
+
+    <!-- Amber glow radial (from ship engines or setting sun) -->
+    <radialGradient id="engineGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#FFEED0"/>
+      <stop offset="0.2" stop-color="#FFBE6A"/>
+      <stop offset="0.5" stop-color="#F4B860"/>
+      <stop offset="0.85" stop-color="#D9651A"/>
+      <stop offset="1"   stop-color="#1A3B5C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Distant haze gradient -->
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#8B7450" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A87240" stop-opacity="0.45"/>
+      <stop offset="1"   stop-color="#3A5878" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Ship body gradient (metallic grey with warm light reflection) -->
+    <linearGradient id="shipBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#3A4550"/>
+      <stop offset="0.3"  stop-color="#5F6A75"/>
+      <stop offset="0.6"  stop-color="#8B9094"/>
+      <stop offset="0.85" stop-color="#B88C5A"/>
+      <stop offset="1"    stop-color="#8B5A2A"/>
+    </linearGradient>
+
+    <!-- Ship underside (warm light from engines below) -->
+    <linearGradient id="shipUnder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#2A3540"/>
+      <stop offset="0.5"  stop-color="#6B4A2A"/>
+      <stop offset="1"    stop-color="#F4B860"/>
+    </linearGradient>
+
+    <!-- Wet ground reflection -->
+    <linearGradient id="wetGround" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#1A2540"/>
+      <stop offset="0.3"  stop-color="#0A1525"/>
+      <stop offset="0.7"  stop-color="#0E1728"/>
+      <stop offset="1"    stop-color="#1A3B5C"/>
+    </linearGradient>
+
+    <!-- Atmospheric blur for distance -->
+    <filter id="distanceBlur" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <filter id="strongBlur" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- =========================================================
+       LAYER 1 — Sky (navy → amber gradient)
+       ========================================================= -->
+  <g id="Layer_Sky">
+    <rect x="0" y="0" width="612" height="520" fill="url(#sky)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 2 — Distant sun / amber halo at horizon
+       ========================================================= -->
+  <g id="Layer_Sun">
+    <circle cx="490" cy="490" r="68" fill="#FFD88A" filter="url(#strongBlur)" opacity="0.7"/>
+    <circle cx="490" cy="490" r="38" fill="#FFBE6A" opacity="0.85"/>
+    <circle cx="490" cy="490" r="18" fill="#FFEED0"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 3 — Distant city silhouettes (far plane, heavy haze)
+       ========================================================= -->
+  <g id="Layer_FarCity" filter="url(#strongBlur)" opacity="0.55">
+    <g fill="#5F6F80">
+      <rect x="20"  y="460" width="40"  height="60"/>
+      <rect x="60"  y="440" width="60"  height="80"/>
+      <rect x="120" y="450" width="30"  height="70"/>
+      <rect x="150" y="430" width="75"  height="90"/>
+      <rect x="225" y="445" width="40"  height="75"/>
+      <rect x="265" y="425" width="95"  height="95"/>
+      <rect x="360" y="455" width="30"  height="65"/>
+      <rect x="390" y="435" width="60"  height="85"/>
+      <rect x="575" y="470" width="37"  height="50"/>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 4 — Mid-distance industrial structures (hangar, tower)
+       ========================================================= -->
+  <g id="Layer_IndustrialMid" filter="url(#distanceBlur)" opacity="0.85">
+    <!-- Control tower left -->
+    <rect x="74" y="400" width="18" height="112" fill="#4A5560"/>
+    <rect x="70" y="388" width="26" height="20" fill="#6B7A85"/>
+    <!-- Antenna -->
+    <line x1="83" y1="388" x2="83" y2="358" stroke="#5A6570" stroke-width="1.4"/>
+    <circle cx="83" cy="358" r="2" fill="#F4B860"/>
+
+    <!-- Hangar structure right -->
+    <polygon points="536,510 576,440 612,440 612,512" fill="#3A4550"/>
+    <polygon points="576,440 608,440 608,480 580,490" fill="#5F6A75"/>
+
+    <!-- Crane silhouette center-right -->
+    <g fill="#4A5560">
+      <rect x="410" y="390" width="3" height="130"/>
+      <rect x="396" y="390" width="38" height="3"/>
+      <rect x="395" y="388" width="3" height="7"/>
+    </g>
+
+    <!-- Small distant ship in sky (flying) -->
+    <ellipse cx="180" cy="250" rx="22" ry="5" fill="#8B9094" opacity="0.8"/>
+    <ellipse cx="180" cy="252" rx="14" ry="2.5" fill="#F4B860" opacity="0.6"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 5 — Haze band (atmospheric perspective)
+       ========================================================= -->
+  <g id="Layer_Haze">
+    <rect x="0" y="400" width="612" height="140" fill="url(#haze)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 6 — Hero landing craft (central subject)
+       Classic Mead industrial ship proportions: bulky, functional, weathered
+       ========================================================= -->
+  <g id="Layer_HeroShip">
+    <!-- Ship drop-shadow on ground -->
+    <ellipse cx="306" cy="616" rx="170" ry="14" fill="#000000" opacity="0.55" filter="url(#distanceBlur)"/>
+
+    <!-- Main body (large flat-bottomed shape) -->
+    <path d="M 158 500
+             L 200 450
+             L 412 450
+             L 454 500
+             L 454 540
+             L 430 556
+             L 182 556
+             L 158 540
+             Z"
+          fill="url(#shipBody)"/>
+
+    <!-- Underside glow (engine heat illuminating hull from below) -->
+    <path d="M 180 550
+             L 432 550
+             L 420 600
+             L 192 600
+             Z"
+          fill="url(#shipUnder)"/>
+
+    <!-- Ship top structure (command bridge / antennas) -->
+    <rect x="264" y="420" width="84" height="32" fill="#4A5560"/>
+    <polygon points="264,420 280,408 332,408 348,420" fill="#5F6A75"/>
+    <!-- Windows on bridge (warm interior light) -->
+    <rect x="274" y="424" width="14" height="8" fill="#FFD88A"/>
+    <rect x="294" y="424" width="14" height="8" fill="#FFD88A"/>
+    <rect x="314" y="424" width="14" height="8" fill="#FFD88A"/>
+    <rect x="330" y="424" width="10" height="8" fill="#FFBE6A"/>
+
+    <!-- Panel line detail (engineering detail, Mead-signature) -->
+    <g stroke="#2A3540" stroke-width="0.6" fill="none">
+      <line x1="200" y1="468" x2="412" y2="468"/>
+      <line x1="200" y1="488" x2="412" y2="488"/>
+      <line x1="200" y1="518" x2="412" y2="518"/>
+      <line x1="230" y1="450" x2="230" y2="520"/>
+      <line x1="280" y1="450" x2="280" y2="520"/>
+      <line x1="332" y1="450" x2="332" y2="520"/>
+      <line x1="382" y1="450" x2="382" y2="520"/>
+    </g>
+
+    <!-- Side thrusters (amber warning lights glowing) -->
+    <circle cx="200" cy="498" r="4" fill="#FFBE6A"/>
+    <circle cx="200" cy="498" r="2" fill="#FFEED0"/>
+    <circle cx="412" cy="498" r="4" fill="#FFBE6A"/>
+    <circle cx="412" cy="498" r="2" fill="#FFEED0"/>
+
+    <!-- Landing gear struts -->
+    <g stroke="#2A3540" stroke-width="3" fill="#4A5560">
+      <rect x="204" y="556" width="6" height="40"/>
+      <rect x="194" y="596" width="26" height="6"/>
+      <rect x="402" y="556" width="6" height="40"/>
+      <rect x="392" y="596" width="26" height="6"/>
+    </g>
+
+    <!-- Engine glow plumes (radial gradients from under ship) -->
+    <circle cx="306" cy="610" r="90" fill="url(#engineGlow)"/>
+
+    <!-- Red warning stripe on hull (Mead's rare red accent) -->
+    <rect x="260" y="535" width="92" height="4" fill="#C43E1C"/>
+    <rect x="260" y="535" width="14" height="4" fill="#1A1A1A"/>
+    <rect x="278" y="535" width="14" height="4" fill="#C43E1C"/>
+    <rect x="296" y="535" width="14" height="4" fill="#1A1A1A"/>
+    <rect x="314" y="535" width="14" height="4" fill="#C43E1C"/>
+    <rect x="332" y="535" width="14" height="4" fill="#1A1A1A"/>
+
+    <!-- Tech label on hull (minimal typography) -->
+    <text x="306" y="505" text-anchor="middle"
+          font-family="'Courier New', monospace" font-size="7"
+          fill="#F5F5F0" fill-opacity="0.7" letter-spacing="3">
+      MHC-12 / SECTOR 12
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 7 — Volumetric light rays (from horizon sun)
+       ========================================================= -->
+  <g id="Layer_LightRays" opacity="0.22">
+    <g fill="#FFD88A">
+      <polygon points="490,490 200,720 220,720 490,490"/>
+      <polygon points="490,490 150,720 180,720 490,490"/>
+      <polygon points="490,490 80,750  130,750 490,490"/>
+      <polygon points="490,490 320,780 360,780 490,490"/>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 8 — Wet ground plane with reflection
+       ========================================================= -->
+  <g id="Layer_Ground">
+    <rect x="0" y="620" width="612" height="172" fill="url(#wetGround)"/>
+
+    <!-- Ship reflection on wet ground (flipped amber smear) -->
+    <g opacity="0.35" filter="url(#distanceBlur)">
+      <ellipse cx="306" cy="640" rx="140" ry="6" fill="#F4B860"/>
+      <ellipse cx="306" cy="655" rx="130" ry="4" fill="#D9651A"/>
+      <ellipse cx="306" cy="672" rx="110" ry="3" fill="#8B5A2A"/>
+    </g>
+
+    <!-- Horizontal highlights (wet surface) -->
+    <line x1="0" y1="630" x2="612" y2="630" stroke="#F4B860" stroke-opacity="0.25" stroke-width="0.5"/>
+    <line x1="0" y1="635" x2="612" y2="635" stroke="#F4B860" stroke-opacity="0.18" stroke-width="0.4"/>
+    <line x1="0" y1="648" x2="612" y2="648" stroke="#5F6A75" stroke-opacity="0.3"  stroke-width="0.4"/>
+    <line x1="0" y1="668" x2="612" y2="668" stroke="#5F6A75" stroke-opacity="0.2"  stroke-width="0.3"/>
+
+    <!-- Ground puddles (isolated reflective pools) -->
+    <ellipse cx="140" cy="720" rx="35" ry="4" fill="#F4B860" fill-opacity="0.15"/>
+    <ellipse cx="480" cy="735" rx="42" ry="5" fill="#F4B860" fill-opacity="0.12"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 9 — Tiny human figures for scale (Mead signature)
+       Three small silhouettes at bottom of ship
+       ========================================================= -->
+  <g id="Layer_TinyFigures" fill="#0A1525">
+    <!-- Figure 1 (left of ship, looking up) -->
+    <rect x="136" y="628" width="2.5" height="12"/>
+    <circle cx="137.25" cy="625.5" r="2"/>
+    <rect x="140" y="634" width="3.5" height="1" transform="rotate(-20 141.75 634.5)"/>
+
+    <!-- Figure 2 (approaching ship, walking) -->
+    <rect x="162" y="630" width="2.5" height="12"/>
+    <circle cx="163.25" cy="627.5" r="2"/>
+
+    <!-- Figure 3 (right of ship, gesturing) -->
+    <rect x="458" y="626" width="2.5" height="13"/>
+    <circle cx="459.25" cy="623" r="2.2"/>
+    <line x1="461" y1="631" x2="469" y2="628" stroke="#0A1525" stroke-width="1.2"/>
+
+    <!-- Figure 4 (further right) -->
+    <rect x="478" y="628" width="2.5" height="12"/>
+    <circle cx="479.25" cy="625.5" r="2"/>
+
+    <!-- Elongated reflections below figures -->
+    <g opacity="0.3">
+      <line x1="137" y1="640" x2="137" y2="660" stroke="#0A1525" stroke-width="1.5"/>
+      <line x1="163" y1="642" x2="163" y2="660" stroke="#0A1525" stroke-width="1.5"/>
+      <line x1="459" y1="639" x2="459" y2="660" stroke="#0A1525" stroke-width="1.5"/>
+      <line x1="479" y1="640" x2="479" y2="660" stroke="#0A1525" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 10 — Minimal tech labels (Mead-style functional type)
+       ========================================================= -->
+  <g id="Layer_TechLabels">
+    <!-- Top-left stencil label -->
+    <text x="28" y="28"
+          font-family="'Courier New', monospace" font-size="7"
+          fill="#F5F5F0" fill-opacity="0.65" letter-spacing="3"
+          font-weight="700">ARRIVAL / SECTOR-12</text>
+    <text x="28" y="40"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#F5F5F0" fill-opacity="0.45" letter-spacing="2">
+      LAT 47.3°N  ALT +0012m  WIND 8kts
+    </text>
+    <text x="28" y="51"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#F5F5F0" fill-opacity="0.45" letter-spacing="2">
+      CRAFT MHC-12  PORT.AUTH  CLEAR
+    </text>
+
+    <!-- Bottom-right signature block -->
+    <text x="584" y="760" text-anchor="end"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#F5F5F0" fill-opacity="0.55" letter-spacing="3">
+      CONCEPT STUDY · 2077
+    </text>
+    <text x="584" y="772" text-anchor="end"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#F5F5F0" fill-opacity="0.4" letter-spacing="3">
+      GOUACHE SIMULATION · PLATE 07
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 11 — Top corner reticle marks (concept art border feel)
+       ========================================================= -->
+  <g id="Layer_BorderMarks" stroke="#F5F5F0" stroke-width="0.4" stroke-opacity="0.4" fill="none">
+    <polyline points="20,20 20,40 40,40"/>
+    <polyline points="592,20 592,40 572,40"/>
+    <polyline points="20,772 20,752 40,752"/>
+    <polyline points="592,772 592,752 572,752"/>
+  </g>
+
+</svg>

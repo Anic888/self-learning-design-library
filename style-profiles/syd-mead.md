@@ -67,5 +67,20 @@ Majestic, contemplative, optimistic-industrial. "Humans have built this, it's im
 - Estate: sydmead.com
 - See `sources/designers/syd-mead.md`
 
+## Notes from posthumous verification (2026-04-15)
+
+Web-search context — no "live refinement" possible (deceased 2019), but the estate is actively managed and exhibitions continue:
+
+- **Academy Museum of Motion Pictures (Los Angeles)**: major Syd Mead exhibition running **October 2024 through April 2026** — 18-month institutional show, the most substantial posthumous presentation to date
+- **"Future Pastime" (NYC, 534 W 26th St)**: first significant NYC posthumous exhibition — March 27 – May 21, 2025 — curated by Elon Solo and William Corman with full archive access; 40 years of paintings shown
+- **Estate + archive**: Solo and Corman curating as official archive stewards; more exhibitions planned 2026+
+- **sydmead.com** remains active as estate archive
+- **Auction presence**: regular MutualArt / auction appearances indicate sustained market demand
+
+Implications for profile:
+- Mead's visual language is **alive and being re-seen** — not historical curiosity. Refer to him as current reference, not retrospective.
+- For contemporary designers referencing Mead, the Academy Museum show is the best live reference surface through mid-2026.
+- No tactical changes to profile — his approach is fixed by his work; what's changing is how much of it we can see.
+
 ## Last sync
-2026-04-15 (seed profile — public domain knowledge)
+2026-04-15 (posthumous profile — deceased 2019, but estate active; Academy Museum LA show Oct 2024–Apr 2026 + Future Pastime NYC 2025 curated by Solo & Corman. Tactical rules unchanged — his work is a closed body of reference.)

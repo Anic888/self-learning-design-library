@@ -55,24 +55,31 @@ design-library/
 └── templates/                 # templates for new entries
 ```
 
-## Current inventory (v1)
+## Current inventory (v1.2.0)
 
-**9 designers** seeded across genres:
+**14 designers** across genres:
 
 | Designer | Genre | Best for |
 |---|---|---|
-| Ash Thorp | Cinematic UI, minimalist sci-fi | Cold atmospheric tech, BR2049 vibes |
-| Josan Gonzalez | Dense cyberpunk editorial | Maximalist packed cyberpunk illustration |
+| Ash Thorp | Cinematic UI, atmospheric illustration | Cold atmospheric tech, BR2049 vibes |
+| Josan Gonzalez / Death Burger | Dense cyberpunk editorial | Maximalist packed cyberpunk illustration |
 | James White / Signalnoise | 80s retrofuturism, synthwave | Nostalgic optimism, sunset gradients |
 | Syd Mead | Legacy industrial concept art | Painterly gravitas, realistic futurism |
 | Beeple | 3D satirical daily-art | Cultural commentary, absurd 3D |
-| Kilian Eng | Retrofuturism screen-print | Warm nostalgic sci-fi posters (Mondo) |
+| Kilian Eng | Retrofuturism + engraving + dark fantasy | Warm nostalgic sci-fi posters (Mondo) |
 | Yoji Shinkawa | Sumi-e ink + mecha | Traditional Japanese ink, high contrast |
-| David Carson | Chaos typography, grunge | Anti-grid rebellion, emotional layouts |
+| David Carson | Chaos typography, anti-design | Anti-grid rebellion, emotional layouts |
 | Stefan Sagmeister | Concept-first brand | Big ideas via unusual materials |
+| **Paula Scher** | Type-forward editorial maximalism | "Loud but literate" — cultural institutions |
+| **Kenya Hara** | Japanese modern minimalism (Muji) | Quiet premium, breathing-room design |
+| **Peter Saville** | Cerebral minimalism via appropriation | Record sleeves / thinking-object aesthetic |
+| **Massimo Vignelli** | Swiss modernism systems | Wayfinding, institutional identity |
+| **Refik Anadol** | Generative / AI-collab art | Machine-imagination at architectural scale |
 
-**3 collections:** Envato Elements index, Canva favorites, Behance cyberpunk
+**3 deep analyses:** Thorp GITS UI, Shinkawa MGS5 Sahelanthropus, Carson Ray Gun spread
+**3 collections:** Envato Elements index, Canva favorites, Behance cyberpunk (templates)
 **3 principles:** color theory, typography hierarchy, composition & grids
+**8 showcase works + 1 synthesis test:** `my-works/showcase-2026-04/` validates profiles produce legibly distinct outputs
 
 ## Getting started
 
@@ -155,14 +162,21 @@ Every LLM parses markdown. No custom format, no tooling required. Plain files, g
 **Explicit negative rules.**
 Style profiles say both what to use AND what NOT to use. LLMs need explicit "don't" instructions to avoid defaulting to generic.
 
-## Roadmap (potential)
+## Roadmap
 
-- [ ] Add 10+ more designers across underrepresented genres (Swiss, brutalist, Asian)
-- [ ] Add specific work analyses for top 3 per designer
-- [ ] Create Claude skill package (`design-mentor.skill.md`)
-- [ ] LoRA training companion guide for image models (see [TRAINING.md](TRAINING.md))
-- [ ] Multi-language (Russian/Japanese profile translations)
-- [ ] Collections for stock resources (Envato saved, Canva favorites, Behance galleries)
+### Done in v1.2.0 (2026-04-15)
+- [x] 14 designers covering cyberpunk, retrofuturism, minimalism, chaos typography, concept-first, Swiss, Japanese modern, record-sleeve, generative AI
+- [x] 3 deep analyses of iconic works
+- [x] 8 showcase demonstrations + 1 synthesis test proving legibility of distinction
+- [x] GitHub infrastructure (issue templates, PR template, lint workflow, Discussions)
+
+### Next (v1.3 potential)
+- [ ] 10-15 more designers (Müller-Brockmann, Paula Scher analyses, Saville analyses, etc.)
+- [ ] Analyses for all 14 top designers (3 per, ~40 total)
+- [ ] Claude skill package (`design-mentor.skill.md`) for auto-triggering
+- [ ] LoRA training companion guide for image models
+- [ ] Multi-language (Russian / Japanese / Spanish profile translations)
+- [ ] PNG exports of showcase SVGs for README display on GitHub
 
 ## License
 

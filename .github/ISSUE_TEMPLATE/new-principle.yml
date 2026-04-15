@@ -1,0 +1,35 @@
+name: Propose a new design principle
+description: Add universal design knowledge (not style-specific) to sources/principles/
+title: "[principle] "
+labels: ["principle"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Principles are **universal design knowledge** applicable across styles. Read existing `sources/principles/` first to see scope and depth expected.
+  - type: input
+    id: topic
+    attributes:
+      label: Principle topic
+      placeholder: e.g. Grid systems, Motion timing, Print vs digital, Accessibility
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: What the principle covers
+      description: 2-4 sentence scope. Must be universal (not a single designer's approach).
+    validations:
+      required: true
+  - type: textarea
+    id: bullets
+    attributes:
+      label: 5-10 key takeaways (actionable rules)
+      description: Each one must be tactical — something an LLM can apply. Not philosophy.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Which library designers exemplify this principle?
+      description: Cross-link designers in the library who demonstrate the principle well. Helps future readers.

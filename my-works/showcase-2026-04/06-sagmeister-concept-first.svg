@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  SHOWCASE 06 / STEFAN SAGMEISTER STYLE
+  "OBSESSION IS A SKILL" — concept-first aphorism poster
+  8.5" x 11" vertical (612 x 792 @ 72dpi)
+
+  Style profile applied: style-profiles/stefan-sagmeister.md
+  Tactical rules enforced:
+    - Start with the idea, not the style
+    - Typography as main visual element (no illustration or photography)
+    - Simulated physical material (cut-paper with shadow)
+    - Hand-lettered / hand-cut feel — keep imperfections visible
+    - Minimal palette: 3 colors max (warm paper + black + one red accent)
+    - One clear message — don't split focus
+    - Craft visible — see the process
+    - Unexpected scale variation — one word huge, caption tiny
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="8.5in" height="11in"
+     viewBox="0 0 612 792"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Warm paper gradient (very subtle, feels physical) -->
+    <linearGradient id="paperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F7F1E3"/>
+      <stop offset="0.5" stop-color="#F2EAD3"/>
+      <stop offset="1"   stop-color="#EDE3C8"/>
+    </linearGradient>
+
+    <!-- Deeper paper for "cut out" pieces (inset feel) -->
+    <linearGradient id="paperInset" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#D6C7A0"/>
+      <stop offset="1"   stop-color="#B8A97E"/>
+    </linearGradient>
+
+    <!-- Paper fiber texture -->
+    <pattern id="paperFiber" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="none"/>
+      <circle cx="1" cy="2" r="0.25" fill="#8B6F3F" fill-opacity="0.12"/>
+      <circle cx="3" cy="3" r="0.2"  fill="#8B6F3F" fill-opacity="0.08"/>
+      <line x1="0" y1="0.5" x2="4" y2="0.7" stroke="#8B6F3F" stroke-opacity="0.05" stroke-width="0.3"/>
+    </pattern>
+
+    <!-- Deep paper shadow filter -->
+    <filter id="paperShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- =========================================================
+       LAYER 1 — Warm paper background
+       ========================================================= -->
+  <g id="Layer_Paper">
+    <rect x="0" y="0" width="612" height="792" fill="url(#paperGrad)"/>
+    <rect x="0" y="0" width="612" height="792" fill="url(#paperFiber)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 2 — Process marks (faint pencil grid, shows craft)
+       ========================================================= -->
+  <g id="Layer_ProcessMarks" stroke="#8B6F3F" stroke-width="0.3" stroke-opacity="0.2" fill="none">
+    <!-- Horizontal construction lines -->
+    <line x1="40" y1="130" x2="572" y2="130" stroke-dasharray="1 3"/>
+    <line x1="40" y1="270" x2="572" y2="270" stroke-dasharray="1 3"/>
+    <line x1="40" y1="410" x2="572" y2="410" stroke-dasharray="1 3"/>
+    <line x1="40" y1="550" x2="572" y2="550" stroke-dasharray="1 3"/>
+    <!-- Vertical guides -->
+    <line x1="100" y1="100" x2="100" y2="700" stroke-dasharray="1 3"/>
+    <line x1="512" y1="100" x2="512" y2="700" stroke-dasharray="1 3"/>
+    <!-- Small annotations handwritten -->
+    <text x="45" y="127" font-family="'Brush Script MT', cursive" font-size="8"
+          fill="#8B6F3F" fill-opacity="0.55">x-height</text>
+    <text x="45" y="407" font-family="'Brush Script MT', cursive" font-size="8"
+          fill="#8B6F3F" fill-opacity="0.55">baseline</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 3 — Shadow layer for "OBSESSION" (cut-paper effect)
+       Shifted down-right to create dimensional feel
+       ========================================================= -->
+  <g id="Layer_ShadowOBSESSION">
+    <text x="310" y="230" text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="98" font-weight="900" letter-spacing="-4"
+          fill="#1A1A1A" fill-opacity="0.35" filter="url(#paperShadow)">
+      OBSESSION
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 4 — "OBSESSION" cut-out (paper inset look)
+       ========================================================= -->
+  <g id="Layer_OBSESSION">
+    <!-- Darker "inset" beneath where letters are "cut" -->
+    <text x="306" y="228" text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="98" font-weight="900" letter-spacing="-4"
+          fill="url(#paperInset)">
+      OBSESSION
+    </text>
+    <!-- Edge line highlighting cut (thin dark outline) -->
+    <text x="306" y="228" text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="98" font-weight="900" letter-spacing="-4"
+          fill="none" stroke="#4A3A20" stroke-width="0.6" stroke-opacity="0.6">
+      OBSESSION
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 5 — "is a" in handwritten brush-style (smaller, off-axis)
+       ========================================================= -->
+  <g id="Layer_IsA">
+    <text x="460" y="360"
+          font-family="'Brush Script MT', 'Lucida Handwriting', cursive"
+          font-size="70" fill="#0E0E0E" font-style="italic" font-weight="700"
+          transform="rotate(-5 460 360)">
+      is a
+    </text>
+    <!-- Subtle underline brush stroke -->
+    <path d="M 390 378 Q 440 385 525 378"
+          stroke="#0E0E0E" stroke-width="3" fill="none"
+          stroke-linecap="round" transform="rotate(-5 460 378)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 6 — Shadow layer for "SKILL"
+       ========================================================= -->
+  <g id="Layer_ShadowSKILL">
+    <text x="152" y="524"
+          font-family="Impact, 'Arial Black', sans-serif"
+          font-size="132" font-weight="900" letter-spacing="-2"
+          fill="#1A1A1A" fill-opacity="0.35" filter="url(#paperShadow)">
+      SKILL
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 7 — "SKILL" as cut-paper (different typeface intentional)
+       Sagmeister style: each word can have its own typographic treatment
+       ========================================================= -->
+  <g id="Layer_SKILL">
+    <text x="148" y="522"
+          font-family="Impact, 'Arial Black', sans-serif"
+          font-size="132" font-weight="900" letter-spacing="-2"
+          fill="url(#paperInset)">
+      SKILL
+    </text>
+    <text x="148" y="522"
+          font-family="Impact, 'Arial Black', sans-serif"
+          font-size="132" font-weight="900" letter-spacing="-2"
+          fill="none" stroke="#4A3A20" stroke-width="0.7" stroke-opacity="0.65">
+      SKILL
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 8 — Red accent: hand-drawn exclamation mark / punctuation
+       ========================================================= -->
+  <g id="Layer_RedAccent">
+    <!-- Hand-drawn red dot (imperfect circle) -->
+    <ellipse cx="506" cy="552" rx="22" ry="24" fill="#D41A3C"
+             transform="rotate(6 506 552)"/>
+    <!-- Tiny highlight -->
+    <ellipse cx="500" cy="545" rx="5" ry="4" fill="#F7F1E3" fill-opacity="0.4"/>
+    <!-- Hand-drawn red exclamation stroke -->
+    <path d="M 502 500 Q 506 480 508 465 Q 510 455 512 452"
+          stroke="#D41A3C" stroke-width="18" fill="none"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 9 — Small tape/pin marks (physical materiality)
+       Top-left and bottom-right — like poster actually pinned
+       ========================================================= -->
+  <g id="Layer_TapeMarks">
+    <!-- Top-left tape strip (translucent rectangle) -->
+    <rect x="28" y="40" width="80" height="16" fill="#F7F1E3"
+          fill-opacity="0.7" stroke="#8B6F3F" stroke-opacity="0.4"
+          stroke-width="0.5" transform="rotate(-12 68 48)"/>
+    <!-- Tape fiber texture hint -->
+    <line x1="32" y1="48" x2="100" y2="48" stroke="#8B6F3F"
+          stroke-opacity="0.2" transform="rotate(-12 68 48)"/>
+
+    <!-- Bottom-right thumbtack -->
+    <circle cx="564" cy="728" r="6" fill="#D41A3C" stroke="#0E0E0E" stroke-width="1"/>
+    <circle cx="562" cy="726" r="1.8" fill="#FFFFFF" fill-opacity="0.6"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 10 — Caption (printed, small, informational)
+       Sagmeister-style: one clear idea, then tiny printed context
+       ========================================================= -->
+  <g id="Layer_Caption">
+    <!-- Thin horizontal rule -->
+    <line x1="56" y1="660" x2="200" y2="660" stroke="#0E0E0E" stroke-width="0.6"/>
+
+    <text x="56" y="678"
+          font-family="Georgia, serif" font-size="10"
+          fill="#0E0E0E" font-style="italic">
+      AN APHORISM FOR MAKERS, PART 07
+    </text>
+    <text x="56" y="694"
+          font-family="Georgia, serif" font-size="10"
+          fill="#0E0E0E">
+      It&apos;s not talent. It&apos;s not luck.
+    </text>
+    <text x="56" y="708"
+          font-family="Georgia, serif" font-size="10"
+          fill="#0E0E0E">
+      It&apos;s the willingness to return to the
+    </text>
+    <text x="56" y="722"
+          font-family="Georgia, serif" font-size="10"
+          fill="#0E0E0E">
+      same question, every day, for years.
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 11 — Bottom metadata (craft signature)
+       ========================================================= -->
+  <g id="Layer_Metadata">
+    <text x="56" y="760"
+          font-family="'Courier New', monospace" font-size="7"
+          fill="#0E0E0E" letter-spacing="3" fill-opacity="0.7">
+      CUT · SET · GLUED — APR 2026
+    </text>
+    <text x="556" y="760" text-anchor="end"
+          font-family="'Courier New', monospace" font-size="7"
+          fill="#0E0E0E" letter-spacing="3" fill-opacity="0.7">
+      EDITION 07 OF 07
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 12 — Subtle fold crease down center (physical poster feel)
+       ========================================================= -->
+  <g id="Layer_FoldCrease">
+    <line x1="306" y1="0" x2="306" y2="792"
+          stroke="#8B6F3F" stroke-width="0.3" stroke-opacity="0.12"/>
+    <!-- Slight shadow on one side of fold -->
+    <rect x="306" y="0" width="8" height="792" fill="#0E0E0E" fill-opacity="0.04"/>
+  </g>
+
+</svg>

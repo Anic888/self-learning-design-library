@@ -1,0 +1,55 @@
+name: Refine an existing profile
+description: Corrections, updates, or tactical additions to an existing style profile
+title: "[refinement] "
+labels: ["profile-refinement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Style profiles are living documents. Refinements based on fresh observation are very welcome.
+        Link to the designer's current work rather than describing from memory.
+  - type: input
+    id: designer
+    attributes:
+      label: Designer slug
+      description: Must match an existing file in style-profiles/
+      placeholder: e.g. ash-thorp
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of refinement
+      options:
+        - Palette correction (hex codes wrong / incomplete)
+        - Typography spec update (fonts wrong / approach evolved)
+        - Composition rule correction
+        - New signature move to add
+        - Tools update (actual tools designer uses)
+        - Portfolio links broken / needs updating
+        - Mood / emotional register mischaracterized
+        - Missing "when NOT to apply" scenario
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content you want to change
+      description: Quote the exact lines from the profile, or paste the section
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed change
+      description: What the new / corrected content should be
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / sources
+      description: URLs to designer's current work, interviews, or artbook citations that support the change
+    validations:
+      required: true

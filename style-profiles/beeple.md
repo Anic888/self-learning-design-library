@@ -65,5 +65,20 @@ Satirical, angry, exhausted, earnest-ironic. Mixed: humor + horror + political c
 - Main: beeple-crap.com
 - See `sources/designers/beeple.md`
 
+## Notes from live verification (2026-04-15)
+
+Visited beeple-crap.com — observations:
+
+- **Site itself** is atmospheric/contemplative (forest with single vertical light beam), contrasting with loud individual pieces — his self-presentation is moodier than his content
+- **Navigation reveals breadth:** SHORT FILMS / EVERYDAYS / VJ LOOPS / RESOURCES / COLLECT / ABOUT. Not just Everydays.
+- **"RESOURCES" is a category** — he open-sources Cinema 4D project files, teaching material, free assets. This is part of his identity (generous with tooling). Rare among artists of his success level.
+- **"VJ LOOPS" category active** — continues concert-visual work (Imagine Dragons, Eminem tours, etc.)
+- **Self-deprecating voice:** bio reads "he makes a variety of art crap across a variety of media. some of it is ok, but a lot of it kind of blows ass. he's working on making it suck less everyday though so bear with him..." — this tone matters. Not pretentious even at Christie's-$69M level.
+
+Implications for the profile:
+- **Tone of voice** is part of the work — keep earnest-ironic in any copy that references him
+- **"Resources" generosity** — worth noting culturally; he gives away project files
+- **The atmospheric/dark side of his palette** is under-represented in the seed profile — he does quiet/atmospheric work too, not only loud satire
+
 ## Last sync
-2026-04-15 (seed profile — general knowledge through 2021; newer work needs fresh scan)
+2026-04-15 (LIVE verified via beeple-crap.com — expanded to include VJ loops, resources-sharing practice, and atmospheric mode alongside loud-satire mode. Tone-of-voice note added for references.)

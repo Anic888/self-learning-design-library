@@ -1,0 +1,76 @@
+name: Propose a new designer
+description: Suggest a designer to add to the library (or let us know you plan to open a PR for one)
+title: "[new-designer] "
+labels: ["new-designer"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a designer. Read [CONTRIBUTING.md](../CONTRIBUTING.md) first — the quality bar for style profiles is explicit.
+  - type: input
+    id: name
+    attributes:
+      label: Designer name
+      description: Full professional name
+      placeholder: e.g. Paula Scher
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Proposed slug
+      description: Lowercase kebab-case, matches filename
+      placeholder: e.g. paula-scher
+    validations:
+      required: true
+  - type: input
+    id: portfolio
+    attributes:
+      label: Primary portfolio URL
+      description: Website preferred; Behance or IG acceptable
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: genre
+    attributes:
+      label: Primary genre
+      description: What design space do they occupy?
+      options:
+        - Cinematic UI / motion
+        - Illustration (cyberpunk / dense)
+        - Illustration (retrofuturism / screen-print)
+        - Editorial / type-driven
+        - Concept / conceptual brand
+        - Swiss modernism / systems
+        - Japanese modern / minimalism
+        - Record sleeve / music packaging
+        - Generative / AI-collab
+        - 3D / daily art
+        - Chaos typography / anti-design
+        - Industrial / concept art
+        - Other (describe in notes)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this designer fills a gap
+      description: One paragraph — what problem space do they solve that existing 14 profiles don't?
+    validations:
+      required: true
+  - type: textarea
+    id: key-works
+    attributes:
+      label: 3-5 key works worth analyzing
+      description: List specific pieces + URLs. Format each as "Title (year) — URL — why notable"
+    validations:
+      required: true
+  - type: checkboxes
+    id: intent
+    attributes:
+      label: Intent
+      options:
+        - label: I plan to submit a PR with the profile
+        - label: I'm suggesting this for someone else to write
+        - label: I've read CONTRIBUTING.md and accept the quality bar

@@ -77,5 +77,17 @@ Witty, generous, humanist, intellectually playful. Big ideas made accessible. Н
 - Main: sagmeister.com
 - See `sources/designers/stefan-sagmeister.md`
 
+## Notes from live verification (2026-04-15)
+
+Visited sagmeister.com/WORK — observations from current portfolio:
+
+- **Post-2019 solo direction** shows a shift toward **data visualization rendered as physical installation** (his "Beautiful Numbers" series — global optimism/pessimism charts rendered as paintings in gallery grids)
+- **Self-portrait-with-material** remains active practice: recent portraits feature painted face (theatrical makeup), egg yolk poured over head, other wet material interventions on his own body
+- **Architectural-scale work** has grown: container-structure sculptures, mountain-chalet gallery interventions, long horizontal digital displays
+- **Website itself** is archetypal Sagmeister design: 3-column black grid, photography-forward, no decorative chrome — the work speaks
+- Main navigation: WORK / ANSWERS / CONTACT / EVENTS — characteristic four-noun simplicity
+
+Implication for "how to apply": the library should capture his architectural-scale and data-as-painting direction alongside the classic poster work. Concept-first principle unchanged; scope expanded.
+
 ## Last sync
-2026-04-15 (seed profile)
+2026-04-15 (LIVE verified via sagmeister.com — confirmed concept-first principle, added data-viz-as-installation and architectural intervention as post-2019 expansions. Walsh departure has not changed core approach, only solo execution.)

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the contribution guide first
+    url: https://github.com/Anic888/self-learning-design-library/blob/main/CONTRIBUTING.md
+    about: Quality bars, templates, and process are documented here. Start there before filing an issue.
+  - name: Read how retrieval vs training works
+    url: https://github.com/Anic888/self-learning-design-library/blob/main/TRAINING.md
+    about: Honest notes on what this library is and isn't. Many questions are answered here.

@@ -1,0 +1,133 @@
+# Library Lint — verifies style profiles and sources meet the quality bar documented in CONTRIBUTING.md.
+#
+# Security note: this workflow does NOT consume any user-controlled inputs (issue titles,
+# PR titles, commit messages, head_ref, etc.) inside run: blocks. All data comes from
+# repository files which are already vetted via pull-request review. No injection vectors.
+
+name: Library Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  profile-structure:
+    name: Verify style-profile quality bar sections
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every style profile has required sections
+        shell: bash
+        run: |
+          set -euo pipefail
+          REQUIRED=(
+            "## Core Identity"
+            "## Palette"
+            "## Typography"
+            "## Composition"
+            "## Signature Moves"
+            "## Techniques / Tools"
+            "## Mood / Emotional Register"
+            "## When to apply"
+            "## How to apply (tactical for Claude)"
+            "## Sources"
+            "## Last sync"
+          )
+          fail=0
+          for f in style-profiles/*.md; do
+            echo "==> $f"
+            for section in "${REQUIRED[@]}"; do
+              if ! grep -qF "$section" "$f"; then
+                echo "  MISSING: $section"
+                fail=1
+              fi
+            done
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo ""
+            echo "One or more style profiles are missing required sections."
+            echo "See CONTRIBUTING.md for the quality bar."
+            exit 1
+          fi
+          echo ""
+          echo "All style profiles pass section check."
+
+      - name: Check every designer source has required sections
+        shell: bash
+        run: |
+          set -euo pipefail
+          REQUIRED=(
+            "## Identity"
+            "## Portfolio"
+            "## Focus areas"
+            "## Why I care"
+            "## Style profile"
+            "## Last profile sync"
+          )
+          fail=0
+          for f in sources/designers/*.md; do
+            echo "==> $f"
+            for section in "${REQUIRED[@]}"; do
+              if ! grep -qF "$section" "$f"; then
+                echo "  MISSING: $section"
+                fail=1
+              fi
+            done
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo ""
+            echo "One or more source files are missing required sections."
+            exit 1
+          fi
+          echo ""
+          echo "All source files pass section check."
+
+      - name: Check parity between source and style-profile filenames
+        shell: bash
+        run: |
+          set -euo pipefail
+          srcs=$(ls sources/designers/ | sort)
+          profs=$(ls style-profiles/ | sort)
+          if ! diff <(echo "$srcs") <(echo "$profs"); then
+            echo ""
+            echo "Mismatch: every sources/designers/<slug>.md needs a matching style-profiles/<slug>.md (and vice versa)."
+            exit 1
+          fi
+          echo "Parity check passed — each designer has both a source and a style profile."
+
+  link-check:
+    name: Check internal markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify internal relative .md links resolve
+        shell: bash
+        run: |
+          set -euo pipefail
+          fail=0
+          # Grep for markdown links whose target ends in .md and is relative (no http).
+          while IFS= read -r line; do
+            file=$(echo "$line" | cut -d: -f1)
+            target=$(echo "$line" | sed -E 's/.*\]\(([^)]+\.md)\).*/\1/' | head -n1)
+            target_path="${target%#*}"
+            dir=$(dirname "$file")
+            resolved=$(python3 -c "import os, sys; print(os.path.normpath(sys.argv[1]))" "$dir/$target_path")
+            if [ ! -f "$resolved" ]; then
+              echo "BROKEN: $file -> $target_path  (resolved: $resolved)"
+              fail=1
+            fi
+          done < <(grep -rn -E '\]\([^h][^)]+\.md[^)]*\)' --include="*.md" . | grep -v node_modules || true)
+          if [ "$fail" -ne 0 ]; then
+            echo ""
+            echo "One or more internal markdown links are broken."
+            exit 1
+          fi
+          echo "All internal .md links resolve."

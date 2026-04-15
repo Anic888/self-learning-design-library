@@ -1,0 +1,38 @@
+name: Bug, broken link, or factual error
+description: Report issues with the library content
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: What kind of issue?
+      options:
+        - Broken external link (URL returns 404 / dead)
+        - Factual error (dates, names, location, etc.)
+        - Typo / grammar / formatting
+        - File reference broken (internal .md link wrong)
+        - Template not rendering correctly
+        - GitHub Action failing
+        - Misattribution (credited wrong designer)
+        - Copyright concern
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File / URL affected
+      placeholder: e.g. style-profiles/ash-thorp.md, or https://...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the issue
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix (if you have one)
+      description: Optional — if you know how to fix it, say how

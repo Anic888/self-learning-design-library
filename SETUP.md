@@ -62,25 +62,42 @@ Claude читает `style-profiles/*.md` → синтезирует → соз�
 4. **Style profiles — авторитетный источник истины для работы.** Обновляй при изменении направления дизайнера.
 5. **Last sync дата** в каждом профиле — если она старше полугода, надо обновить.
 
-## Текущий inventory (v1)
+## Текущий inventory (v1.2.0)
 
-**Designers seeded (9):**
+**Designers seeded (14):**
 
-| Designer | Genre | Use when... |
-|---|---|---|
-| Ash Thorp | Cinematic UI / minimalist sci-fi | Нужен cold serious tech-sublime (BR2049 vibe) |
-| Josan Gonzalez | Dense cyberpunk editorial | Maximalist packed cyberpunk illustration |
-| James White / Signalnoise | 80s retrofuturism / synthwave | Nostalgic optimism, sunset gradients |
-| Syd Mead | Legacy industrial concept art | Painterly gravitas, atmospheric realism |
-| Beeple | Digital 3D satirical daily-art | Absurd cultural commentary, bold 3D |
-| **Kilian Eng** | Retrofuturism screen-print | Warm nostalgic sci-fi posters (Mondo tradition) |
-| **Yoji Shinkawa** | Sumi-e ink on mecha | Traditional Japanese ink + futuristic subjects |
-| **David Carson** | Chaos typography / grunge | Anti-grid rebellion, emotional layouts |
-| **Stefan Sagmeister** | Concept-first brand | Big ideas через unusual materials/handwork |
+| Designer | Genre | Use when... | Last sync |
+|---|---|---|---|
+| Ash Thorp | Cinematic UI / atmospheric illustration | Cold serious tech-sublime (BR2049 vibe) | LIVE 2026-04-15 |
+| Josan Gonzalez / Death Burger | Dense cyberpunk editorial | Maximalist packed cyberpunk illustration | LIVE 2026-04-15 |
+| James White / Signalnoise | 80s retrofuturism / synthwave | Nostalgic optimism, sunset gradients | LIVE 2026-04-15 |
+| Syd Mead (deceased 2019) | Legacy industrial concept art | Painterly gravitas, atmospheric realism | posthumous 2026-04-15 |
+| Beeple | Digital 3D satirical daily-art | Absurd cultural commentary, bold 3D | LIVE 2026-04-15 |
+| Kilian Eng | Retrofuturism + dark fantasy + engraving | Warm nostalgic sci-fi posters (Mondo tradition) | LIVE 2026-04-15 |
+| Yoji Shinkawa | Sumi-e ink on mecha | Traditional Japanese ink + futuristic subjects | LIVE + WS 2026-04-15 |
+| David Carson | Chaos typography / anti-design | Anti-grid rebellion, emotional layouts | LIVE 2026-04-15 |
+| Stefan Sagmeister | Concept-first brand | Big ideas via unusual materials/handwork | LIVE 2026-04-15 |
+| **Paula Scher** | Type-forward editorial maximalism | Loud but literate — cultural institutions | seed 2026-04-15 |
+| **Kenya Hara** | Japanese modern minimalism (Muji) | Quiet premium, breathing-room design | seed 2026-04-15 |
+| **Peter Saville** | Cerebral minimalism via appropriation | Record sleeves / thinking-object aesthetic | seed 2026-04-15 |
+| **Massimo Vignelli** (d. 2014) | Swiss modernism systems | Wayfinding, institutional identity | seed 2026-04-15 |
+| **Refik Anadol** | Generative / AI-collab art | Machine-imagination at architectural scale | seed 2026-04-15 |
+
+**Analyses (deep-dive breakdowns):**
+- analyses/ash-thorp/2017-ghost-in-shell-ui.md
+- analyses/yoji-shinkawa/2015-mgs5-sahelanthropus.md
+- analyses/david-carson/1994-ray-gun-bryan-ferry-spread.md
 
 **Collections:** envato-saved, canva-favorites, behance-cyberpunk (placeholders)
 **Principles:** color-theory, typography-hierarchy, composition-grids
-**Works:** 2026-04-cyber-art-expo (V1 + V2 Thorp)
+**Works:** 2026-04-cyber-art-expo (Thorp V2) + showcase-2026-04 (8 style demonstrations + combination test)
+
+**GitHub infrastructure (as of v1.2.0):**
+- .github/ISSUE_TEMPLATE/ — 4 structured forms (new-designer, profile-refinement, new-principle, bug) + config
+- .github/pull_request_template.md — full checklist from CONTRIBUTING quality bar
+- .github/workflows/lint.yml — validates style profile + source sections + internal link integrity
+- Discussions enabled with welcome post at /discussions/1
+- docs/share-drafts.md — copy-paste-ready announcement text for Reddit / HN / PH / X / Telegram
 
 ## Расширение
 

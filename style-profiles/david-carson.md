@@ -81,5 +81,23 @@ Rebellious, intuitive, emotional, anti-corporate. Youth culture, alternative mus
 - Main: davidcarsondesign.com
 - See `sources/designers/david-carson.md`
 
+## Notes from live verification (2026-04-15)
+
+Visited davidcarsondesign.com — observations:
+
+- **Site itself is a manifesto for his style** — chaotic, broken grid, multiple text columns, asymmetric paint-swipe image of pink/orange, lowercase italic "davidcarsondesign." as ONLY element of consistency. The living proof of the profile's tactical rules.
+- **Self-described scope** broader than editorial: "Graphic Design. Branding. Advertising. Consulting. Web. print + digital"
+- **NuCollage book (2019)** — continues collage tradition into recent work
+- **Masterclass (2021)** — formal teaching evidence (he's teaching at scale)
+- **Client breadth** confirmed: Nike ("Fate" campaign), Transworld Skateboarding (art direction), **surfboard designs** (physical product), **potato chip branding** (Lay's-adjacent), branding work across multiple industries — not just editorial magazines
+- Quotes from site (praise-dense): "most googled graphic designer in history", "the art director of the era" (Creative Review), AIGA Gold Medal winner, "most influential graphic designer of our times" (Surfrider Foundation)
+- Nomadic: "usa/europe" — no single studio base
+- **Instagram:** #davidcarsondesigner (hashtag, not handle — characteristic)
+
+Implications for profile:
+- Expand "When to apply" to include **product/consumer brand** work (not just editorial) — Carson has done packaging, surfboards, skateboards, Nike campaigns
+- His site IS a case study for his style — linkable as reference
+- He's actively teaching — modern influence ongoing, not historical
+
 ## Last sync
-2026-04-15 (seed profile)
+2026-04-15 (LIVE verified via davidcarsondesign.com — confirmed broader scope than editorial, added product/consumer brand applications, noted continuing practice via NuCollage 2019 and Masterclass 2021. Site layout itself is the profile's proof.)

@@ -74,5 +74,21 @@ Meditative, powerful, restrained. East Asian ink tradition emotion: quiet dignit
 - Studio: kojimaproductions.jp
 - See `sources/designers/yoji-shinkawa.md`
 
+## Notes from live verification (2026-04-15)
+
+Web-search context (Twitter profile inaccessible without login; gallery appearances are intermittent). Verified via current publications:
+
+- **Currently active** — concept art for **Death Stranding 2: On the Beach** (Kojima Productions, released 2025)
+- **Recent artbook:** "The Art of Death Stranding 2: On the Beach" — 256 pages, standard edition published Feb 2026, hundreds of Shinkawa pieces (characters, equipment, locations, creatures)
+- **Limited collector edition** of artbook: includes a separate **240-page Shinkawa sketchbook** + signed acrylic print of "New Journey". Only 100 copies made. Market treats his sketches themselves as collectible art.
+- **Edge Magazine cover** (2025) featured exclusive DS2 art — mainstream gaming press still uses his work for major cover stories
+- **Continuing Kojima partnership** unbroken from MGS (1994) through Death Stranding 1 (2019) and now 2 — 30+ year collaboration
+- Ink medium continues — sketchbook inclusion in limited edition suggests he's still producing brush-and-ink work as primary practice, not just finalized digital
+
+Implications for profile:
+- Confirm ink-on-paper practice is ongoing (not a legacy medium)
+- Add "sketchbook release" as a practice — his process is the product, sketches valued as final art
+- Profile doesn't need major revision; sources are stable
+
 ## Last sync
-2026-04-15 (seed profile)
+2026-04-15 (LIVE + web-search verified — Death Stranding 2 work active, 256-page artbook Feb 2026 + 100-copy limited edition with 240-page sketchbook, 30+ year Kojima partnership continuing. Profile tactical rules remain accurate.)
