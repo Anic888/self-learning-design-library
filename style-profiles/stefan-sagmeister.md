@@ -56,7 +56,7 @@ Witty, generous, humanist, intellectually playful. Big ideas made accessible. Н
 - ❌ НЕ для speed-first projects
 - ❌ НЕ для pure decorative work (он always says something)
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Start with "what's the idea?"** — НЕ "what should it look like?"
 2. **Choose material/gesture** that embodies the idea (e.g., for "fragile trust" → poster on torn paper).
 3. **Use typography as the main image** — custom hand-lettered word большой, всё остальное support.

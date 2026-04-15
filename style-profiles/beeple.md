@@ -47,7 +47,7 @@ Satirical, angry, exhausted, earnest-ironic. Mixed: humor + horror + political c
 - ❌ НЕ для brand / corporate / client work обычно
 - ❌ НЕ если хочется "timeless" — работы очень топикально привязаны
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Композиция: one massive 3D subject** в центре, detailed environment around.
 2. **Палитра: saturated neon accents** против industrial grey/brown base.
 3. **Weathered textures** — grime, rust, wear на всём.

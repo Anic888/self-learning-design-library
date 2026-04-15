@@ -47,7 +47,7 @@ Energetic, overstimulating, nostalgic for neon futures. Ближе к manga/comi
 - ✅ Когда задача "rich, dense, memorable"
 - ❌ НЕ подходит для corporate, minimalist, academic контекстов
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Палитра: pink + cyan + yellow + black + white.** Все пять одновременно. Никаких monochromatic.
 2. **Composition: central figure or vehicle.** Вокруг — packed environment.
 3. **Signs everywhere.** Neon signs, billboards, stickers — как часть illustration.

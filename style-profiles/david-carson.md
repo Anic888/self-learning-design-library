@@ -60,7 +60,7 @@ Rebellious, intuitive, emotional, anti-corporate. Youth culture, alternative mus
 - ❌ НЕ для wayfinding / UX (people die на illegible signage)
 - ❌ НЕ для information-heavy work (cenze gets lost)
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Break the grid.** Place hero text off-center, tilted, partially off-page.
 2. **Mix 4+ fonts** на одной work. Contrast heavy slab + script + grunge display.
 3. **Overlap everything** — text on images, text on text, images on text.

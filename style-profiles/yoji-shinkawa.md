@@ -54,7 +54,7 @@ Meditative, powerful, restrained. East Asian ink tradition emotion: quiet dignit
 - ❌ НЕ для corporate identity
 - ❌ НЕ для multi-color illustrations
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Палитра: ink black + off-white paper ONLY.** Optional red accent (max 5%).
 2. **Композиция: ONE hero figure** (mecha / character / abstract form) в движении.
 3. **Massive negative space** — 40-60% untouched "paper".

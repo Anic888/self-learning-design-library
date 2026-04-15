@@ -48,7 +48,7 @@ Majestic, contemplative, optimistic-industrial. "Humans have built this, it's im
 - ❌ НЕ подходит для neon-cyberpunk (это его "потомки" Josan/Signalnoise)
 - ❌ НЕ для flat design / minimalist UI
 
-## How to apply (tactical для Claude)
+## How to apply (tactical for Claude)
 1. **Палитра: amber + deep blue + metallic grey.** Warm/cold dichotomy. Не neon.
 2. **Композиция: one hero subject.** Вокруг — atmospheric context.
 3. **Haze distance** — дальние элементы faded, warmer/bluer tone.
