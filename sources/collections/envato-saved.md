@@ -7,28 +7,23 @@
 - Filter preferences: `filter.graphics_applications_supported=Adobe+Illustrator` для vector-compatible assets
 - Tool: Claude in Chrome (navigate / screenshot / read_page)
 
-## Currently downloaded (local in `~/Desktop/Cyber-Art-Expo-Poster/01-envato-assets/`)
+## Example inventory format
+Keep a local catalog of what's been downloaded. Organize by asset type to find reusable pieces fast.
 
-### Vector / AI-compatible (primary value)
+### Vector / Illustrator-compatible (primary value)
 | Item | Creator | Format | Use case |
 |---|---|---|---|
-| **222 Cyber Y2K Elements** | Studio_Dusk | AI + EPS + SVG + PNG, layered | Декоративные cyber shapes. Разделены Alien/Data/Modern/Retro. **Highly reusable.** |
-| **Circle Made Wavy Lines** | (unknown) | EPS | Wave pattern — хорошая texture base |
+| _Example: 222 Cyber Y2K Elements_ | _Studio_Dusk_ | _AI + EPS + SVG + PNG, layered_ | _Decorative cyber shapes library_ |
+| _(your items here)_ | | | |
 
-### Raster / PSD (secondary — для reference / imports)
+### Raster / PSD (secondary — reference / imports)
 | Item | Creator | Format | Use case |
 |---|---|---|---|
-| **Cyberpunk 80s Text Effects** | — | PSD (10 files) | Text treatments — study для replication в AI |
-| **3D Y2K Futuristic Glass Shape** | Creavora | PNG (25 shapes) | Chrome/glass 3D accents |
-| **Futuristic Sci-Fi Cinematic Movie Poster Bundle** | — | PSD (3 posters: Return-To, Beyond-Speed, Solitude) | Full poster references для layout |
-| **Tech AI Cyberpunk Technology Website** | — | PSD | Web template — layout ideas |
-| **Cyberpunk Twitch Video Overlay** | Sko4 | PSD | Stream overlay — can adapt UI elements |
-| **20 Torn Paper Texture Pack** | PartikusiDesign | PNG transparent | Grunge overlay |
+| _Example: 20 Torn Paper Texture Pack_ | _PartikusiDesign_ | _PNG transparent_ | _Grunge overlay for distressed aesthetic_ |
+| _(your items here)_ | | | |
 
 ## Wishlist (seen but not downloaded)
-- [ ] TBD — добавлять когда натыкаешься на интересное
-- [ ] Y2K Asset Streetwear (seen at first URL)
-- [ ] Wireframe Topo (seen at first URL)
+- [ ] _Items worth downloading later_
 
 ## Search patterns that work
 - Filter: Adobe Illustrator support + sort: popular → quality vector assets
