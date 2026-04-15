@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  SHOWCASE 03 / DAVID CARSON STYLE
+  "FRAGMENT" — fictional magazine spread, interview with Velvet Noir
+  11" x 8.5" HORIZONTAL (792 x 612 @ 72dpi)  — magazine-spread feel
+
+  Style profile applied: style-profiles/david-carson.md
+  Tactical rules enforced:
+    - NO grid (broken/ignored)
+    - 5+ different typefaces clashing
+    - Overlapping text blocks
+    - Off-center tilted photograph placeholder
+    - Main title partially off-page
+    - One paragraph in "dingbats substitution" (Carson homage to Bryan Ferry spread)
+    - Hand-drawn marks (arrows, scribbles, underlines)
+    - Text running off edge intentionally
+    - Halftone/grunge texture
+    - "Mistakes" left in — misalignment, wrong-way text
+    - Monochrome + ONE oxblood accent
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="11in" height="8.5in"
+     viewBox="0 0 792 612"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Newsprint paper -->
+    <linearGradient id="newsprint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F5F0E0"/>
+      <stop offset="1"   stop-color="#EEE7D2"/>
+    </linearGradient>
+
+    <!-- Halftone dot pattern (photograph simulation) -->
+    <pattern id="halftonePattern" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="3" fill="#F5F0E0"/>
+      <circle cx="1.5" cy="1.5" r="1" fill="#0E0E0E"/>
+    </pattern>
+    <pattern id="halftoneDense" x="0" y="0" width="2" height="2" patternUnits="userSpaceOnUse">
+      <rect width="2" height="2" fill="#F5F0E0"/>
+      <circle cx="1" cy="1" r="0.85" fill="#0E0E0E"/>
+    </pattern>
+
+    <!-- Grunge noise -->
+    <pattern id="paperNoise" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="none"/>
+      <circle cx="1" cy="2" r="0.4" fill="#0E0E0E" fill-opacity="0.08"/>
+      <circle cx="5" cy="4" r="0.3" fill="#0E0E0E" fill-opacity="0.06"/>
+    </pattern>
+
+    <!-- Xerox distressed look -->
+    <filter id="xerox">
+      <feGaussianBlur stdDeviation="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- =========================================================
+       LAYER 1 — Newsprint paper base with noise
+       ========================================================= -->
+  <g id="Layer_Paper">
+    <rect x="0" y="0" width="792" height="612" fill="url(#newsprint)"/>
+    <rect x="0" y="0" width="792" height="612" fill="url(#paperNoise)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 2 — Page number (wrong place, tiny)
+       ========================================================= -->
+  <g id="Layer_PageNum">
+    <text x="22" y="18"
+          font-family="'Courier New', monospace" font-size="7"
+          fill="#0E0E0E">p. 47 ·· FRAGMENT ·· issue 03</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 3 — Tilted halftone photograph placeholder
+       Off-center, tilted, cropped weirdly
+       ========================================================= -->
+  <g id="Layer_Photo" transform="rotate(-7 260 280)">
+    <rect x="120" y="180" width="280" height="330"
+          fill="url(#halftonePattern)" filter="url(#xerox)"/>
+    <!-- Darker overlay to suggest shadow areas of a photo -->
+    <rect x="120" y="180" width="280" height="330" fill="#0E0E0E" fill-opacity="0.25"/>
+    <!-- Hand-scratched label on photo -->
+    <rect x="120" y="465" width="280" height="45" fill="#F5F0E0" fill-opacity="0.92"/>
+    <text x="128" y="485"
+          font-family="'Brush Script MT', cursive" font-size="18"
+          fill="#0E0E0E" font-style="italic">velvet noir</text>
+    <text x="128" y="502"
+          font-family="'Courier New', monospace" font-size="8"
+          fill="#0E0E0E">photographed in a basement. feb 2077.</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 4 — Huge hero name partially off-page (top)
+       ========================================================= -->
+  <g id="Layer_HeroName">
+    <!-- "VELVET" massively, off-left-edge -->
+    <text x="-40" y="130"
+          font-family="Impact, 'Arial Black', sans-serif"
+          font-size="168" font-weight="900" letter-spacing="-6"
+          fill="#0E0E0E">VELVET</text>
+    <!-- "NOIR" displaced right, different typeface entirely -->
+    <text x="470" y="160"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="128" font-weight="900" letter-spacing="-4"
+          fill="#0E0E0E" font-style="italic">NOIR.</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 5 — Rotated sidebar text (Carson signature move)
+       ========================================================= -->
+  <g id="Layer_RotatedText">
+    <text x="24" y="380" transform="rotate(-90 24 380)"
+          font-family="'Arial Narrow', Arial, sans-serif"
+          font-size="11" fill="#0E0E0E" letter-spacing="2" font-weight="700">
+      AN INTERVIEW RECORDED WHILE EVERYTHING WAS FALLING APART
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 6 — Overlapping INTERVIEW tag (tiny, wrong placement)
+       ========================================================= -->
+  <g id="Layer_InterviewTag">
+    <text x="380" y="200"
+          font-family="'Courier New', monospace" font-size="10"
+          fill="#A33020" letter-spacing="6" font-weight="700">
+      I N T E R V I E W  //
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 7 — Mixed-font body column (runs off bottom)
+       ========================================================= -->
+  <g id="Layer_BodyColumn">
+    <g font-family="'Courier New', monospace" font-size="9"
+       fill="#0E0E0E" letter-spacing="0">
+      <text x="430" y="240">Q: Do you consider yourself a</text>
+      <text x="430" y="253">designer? an artist? a</text>
+      <text x="430" y="266">noise-maker?</text>
+    </g>
+
+    <g font-family="Georgia, serif" font-size="11"
+       fill="#0E0E0E" font-style="italic">
+      <text x="430" y="292">A — none of those. i don't think</text>
+      <text x="430" y="308">in categories. i think in</text>
+      <text x="430" y="324" font-weight="700">FEELINGS.</text>
+    </g>
+
+    <g font-family="'Courier New', monospace" font-size="9"
+       fill="#0E0E0E">
+      <text x="430" y="352">Q: but the work has a look.</text>
+      <text x="430" y="365">people describe it. people</text>
+      <text x="430" y="378">categorize it. that's happening</text>
+      <text x="430" y="391">whether you</text>
+    </g>
+
+    <!-- Text cut off / running off the page -->
+    <text x="430" y="411" font-family="Georgia, serif" font-size="16"
+          fill="#0E0E0E" font-weight="900">want it to</text>
+    <text x="430" y="431" font-family="Georgia, serif" font-size="22"
+          fill="#0E0E0E" font-weight="900" font-style="italic">OR NOT.</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 8 — DINGBATS SUBSTITUTION (Carson homage to Bryan Ferry spread)
+       A paragraph where actual content is replaced with symbol/shapes
+       suggesting the interview was boring or the words don't matter.
+       ========================================================= -->
+  <g id="Layer_DingbatsParagraph">
+    <!-- Faint label above -->
+    <text x="430" y="468"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#A33020" letter-spacing="2">Q: AND YOUR FAVORITE SUBJECT MATTER IS —</text>
+
+    <!-- The "answer" rendered as symbol-shapes — impossible to read -->
+    <g fill="#0E0E0E" font-family="'Zapf Dingbats', 'Wingdings', Arial" font-size="14"
+       letter-spacing="2">
+      <text x="430" y="486">✦ ✧ ❋ ✺ ❀ ❁ ❂ ✺ ❃ ✦ ✧ ◆ ◇ ▲</text>
+      <text x="430" y="503">✺ ❀ ✧ ❋ ❁ ◆ ✦ ❂ ✧ ✺ ✦ ❋ ◇ ◆ ❀</text>
+      <text x="430" y="520">❃ ✦ ✺ ❁ ✧ ◆ ❋ ❀ ✺ ✧ ❂ ◇ ❃ ◆ ✦</text>
+      <text x="430" y="537">▲ ✦ ❀ ✺ ✧ ❋ ❃ ❁ ◆ ✺ ❀ ✧ ▲</text>
+    </g>
+
+    <!-- Sarcastic annotation (Carson's wit) -->
+    <text x="430" y="560"
+          font-family="'Brush Script MT', cursive" font-size="13"
+          fill="#A33020" font-style="italic" transform="rotate(-3 530 560)">
+      — editor's note: he answered but we didn't catch it
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 9 — Pull quote, script font, tilted
+       ========================================================= -->
+  <g id="Layer_PullQuote" transform="rotate(-4 220 545)">
+    <text x="60" y="545"
+          font-family="'Brush Script MT', 'Lucida Handwriting', cursive"
+          font-size="36" fill="#0E0E0E" font-style="italic" font-weight="700">
+      "noise is a gift"
+    </text>
+    <text x="175" y="572"
+          font-family="'Courier New', monospace" font-size="10"
+          fill="#A33020" letter-spacing="4">
+      — v.n., 2077
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 10 — Hand-drawn arrow (from quote to photo)
+       ========================================================= -->
+  <g id="Layer_HandArrow" stroke="#A33020" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M 270 545 Q 250 520 300 490" stroke-dasharray="0"/>
+    <!-- Arrow head -->
+    <path d="M 300 490 L 293 498 M 300 490 L 308 498" stroke-width="2"/>
+    <!-- Scribble underline accent -->
+    <path d="M 62 554 Q 100 560 140 556 Q 180 552 218 558"
+          stroke-width="1.5" opacity="0.85"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 11 — Hand-written annotation (wrong direction)
+       ========================================================= -->
+  <g id="Layer_HandNote" transform="rotate(15 690 420)">
+    <text x="660" y="420"
+          font-family="'Brush Script MT', cursive" font-size="13"
+          fill="#0E0E0E" font-style="italic">
+      why is this here?
+    </text>
+    <!-- Circle around it -->
+    <ellipse cx="690" cy="418" rx="52" ry="14" fill="none"
+             stroke="#A33020" stroke-width="1.2" opacity="0.8"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 12 — Red accent bar (barcode-like mark)
+       ========================================================= -->
+  <g id="Layer_BarcodeAccent">
+    <g transform="translate(716, 12)">
+      <rect x="0"  y="0" width="3" height="36" fill="#0E0E0E"/>
+      <rect x="6"  y="0" width="1" height="36" fill="#0E0E0E"/>
+      <rect x="10" y="0" width="4" height="36" fill="#0E0E0E"/>
+      <rect x="18" y="0" width="2" height="36" fill="#0E0E0E"/>
+      <rect x="24" y="0" width="5" height="36" fill="#0E0E0E"/>
+      <rect x="33" y="0" width="1" height="36" fill="#0E0E0E"/>
+      <rect x="38" y="0" width="3" height="36" fill="#0E0E0E"/>
+      <rect x="45" y="0" width="1" height="36" fill="#0E0E0E"/>
+      <rect x="50" y="0" width="4" height="36" fill="#0E0E0E"/>
+      <rect x="58" y="0" width="2" height="36" fill="#0E0E0E"/>
+      <text x="0" y="50" font-family="'Courier New', monospace"
+            font-size="6" fill="#0E0E0E">FRAG0347</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 13 — Diagonal scribble mark (drawing-on-page feel)
+       ========================================================= -->
+  <g id="Layer_Scribble" stroke="#A33020" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M 620 60 L 740 85" stroke-width="2"/>
+    <path d="M 618 64 L 742 89" stroke-width="1"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 14 — Footer (strange placement — bottom right, rotated)
+       ========================================================= -->
+  <g id="Layer_Footer" transform="rotate(-1.5 680 600)">
+    <text x="580" y="600"
+          font-family="'Arial Narrow', sans-serif" font-size="7"
+          fill="#0E0E0E" letter-spacing="3" font-weight="700">
+      COPYRIGHT FRAGMENT MAGAZINE 2077. ALL RIGHTS IGNORED.
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 15 — Overlapping large character cut-off (texture)
+       ========================================================= -->
+  <g id="Layer_OverlayChar" opacity="0.12">
+    <text x="420" y="580"
+          font-family="Georgia, serif" font-size="280"
+          font-weight="900" fill="#0E0E0E">?</text>
+  </g>
+
+</svg>
