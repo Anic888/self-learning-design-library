@@ -81,6 +81,43 @@ design-library/
 **3 principles:** color theory, typography hierarchy, composition & grids
 **8 showcase works + 1 synthesis test:** `my-works/showcase-2026-04/` validates profiles produce legibly distinct outputs
 
+## Scope — what this library is and isn't for
+
+The library is **medium-agnostic in principle** (it describes visual design approaches) but **Adobe Illustrator-first in practice** (Claude generates SVG, which opens natively in Illustrator with editable named layers). Here's the honest breakdown of what workflows it supports.
+
+### Where it works directly (Claude outputs a usable file)
+
+| Tool | What you get | Workflow |
+|---|---|---|
+| **Adobe Illustrator** | SVG with named layers → Save As `.ai` | Primary supported path. All 8 showcase pieces follow this. |
+| **Figma / vector web design** | SVG imports cleanly with layer structure preserved | Drag SVG into Figma; refine with Figma's vector tools |
+| **SVG for web** | `.svg` renders in browsers directly | Works as-is or inline in HTML |
+| **Canva** (via MCP) | Profile text seeds AI design generation | Paste tactical rules into Canva's generate-design prompt |
+
+### Where it works as guidance (you execute manually)
+
+| Tool | What the library provides | Execution |
+|---|---|---|
+| **Adobe Photoshop** | Hex palette with role %, typography specs, composition rules, signature moves | You paint / composite manually. Profiles reference Photoshop mastery (Thorp, Beeple, Kilian Eng, Shinkawa) but Claude can't generate `.psd`. |
+| **Cinema 4D / Blender / 3D** | Aesthetic direction, palette, compositional intent | You model, light, render. Beeple/Thorp work started in 3D — Claude describes approach, not files. |
+| **After Effects / motion** | Visual language direction | Motion execution is yours; Claude's output is static. |
+| **Physical print / letterpress / paper craft** | Principles + reference | Sagmeister paper-cut, Shinkawa brush-and-ink, Kilian Eng print work — profile describes; your hands (or collaborators) execute. |
+| **Procreate / digital painting** | Palette + typographic/compositional direction | You paint per guidance. |
+
+### Where it doesn't work
+
+- **Replacing a designer.** The library raises the floor on AI-generated design output. It does not lift the ceiling past generalist-LLM + vector-tool capability.
+- **Pixel-level style match.** If you need output that visually matches a specific designer's hand at pixel level (i.e. for Kilian Eng's screenprint feel or Beeple's C4D glossy rendering), you need image-gen models (Flux / SDXL) with LoRA fine-tuning. See [TRAINING.md](TRAINING.md).
+- **Direct-to-production work.** Everything Claude generates here is a **starting point**. Expect to refine in your actual design tool.
+
+### TL;DR
+
+If you work in **Adobe Illustrator** → library delivers editable SVG → `.ai` files directly. This is the flagship use case.
+
+If you work in **Adobe Photoshop / 3D / motion / print / physical craft** → library delivers tactical direction (palette, typography, composition, signature moves) for you to execute by hand. Library is the briefing; you are the production.
+
+All 8 showcase pieces in `my-works/showcase-2026-04/` are SVG → AI workflow. See the [showcase README](my-works/showcase-2026-04/README.md) for a 9-dimension comparison of what the direct-output path produces.
+
 ## Getting started
 
 ### 1. Fork + clone
