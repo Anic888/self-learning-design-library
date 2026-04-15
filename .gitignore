@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp / backup
+*.bak
+*.tmp
+*.orig
+
+# Private notes (for users who want local-only drafts)
+private/
+drafts/
+.local/
+
+# Large binary assets (keep markdown + SVG only — image references via URLs)
+# If you want to include images, remove these lines:
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.heic
+*.mp4
+*.mov
+*.zip
+*.tar.gz
+*.ai
+*.psd
+*.sketch
+*.fig
+
+# Allow SVG (source-editable vector, used in my-works)
+!*.svg

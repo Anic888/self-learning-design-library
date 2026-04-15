@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  NEO//GENESIS  —  Cyber Art Expo 2077  |  V2 / ASH THORP STYLE
+  8.5" x 11" vertical  (612 x 792 @ 72dpi)
+
+  Strictly 3 colors:
+    #06090D  near-black base        (≈70% area)
+    #E8E8E8  off-white linework     (≈25% area)
+    #FF6A00  amber accent           (≈5% area, highlights only)
+
+  Style rules applied (from style-profiles/ash-thorp.md):
+    - Thin strokes only (0.4 — 1px). Zero solid decorative blocks.
+    - Horizon-anchored composition. Huge breathing room.
+    - Condensed light uppercase with WIDE tracking.
+    - HUD readouts in all four corners.
+    - NO RGB split, NO scanlines as subject, NO neon gradients.
+    - Monochromatic + ONE warm accent. Accent = amber, used sparingly.
+
+  Open in Adobe Illustrator → Save As → .ai to finalize.
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="8.5in" height="11in"
+     viewBox="0 0 612 792"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+
+    <!-- Atmospheric base: extremely subtle radial fade (only hint of depth) -->
+    <radialGradient id="atmosphere" cx="0.5" cy="0.48" r="0.7">
+      <stop offset="0"    stop-color="#0D1116"/>
+      <stop offset="0.55" stop-color="#080B10"/>
+      <stop offset="1"    stop-color="#06090D"/>
+    </radialGradient>
+
+    <!-- Horizon ambient wash: faint amber glow low on horizon (Thorp BR2049 move) -->
+    <linearGradient id="horizonGlow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0"   stop-color="#FF6A00" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#FF6A00" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#FF6A00" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Faint dot grid (assignment: pattern) — at very low opacity -->
+    <pattern id="dotGrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="0.5" fill="#E8E8E8" fill-opacity="0.08"/>
+    </pattern>
+
+    <!-- Technical grid pattern (very subtle, suggests blueprint underlay) -->
+    <pattern id="techGrid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#E8E8E8" stroke-width="0.2" stroke-opacity="0.05"/>
+    </pattern>
+
+    <!-- Curved path for top type-on-path -->
+    <path id="topArc" d="M 140 112 Q 306 98 472 112" fill="none" stroke="none"/>
+
+    <!-- ClipPath for type mask demo — "047" number filled with techGrid -->
+    <clipPath id="maskNum">
+      <text x="306" y="644" text-anchor="middle"
+            font-family="'Helvetica Neue Condensed', Impact, sans-serif"
+            font-size="88" font-weight="300" letter-spacing="6">047</text>
+    </clipPath>
+
+    <!-- Reusable: corner bracket (L-shape) -->
+    <symbol id="cornerBracket" viewBox="0 0 40 40">
+      <polyline points="0,14 0,0 14,0" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- Reusable: small tick marker -->
+    <symbol id="tick" viewBox="0 0 10 10">
+      <line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+  </defs>
+
+  <!-- =========================================================
+       LAYER 1 — Base atmosphere
+       ========================================================= -->
+  <g id="Layer_Base">
+    <rect x="0" y="0" width="612" height="792" fill="url(#atmosphere)"/>
+    <!-- horizon glow band -->
+    <rect x="0" y="450" width="612" height="120" fill="url(#horizonGlow)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 2 — Technical underlay grid (very subtle)
+       ========================================================= -->
+  <g id="Layer_TechGrid">
+    <rect x="0" y="0" width="612" height="792" fill="url(#techGrid)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 3 — Dot pattern (assignment: simple pattern)
+       ========================================================= -->
+  <g id="Layer_DotPattern">
+    <rect x="0" y="0" width="612" height="792" fill="url(#dotGrid)"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 4 — Hero construct: concentric rings with cardinal marks
+       ========================================================= -->
+  <g id="Layer_HeroConstruct" color="#E8E8E8">
+    <g transform="translate(306,340)" fill="none" stroke="#E8E8E8">
+
+      <!-- outermost ring (faintest) -->
+      <circle r="170" stroke-width="0.4" stroke-opacity="0.25"/>
+      <!-- ring 2 -->
+      <circle r="130" stroke-width="0.5" stroke-opacity="0.45"/>
+      <!-- ring 3 -->
+      <circle r="92"  stroke-width="0.6" stroke-opacity="0.7"/>
+      <!-- ring 4 (brightest) -->
+      <circle r="58"  stroke-width="0.8" stroke-opacity="0.95"/>
+
+      <!-- 72 radial tick marks on outermost ring (every 5°) -->
+      <g stroke-opacity="0.35" stroke-width="0.4">
+        <!-- generated programmatically: 72 ticks at 5° increments -->
+        <g transform="rotate(0)">   <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(5)">   <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(10)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(15)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(20)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(25)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(30)">  <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(35)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(40)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(45)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(50)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(55)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(60)">  <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(65)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(70)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(75)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(80)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(85)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(90)">  <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(95)">  <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(100)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(105)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(110)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(115)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(120)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(125)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(130)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(135)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(140)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(145)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(150)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(155)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(160)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(165)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(170)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(175)"> <line y1="-170" y2="-173"/></g>
+        <g transform="rotate(180)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(210)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(240)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(270)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(300)"> <line y1="-170" y2="-176"/></g>
+        <g transform="rotate(330)"> <line y1="-170" y2="-176"/></g>
+      </g>
+
+      <!-- cardinal crosshair lines (12/3/6/9 o'clock) -->
+      <line x1="-176" y1="0" x2="-130" y2="0" stroke-width="0.6" stroke-opacity="0.55"/>
+      <line x1="130"  y1="0" x2="176"  y2="0" stroke-width="0.6" stroke-opacity="0.55"/>
+      <line x1="0" y1="-176" x2="0" y2="-130" stroke-width="0.6" stroke-opacity="0.55"/>
+      <line x1="0" y1="130"  x2="0" y2="176"  stroke-width="0.6" stroke-opacity="0.55"/>
+
+      <!-- inner crosshair shorter -->
+      <line x1="-60" y1="0" x2="60" y2="0" stroke-width="0.4" stroke-opacity="0.3"/>
+      <line x1="0" y1="-60" x2="0" y2="60" stroke-width="0.4" stroke-opacity="0.3"/>
+
+      <!-- amber accent: tiny central dot + tiny amber arc segment -->
+      <circle r="3" fill="#FF6A00" stroke="none"/>
+      <path d="M 58 0 A 58 58 0 0 1 50.2 29" fill="none" stroke="#FF6A00" stroke-width="1.4" stroke-opacity="0.95"/>
+
+      <!-- cardinal labels -->
+      <g fill="#E8E8E8" font-family="'Courier New', monospace" font-size="6" fill-opacity="0.6">
+        <text x="0" y="-182" text-anchor="middle">N  47.3°</text>
+        <text x="182" y="2"  text-anchor="start">139.7° E</text>
+        <text x="0" y="192"  text-anchor="middle">S  RADIUS·170u</text>
+        <text x="-182" y="2" text-anchor="end">W  /////</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 5 — Horizon line + distant silhouette
+       ========================================================= -->
+  <g id="Layer_Horizon">
+    <!-- main horizon line -->
+    <line x1="36" y1="505" x2="576" y2="505" stroke="#E8E8E8" stroke-width="0.5" stroke-opacity="0.6"/>
+    <!-- a breath above it: a hairline indicating secondary horizon / haze border -->
+    <line x1="36" y1="498" x2="576" y2="498" stroke="#E8E8E8" stroke-width="0.25" stroke-opacity="0.2"/>
+
+    <!-- tiny distant city silhouette (barely perceptible, implies scale) -->
+    <g fill="#E8E8E8" fill-opacity="0.15">
+      <rect x="188" y="493" width="3"  height="12"/>
+      <rect x="195" y="488" width="4"  height="17"/>
+      <rect x="203" y="495" width="2"  height="10"/>
+      <rect x="210" y="485" width="3"  height="20"/>
+      <rect x="218" y="490" width="5"  height="15"/>
+      <rect x="227" y="492" width="2"  height="13"/>
+      <rect x="234" y="487" width="4"  height="18"/>
+      <rect x="242" y="495" width="2"  height="10"/>
+      <rect x="390" y="493" width="3"  height="12"/>
+      <rect x="398" y="489" width="4"  height="16"/>
+      <rect x="408" y="485" width="3"  height="20"/>
+      <rect x="416" y="491" width="5"  height="14"/>
+      <rect x="425" y="487" width="3"  height="18"/>
+      <rect x="433" y="493" width="2"  height="12"/>
+    </g>
+
+    <!-- amber sun / horizon beacon (single small dot on horizon — Thorp BR2049 move) -->
+    <circle cx="306" cy="505" r="4" fill="#FF6A00"/>
+    <circle cx="306" cy="505" r="10" fill="none" stroke="#FF6A00" stroke-width="0.4" stroke-opacity="0.4"/>
+
+    <!-- micro reference tick on horizon -->
+    <line x1="306" y1="495" x2="306" y2="515" stroke="#FF6A00" stroke-width="0.3" stroke-opacity="0.5"/>
+  </g>
+
+  <!-- =========================================================
+       LAYER 6 — Top HUD corners (NW + NE)
+       ========================================================= -->
+  <g id="Layer_TopHUD">
+    <!-- NW bracket + data -->
+    <g color="#E8E8E8">
+      <use xlink:href="#cornerBracket" x="28" y="28" width="30" height="30" color="#E8E8E8"/>
+    </g>
+    <g font-family="'Courier New', monospace" font-size="6.5"
+       fill="#E8E8E8" fill-opacity="0.7" letter-spacing="1">
+      <text x="66" y="38">CONTINUUM / VOL·07</text>
+      <text x="66" y="48">LAT 47.3°N / LON 139.7°E</text>
+      <text x="66" y="58">ALT +0012m  PSI 1.00atm</text>
+    </g>
+
+    <!-- NE bracket + data (mirrored) -->
+    <g transform="translate(612,0) scale(-1,1)" color="#E8E8E8">
+      <use xlink:href="#cornerBracket" x="28" y="28" width="30" height="30" color="#E8E8E8"/>
+    </g>
+    <g font-family="'Courier New', monospace" font-size="6.5"
+       fill="#E8E8E8" fill-opacity="0.7" letter-spacing="1" text-anchor="end">
+      <text x="546" y="38">2077·11·17 / 19:00 JST</text>
+      <text x="546" y="48">REC ●  CH·047  </text>
+      <text x="546" y="58">SIG [===---] 52%</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 7 — Type on Path (curved micro headline)
+       ========================================================= -->
+  <g id="Layer_TypeOnPath">
+    <use xlink:href="#topArc"/>
+    <text font-family="'Courier New', monospace" font-size="8"
+          fill="#FF6A00" letter-spacing="8">
+      <textPath xlink:href="#topArc" startOffset="50%" text-anchor="middle">
+        · A POST-DIGITAL ARTIFACT OBSERVATION ·
+      </textPath>
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 8 — Main Title (point type, restrained Thorp style)
+       Condensed light uppercase + very wide tracking.
+       NO glitch, NO RGB split. Flat off-white.
+       ========================================================= -->
+  <g id="Layer_MainTitle">
+    <text x="306" y="170" text-anchor="middle"
+          font-family="'Helvetica Neue Condensed', 'Arial Narrow', Impact, sans-serif"
+          font-size="56" font-weight="300" letter-spacing="14"
+          fill="#E8E8E8">NEO // GENESIS</text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 9 — Subtitle strip (the ONE amber element besides accent dots)
+       ========================================================= -->
+  <g id="Layer_Subtitle">
+    <line x1="168" y1="198" x2="250" y2="198"
+          stroke="#FF6A00" stroke-width="0.6" stroke-opacity="0.9"/>
+    <line x1="362" y1="198" x2="444" y2="198"
+          stroke="#FF6A00" stroke-width="0.6" stroke-opacity="0.9"/>
+    <text x="306" y="202" text-anchor="middle"
+          font-family="'Courier New', monospace"
+          font-size="10" font-weight="500"
+          fill="#FF6A00" letter-spacing="14">CYBER · ART · EXPO</text>
+    <text x="306" y="218" text-anchor="middle"
+          font-family="'Courier New', monospace"
+          font-size="8" fill="#E8E8E8" fill-opacity="0.75" letter-spacing="9">
+      2077  /  NEO-TOKYO GALLERIES
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 10 — Type Mask (number 047 filled with techGrid)
+       ========================================================= -->
+  <g id="Layer_TypeMask">
+    <!-- pattern visible only through number shape -->
+    <rect x="200" y="580" width="212" height="80"
+          fill="#E8E8E8" fill-opacity="0.5"
+          clip-path="url(#maskNum)"/>
+    <!-- hairline outline reading of the same number -->
+    <text x="306" y="644" text-anchor="middle"
+          font-family="'Helvetica Neue Condensed', Impact, sans-serif"
+          font-size="88" font-weight="300" letter-spacing="6"
+          fill="none" stroke="#E8E8E8" stroke-width="0.4" stroke-opacity="0.85">047</text>
+    <!-- label under -->
+    <text x="306" y="662" text-anchor="middle"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#E8E8E8" fill-opacity="0.6" letter-spacing="6">
+      ARTEFACT · INDEX
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 11 — Event Details (area type, two columns)
+       ========================================================= -->
+  <g id="Layer_EventDetails">
+    <!-- divider line above -->
+    <line x1="36"  y1="690" x2="136" y2="690"
+          stroke="#E8E8E8" stroke-width="0.4" stroke-opacity="0.55"/>
+    <line x1="476" y1="690" x2="576" y2="690"
+          stroke="#E8E8E8" stroke-width="0.4" stroke-opacity="0.55"/>
+    <text x="306" y="693" text-anchor="middle"
+          font-family="'Courier New', monospace" font-size="6.5"
+          fill="#E8E8E8" fill-opacity="0.65" letter-spacing="5">
+      · TRANSMISSION LOG / TRM·047 ·
+    </text>
+
+    <!-- Left col -->
+    <g font-family="'Courier New', monospace" font-size="7.5" fill="#E8E8E8">
+      <text x="72" y="712" fill="#FF6A00" letter-spacing="1">RUN</text>
+      <text x="72" y="724" fill-opacity="0.85">11·17 —  12·03 / 2077</text>
+      <text x="72" y="742" fill="#FF6A00" letter-spacing="1">OPENING</text>
+      <text x="72" y="754" fill-opacity="0.85">NOV·17·FRI / 19:00 JST</text>
+    </g>
+
+    <!-- Right col -->
+    <g font-family="'Courier New', monospace" font-size="7.5" fill="#E8E8E8" text-anchor="end">
+      <text x="540" y="712" fill="#FF6A00" letter-spacing="1">VENUE</text>
+      <text x="540" y="724" fill-opacity="0.85">DIGITAL HORIZONS GALLERY</text>
+      <text x="540" y="742" fill="#FF6A00" letter-spacing="1">GRID</text>
+      <text x="540" y="754" fill-opacity="0.85">SECTOR·07 / NEO-TOKYO</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LAYER 12 — Bottom HUD corners (SW + SE)
+       ========================================================= -->
+  <g id="Layer_BottomHUD">
+    <!-- SW bracket (flipped) -->
+    <g transform="translate(0,792) scale(1,-1)">
+      <use xlink:href="#cornerBracket" x="28" y="28" width="30" height="30" color="#E8E8E8"/>
+    </g>
+    <!-- SE bracket (flipped + mirrored) -->
+    <g transform="translate(612,792) scale(-1,-1)">
+      <use xlink:href="#cornerBracket" x="28" y="28" width="30" height="30" color="#E8E8E8"/>
+    </g>
+
+    <!-- credit strip -->
+    <line x1="72" y1="770" x2="540" y2="770"
+          stroke="#E8E8E8" stroke-width="0.3" stroke-opacity="0.35"/>
+    <text x="72" y="784"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#E8E8E8" fill-opacity="0.6" letter-spacing="3">
+      CURATED BY  SIGNAL + NOISE COLLECTIVE
+    </text>
+    <text x="540" y="784" text-anchor="end"
+          font-family="'Courier New', monospace" font-size="6"
+          fill="#E8E8E8" fill-opacity="0.6" letter-spacing="3">
+      CON·T / V.07 · IS·2077
+    </text>
+  </g>
+
+  <!-- =========================================================
+       LAYER 13 — Frame edge ticks (subtle registration marks)
+       ========================================================= -->
+  <g id="Layer_FrameTicks" stroke="#E8E8E8" stroke-width="0.3" stroke-opacity="0.25">
+    <!-- top edge centerline tick -->
+    <line x1="306" y1="0" x2="306" y2="8"/>
+    <!-- bottom edge centerline tick -->
+    <line x1="306" y1="784" x2="306" y2="792"/>
+    <!-- left edge center tick -->
+    <line x1="0" y1="396" x2="8" y2="396"/>
+    <!-- right edge center tick -->
+    <line x1="604" y1="396" x2="612" y2="396"/>
+
+    <!-- third marks on edges (grid indicators) -->
+    <line x1="204" y1="0" x2="204" y2="4"/>
+    <line x1="408" y1="0" x2="408" y2="4"/>
+    <line x1="204" y1="788" x2="204" y2="792"/>
+    <line x1="408" y1="788" x2="408" y2="792"/>
+  </g>
+
+</svg>
