@@ -92,42 +92,105 @@ design-library/
 **3 principles:** color theory, typography hierarchy, composition & grids
 **8 showcase works + 1 synthesis test:** `my-works/showcase-2026-04/` validates profiles produce legibly distinct outputs
 
+## Two pipelines: when to use what
+
+This library has two distinct creation pipelines. They complement each other — one generates editable vector art, the other generates photorealistic raster images.
+
+### Pipeline comparison
+
+| | SVG Pipeline (original) | Image Studio (new) |
+|---|---|---|
+| **Output** | `.svg` → editable in Illustrator/Figma | `.png` → ready-to-use raster image |
+| **How it works** | Claude writes SVG code directly | AI model (FLUX, Nano Banana) generates pixels |
+| **Style source** | 14 designer profiles | 14 designers + 99 directors + 99 photographers + 417 cinema params |
+| **Editable** | Fully — layers, paths, text, colors | No — flat pixels, edit in Photoshop |
+| **Typography** | Real editable text with fonts | Text baked into image (sometimes garbled) |
+| **Photorealism** | No — vector art only | Yes — photographic quality |
+| **Best for** | Logos, posters with type, icons, infographics, web graphics | Concept art, film stills, photography, mood boards, backgrounds |
+
+### Decision guide
+
+**Use the SVG pipeline when you need:**
+- Editable typography (headlines, credits, body text)
+- Logo or icon design
+- Print-ready vector files for production
+- Illustrator/Figma workflow
+- Clean geometric compositions (Vignelli, Hara, Scher)
+
+```
+"Design a festival poster in the style of Kilian Eng.
+ Save to my-works/."
+→ Claude reads style-profiles/kilian-eng.md
+→ Outputs .svg with named layers
+→ Open in Illustrator, edit text/colors/layout
+```
+
+**Use Image Studio when you need:**
+- Photorealistic scenes or portraits
+- Cinematic film-look imagery
+- A specific camera/lighting/film stock feel
+- Concept art or mood boards
+- Backgrounds or textures for compositing
+
+```bash
+python3 tools/generate.py "dark alley at night" \
+  --style ash-thorp --director wong-kar-wai \
+  --camera arri-alexa --film-stock cinestill-800t \
+  --lighting neon --prompt-only
+→ Paste into Nano Banana / Midjourney / FLUX
+→ Get photorealistic output
+```
+
+**Use both together for production work:**
+1. Image Studio generates a photorealistic background/scene
+2. SVG pipeline creates typography, layout, and graphic elements
+3. Composite in Photoshop/Illustrator — raster background + vector overlay
+
+Example: film poster = Image Studio hero shot (director + cinematography) + SVG title treatment (Carson chaos typography or Scher bold type).
+
 ## Scope — what this library is and isn't for
 
-The library is **medium-agnostic in principle** (it describes visual design approaches) but **Adobe Illustrator-first in practice** (Claude generates SVG, which opens natively in Illustrator with editable named layers). Here's the honest breakdown of what workflows it supports.
+The library is **medium-agnostic in principle** (it describes visual design approaches) but serves two primary workflows:
+- **Adobe Illustrator** (SVG pipeline) — Claude generates editable vector files with named layers
+- **Any image generator** (Image Studio) — CLI builds style-aware prompts for FLUX, Nano Banana, Midjourney, etc.
 
-### Where it works directly (Claude outputs a usable file)
+### Where it works directly (outputs a usable file)
 
-| Tool | What you get | Workflow |
+| Tool | What you get | Pipeline |
 |---|---|---|
-| **Adobe Illustrator** | SVG with named layers → Save As `.ai` | Primary supported path. All 8 showcase pieces follow this. |
-| **Figma / vector web design** | SVG imports cleanly with layer structure preserved | Drag SVG into Figma; refine with Figma's vector tools |
-| **SVG for web** | `.svg` renders in browsers directly | Works as-is or inline in HTML |
-| **Canva** (via MCP) | Profile text seeds AI design generation | Paste tactical rules into Canva's generate-design prompt |
+| **Adobe Illustrator** | SVG with named layers → Save As `.ai` | SVG pipeline. All 8 showcase pieces follow this. |
+| **Figma / vector web design** | SVG imports cleanly with layer structure | SVG pipeline. Drag SVG into Figma. |
+| **SVG for web** | `.svg` renders in browsers directly | SVG pipeline. Works as-is or inline in HTML. |
+| **Nano Banana / Gemini** | Paste prompt → photorealistic PNG | Image Studio. Direct via API or paste prompt into Google AI Studio. |
+| **Midjourney** | Paste prompt → `/imagine` | Image Studio. Copy prompt, paste in Discord. |
+| **FLUX / HuggingFace** | Paste prompt or generate via API → PNG | Image Studio. Any FLUX Space or HF Inference API. |
+| **Canva** (via MCP) | Profile text seeds AI design generation | Either pipeline. Paste tactical rules into Canva prompt. |
 
 ### Where it works as guidance (you execute manually)
 
 | Tool | What the library provides | Execution |
 |---|---|---|
-| **Adobe Photoshop** | Hex palette with role %, typography specs, composition rules, signature moves | You paint / composite manually. Profiles reference Photoshop mastery (Thorp, Beeple, Kilian Eng, Shinkawa) but Claude can't generate `.psd`. |
-| **Cinema 4D / Blender / 3D** | Aesthetic direction, palette, compositional intent | You model, light, render. Beeple/Thorp work started in 3D — Claude describes approach, not files. |
-| **After Effects / motion** | Visual language direction | Motion execution is yours; Claude's output is static. |
-| **Physical print / letterpress / paper craft** | Principles + reference | Sagmeister paper-cut, Shinkawa brush-and-ink, Kilian Eng print work — profile describes; your hands (or collaborators) execute. |
-| **Procreate / digital painting** | Palette + typographic/compositional direction | You paint per guidance. |
+| **Adobe Photoshop** | Hex palette, composition rules, Image Studio backgrounds | You paint/composite. Use Image Studio output as base layer. |
+| **Cinema 4D / Blender / 3D** | Aesthetic direction, palette, compositional intent | You model, light, render. Profiles describe approach, not files. |
+| **After Effects / motion** | Visual language direction + camera movements | Motion execution is yours; Image Studio provides still reference frames. |
+| **Physical print / letterpress** | Principles + reference | Profile describes; your hands execute. |
+| **Procreate / digital painting** | Palette + compositional direction | You paint per guidance. |
 
 ### Where it doesn't work
 
-- **Replacing a designer.** The library raises the floor on AI-generated design output. It does not lift the ceiling past generalist-LLM + vector-tool capability.
-- **Pixel-level style match.** If you need output that visually matches a specific designer's hand at pixel level (i.e. for Kilian Eng's screenprint feel or Beeple's C4D glossy rendering), you need image-gen models (Flux / SDXL) with LoRA fine-tuning. See [TRAINING.md](TRAINING.md).
-- **Direct-to-production work.** Everything Claude generates here is a **starting point**. Expect to refine in your actual design tool.
+- **Replacing a designer.** The library raises the floor. It does not lift the ceiling past AI capability.
+- **Pixel-level style match** without LoRA. For exact Kilian Eng screenprint feel or Beeple's C4D rendering, you need image-gen fine-tuning. See [TRAINING.md](TRAINING.md).
+- **Direct-to-production.** Everything is a **starting point**. Expect to refine in your actual design tool.
 
 ### TL;DR
 
-If you work in **Adobe Illustrator** → library delivers editable SVG → `.ai` files directly. This is the flagship use case.
+**Need editable vector art with typography?** → SVG pipeline → Illustrator/Figma.
 
-If you work in **Adobe Photoshop / 3D / motion / print / physical craft** → library delivers tactical direction (palette, typography, composition, signature moves) for you to execute by hand. Library is the briefing; you are the production.
+**Need photorealistic images with cinematic feel?** → Image Studio → any image generator.
 
-All 8 showcase pieces in `my-works/showcase-2026-04/` are SVG → AI workflow. See the [showcase README](my-works/showcase-2026-04/README.md) for a 9-dimension comparison of what the direct-output path produces.
+**Need both?** → Image Studio for background + SVG pipeline for type/layout → composite in Photoshop.
+
+All 8 showcase pieces in `my-works/showcase-2026-04/` are SVG pipeline. Image Studio demo in `my-works/2026-04-16-demo/`.
 
 ## Getting started
 
