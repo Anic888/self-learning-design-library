@@ -1,5 +1,11 @@
 # Design Library
 
+<p align="center">
+  <img src="docs/images/hero-samurai-kurosawa.png" alt="Samurai at dawn — generated with Image Studio using Yoji Shinkawa style + Akira Kurosawa cinematography + Kodak Tri-X film stock" width="720">
+  <br>
+  <em>Generated with Image Studio: <code>--style yoji-shinkawa --director kurosawa --film-stock tri-x --lighting golden-hour</code></em>
+</p>
+
 > A structured reference library for working with LLM coding assistants on design tasks. Distilled designer style profiles, composition principles, and project history — organized so an AI assistant (Claude, GPT, local LLMs) can read relevant context on demand.
 
 **Not a training dataset in the machine-learning sense.** It's a **retrieval library** — purpose-built markdown files that an LLM reads at runtime to produce grounded, style-aware design work. Think moodboard + style guide + tactical instructions, rendered as parseable text.
@@ -163,34 +169,166 @@ Create a custom skill that auto-triggers on design-related prompts and reads the
 
 The LLM reads both style profiles, synthesizes their tactical rules, generates output.
 
-## Image generation tools
+## Image Studio — AI image generation tools
 
-The `tools/` directory provides CLI-based AI image generation with style profile integration.
+The `tools/` directory is a style-aware AI prompt builder and image generator. It reads designer style profiles from this library and combines them with cinematography parameters (directors, cameras, lighting, film stocks, lenses, filters) to produce enhanced prompts or actual images via API.
+
+**417 total options** across 11 categories — comparable to commercial tools like RenderZero Studio, but open-source and integrated with designer style profiles.
+
+### What's in the toolbox
+
+| Category | Count | Flag | Example |
+|----------|-------|------|---------|
+| Designer styles | 14 | `--style` | `ash-thorp`, `kilian-eng`, `kenya-hara` |
+| Directors | 99 | `--director` | `kubrick`, `wong-kar-wai`, `tarkovsky` |
+| Photographers | 99 | `--photographer` | `annie-leibovitz`, `fan-ho`, `liam-wong` |
+| Cameras | 47 | `--camera` | `arri-alexa`, `hasselblad-500`, `polaroid-sx70` |
+| Lighting | 43 | `--lighting` | `chiaroscuro`, `golden-hour`, `neon` |
+| Shot types | 26 | `--shot` | `close-up`, `wide`, `dutch`, `worms-eye` |
+| Lens types | 12 | `--lens-type` | `anamorphic`, `petzval`, `tilt-shift` |
+| Film stocks | 28 | `--film-stock` | `portra-400`, `cinestill-800t`, `tri-x` |
+| Filters | 44 | `--filter` | `grain`, `bokeh`, `chromatic`, `risograph` |
+| Focal lengths | 9 | `--focal-length` | `35`, `85`, `200` |
+| Camera moves | 19 | `--camera-move` | `dolly-in`, `orbit-right`, `steadicam` |
 
 ### Quick start
+
 ```bash
 cd design-library
 
-# List available designer styles
-python3 tools/generate.py --list-styles
-
-# Build a style-enhanced prompt (no API key needed)
-python3 tools/generate.py "cyberpunk city at night" --style ash-thorp --prompt-only
-
-# Mix styles
-python3 tools/generate.py "festival poster" --style "kilian-eng+signalnoise" --prompt-only
-
-# Generate image (requires HF_TOKEN or GEMINI_API_KEY)
-python3 tools/generate.py "dark fantasy landscape" --style kilian-eng --size 2K
+# 1. Browse what's available
+python3 tools/generate.py --list-styles          # 14 designer style profiles
+python3 tools/generate.py --list-cinema           # all 400+ cinema options
+python3 tools/generate.py --list-cinema directors  # just directors (99)
+python3 tools/generate.py --list-cinema filters    # just filters (44)
 ```
 
-### Backends
-- **HuggingFace** (`HF_TOKEN`) — FLUX.1-dev, default for high quality
-- **Gemini** (`GEMINI_API_KEY`) — gemini-3-pro-image-preview
-- **Prompt-only** (no key) — outputs the enhanced prompt for use elsewhere
+### Building prompts (no API key needed)
+
+The core feature is **prompt building** — combining your subject with style/cinema parameters into an optimized prompt for any image generation tool (Midjourney, Nano Banana, FLUX, DALL-E, etc.).
+
+```bash
+# Basic: subject + designer style
+python3 tools/generate.py "cyberpunk city at night" \
+  --style ash-thorp \
+  --prompt-only
+
+# Cinema only: director + camera + film stock
+python3 tools/generate.py "portrait of old fisherman, weathered face" \
+  --director tarkovsky \
+  --camera hasselblad-500 \
+  --lighting golden-hour \
+  --film-stock portra-400 \
+  --shot close-up \
+  --focal-length 85 \
+  --prompt-only
+
+# Full combo: designer style + director + photographer + cinema
+python3 tools/generate.py "woman walking through neon-lit Tokyo alley at night" \
+  --style ash-thorp \
+  --director wong-kar-wai \
+  --photographer liam-wong \
+  --camera arri-alexa \
+  --lens-type anamorphic \
+  --lighting neon \
+  --film-stock cinestill-800t \
+  --filter "grain,chromatic,bokeh" \
+  --shot medium \
+  --prompt-only
+
+# Mix designer styles (unique feature — not possible in RenderZero)
+python3 tools/generate.py "festival poster" \
+  --style "kilian-eng+signalnoise" \
+  --prompt-only
+```
+
+### How the prompt is assembled
+
+The prompt builder layers information in this order:
+
+```
+1. SUBJECT         "woman walking through neon-lit Tokyo alley at night"
+2. SHOT TYPE       "Medium shot from waist up"
+3. CAMERA          "shot on ARRI ALEXA 65 cinema camera"
+4. LENS            "Anamorphic Cinema Lens with oval bokeh and horizontal flare"
+5. FILM STOCK      "CineStill 800T, tungsten-balanced with halation glow"
+6. LIGHTING        "Neon Lighting from colorful artificial light sources"
+7. DIRECTOR        "in the cinematic style of Wong Kar-wai, lush saturated
+                    colors, neon reflections on wet surfaces, romantic melancholy"
+8. PHOTOGRAPHER    "in the photographic style of Liam Wong"
+9. FILTERS         "Film grain, Chromatic aberration, Shallow depth of field"
+10. STYLE RULES    (from designer profile: How to apply, Palette, Mood)
+11. KEY TECHNIQUES (from designer profile: Signature Moves)
+12. NEGATIVE RULES (from designer profile: what to avoid)
+```
+
+You can skip any layer — only include what matters for your image. The more specific you are, the better the output.
+
+### Using the built prompt
+
+Once you have a prompt (`--prompt-only`), paste it into any image generation tool:
+
+| Tool | How to use |
+|------|-----------|
+| **Nano Banana / Gemini** | Paste into Google AI Studio or Gemini chat |
+| **Midjourney** | Paste into Discord `/imagine` prompt |
+| **FLUX / HuggingFace** | Paste into any FLUX.1 Space on HuggingFace |
+| **DALL-E** | Paste into ChatGPT or API |
+| **Freepik / Leonardo** | Paste into prompt box |
+| **ComfyUI / A1111** | Use prompt + negative prompt (both output separately) |
+
+### Direct generation (with API key)
+
+If you set an API key, the CLI generates images directly:
+
+```bash
+# HuggingFace (FLUX.1-dev)
+export HF_TOKEN="hf_your_token_here"
+python3 tools/generate.py "dark fantasy landscape" --style kilian-eng --size 2K
+
+# Google Gemini (Nano Banana Pro)
+export GEMINI_API_KEY="your_key_here"
+python3 tools/generate.py "minimal poster" --style kenya-hara --backend gemini
+
+# Output saved to: my-works/YYYY-MM-DD-{slug}/
+# Includes: {style}.png + metadata.json (prompt, params, model, timestamp)
+```
+
+| Backend | Env var | Model | Best for |
+|---------|---------|-------|----------|
+| HuggingFace | `HF_TOKEN` | FLUX.1-dev | Photorealistic, detailed styles |
+| Gemini | `GEMINI_API_KEY` | Nano Banana Pro | Text in images, conversational editing |
+| Auto | (neither set) | — | Falls back to prompt-only mode |
+
+### Using as a Python module
+
+```python
+from tools.prompt_builder import StyleLibrary, CinemaParams
+
+lib = StyleLibrary()
+
+# Build prompt with designer style
+prompt = lib.build_prompt("cyberpunk poster", styles=["ash-thorp"])
+
+# Build prompt with cinema params
+cinema = CinemaParams(
+    director="kubrick",
+    camera="arri-alexa",
+    lighting="chiaroscuro",
+    film_stock="tri-x",
+    filters=["grain", "bw"],
+)
+prompt = lib.build_prompt("haunted hotel hallway", styles=["ash-thorp"], cinema=cinema)
+negative = lib.build_negative_prompt(["ash-thorp"])
+```
 
 ### Claude Code skill
-The `image-studio` skill (installed separately) provides `/image-studio` command that uses HuggingFace MCP Spaces for generation — no API key needed. It reads the same style profiles.
+
+The `image-studio` skill (separate install) provides a `/image-studio` command inside Claude Code that reads the same style profiles and generates via HuggingFace MCP Spaces — no API key needed.
+
+```
+/image-studio "poster for music festival" --style kilian-eng
+```
 
 ## Scaling the library
 

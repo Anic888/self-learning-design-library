@@ -28,6 +28,10 @@ drafts/
 *.png
 *.gif
 *.webp
+
+# Allow docs/images for README hero images
+!docs/images/*.png
+!docs/images/*.jpg
 *.heic
 *.mp4
 *.mov
