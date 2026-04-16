@@ -1,7 +1,7 @@
 # Design Library
 
 <p align="center">
-  <img src="docs/images/hero-samurai-kurosawa.png" alt="Samurai at dawn — generated with Image Studio using Yoji Shinkawa style + Akira Kurosawa cinematography + Kodak Tri-X film stock" width="720">
+  <img src="docs/images/hero-samurai.png" alt="Samurai at dawn — generated with Image Studio using Yoji Shinkawa style + Akira Kurosawa cinematography + Kodak Tri-X film stock" width="720">
   <br>
   <em>Generated with Image Studio: <code>--style yoji-shinkawa --director kurosawa --film-stock tri-x --lighting golden-hour</code></em>
 </p>
