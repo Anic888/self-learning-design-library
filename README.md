@@ -52,6 +52,11 @@ design-library/
 │
 ├── my-works/                  # projects built using the library
 │
+├── tools/                     # CLI tools for image generation
+│   ├── generate.py            # main CLI: style-aware AI image generation
+│   ├── prompt_builder.py      # style profile parser + prompt builder
+│   └── requirements.txt       # Python dependencies
+│
 └── templates/                 # templates for new entries
 ```
 
@@ -157,6 +162,35 @@ Create a custom skill that auto-triggers on design-related prompts and reads the
 ```
 
 The LLM reads both style profiles, synthesizes their tactical rules, generates output.
+
+## Image generation tools
+
+The `tools/` directory provides CLI-based AI image generation with style profile integration.
+
+### Quick start
+```bash
+cd design-library
+
+# List available designer styles
+python3 tools/generate.py --list-styles
+
+# Build a style-enhanced prompt (no API key needed)
+python3 tools/generate.py "cyberpunk city at night" --style ash-thorp --prompt-only
+
+# Mix styles
+python3 tools/generate.py "festival poster" --style "kilian-eng+signalnoise" --prompt-only
+
+# Generate image (requires HF_TOKEN or GEMINI_API_KEY)
+python3 tools/generate.py "dark fantasy landscape" --style kilian-eng --size 2K
+```
+
+### Backends
+- **HuggingFace** (`HF_TOKEN`) — FLUX.1-dev, default for high quality
+- **Gemini** (`GEMINI_API_KEY`) — gemini-3-pro-image-preview
+- **Prompt-only** (no key) — outputs the enhanced prompt for use elsewhere
+
+### Claude Code skill
+The `image-studio` skill (installed separately) provides `/image-studio` command that uses HuggingFace MCP Spaces for generation — no API key needed. It reads the same style profiles.
 
 ## Scaling the library
 
