@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  TRENDS SHOWCASE 02 — James White / Signalnoise × Acid Graphics
+  "ACID FUTURE" — fictional synthwave festival poster
+  612 × 792 (8.5" × 11")
+
+  Style profile : style-profiles/james-white-signalnoise.md
+  Trend         : docs/trends-2026.md § Acid Graphics / Liquid Chrome
+
+  Why this works:
+  - Signalnoise already carries synthwave DNA — acid graphics pushes
+    the finish forward from "pure 80s" into "2026 liquid-chrome revival".
+  - Chrome + iridescent gradients on the masthead, while the
+    composition still obeys Signalnoise rules: deep violet base,
+    perspective grid, sun circle, triangle frame, 5-color system.
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="792" viewBox="0 0 612 792"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Deep violet base (NOT pure black — Signalnoise rule) -->
+    <linearGradient id="violetBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#2A1550"/>
+      <stop offset="0.55" stop-color="#1E0B3A"/>
+      <stop offset="1"    stop-color="#0E0625"/>
+    </linearGradient>
+
+    <!-- Sunset gradient sky -->
+    <linearGradient id="sunsetSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#F72585"/>
+      <stop offset="0.28" stop-color="#B5179E"/>
+      <stop offset="0.58" stop-color="#7209B7"/>
+      <stop offset="0.88" stop-color="#3A0CA3"/>
+      <stop offset="1"    stop-color="#1E0B3A"/>
+    </linearGradient>
+
+    <!-- Sun radial -->
+    <radialGradient id="sunRadial" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FEE440"/>
+      <stop offset="0.3"  stop-color="#FF6D00"/>
+      <stop offset="0.65" stop-color="#F72585"/>
+      <stop offset="1"    stop-color="#7209B7"/>
+    </radialGradient>
+
+    <!-- IRIDESCENT ACID CHROME masthead gradient -->
+    <linearGradient id="acidChrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#2EFFF0"/>
+      <stop offset="0.2"  stop-color="#FFFFFF"/>
+      <stop offset="0.35" stop-color="#F72585"/>
+      <stop offset="0.5"  stop-color="#FEE440"/>
+      <stop offset="0.65" stop-color="#2EFFF0"/>
+      <stop offset="0.8"  stop-color="#9A4DFF"/>
+      <stop offset="1"    stop-color="#FF6D00"/>
+    </linearGradient>
+
+    <!-- Vertical chrome stripes (the "metal sheen" pass) -->
+    <linearGradient id="chromeSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1"    stop-color="#000000" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Grid floor gradient (fade into horizon) -->
+    <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#F72585" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#F72585" stop-opacity="0.8"/>
+      <stop offset="1"   stop-color="#2EFFF0" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Iridescent orb gradient (reusable) -->
+    <radialGradient id="orb1" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0"   stop-color="#FFFFFF"/>
+      <stop offset="0.2" stop-color="#2EFFF0"/>
+      <stop offset="0.55" stop-color="#F72585"/>
+      <stop offset="0.85" stop-color="#7209B7"/>
+      <stop offset="1"   stop-color="#1E0B3A"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="0.4" cy="0.35" r="0.65">
+      <stop offset="0"   stop-color="#FEE440"/>
+      <stop offset="0.3" stop-color="#FF6D00"/>
+      <stop offset="0.65" stop-color="#F72585"/>
+      <stop offset="1"   stop-color="#2A1550"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="0.4" cy="0.4" r="0.65">
+      <stop offset="0"   stop-color="#FFFFFF"/>
+      <stop offset="0.25" stop-color="#9A4DFF"/>
+      <stop offset="0.6" stop-color="#3A0CA3"/>
+      <stop offset="1"   stop-color="#0E0625"/>
+    </radialGradient>
+
+    <!-- Grain -->
+    <filter id="grain80s">
+      <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 1
+                             0 0 0 0 1
+                             0 0 0 0 1
+                             0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <!-- Clip for sky band -->
+    <clipPath id="skyClip">
+      <rect x="0" y="0" width="612" height="430"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base -->
+  <rect width="612" height="792" fill="url(#violetBase)"/>
+
+  <!-- Sunset sky band -->
+  <rect x="0" y="0" width="612" height="430" fill="url(#sunsetSky)"/>
+
+  <!-- Sun circle in sky -->
+  <g clip-path="url(#skyClip)">
+    <circle cx="306" cy="380" r="200" fill="url(#sunRadial)"/>
+    <!-- sun bands (acid stripes across the sun) -->
+    <g fill="#1E0B3A" opacity="0.85">
+      <rect x="106" y="320" width="400" height="6"/>
+      <rect x="106" y="340" width="400" height="5"/>
+      <rect x="106" y="358" width="400" height="4"/>
+      <rect x="106" y="372" width="400" height="3"/>
+      <rect x="106" y="384" width="400" height="3"/>
+    </g>
+  </g>
+
+  <!-- Mountain silhouettes middle distance -->
+  <g fill="#0E0625" opacity="0.85">
+    <polygon points="0,430 80,360 150,410 220,340 300,400 370,330 450,400 530,355 612,420 612,470 0,470"/>
+  </g>
+  <g fill="#1E0B3A" opacity="0.9">
+    <polygon points="0,470 70,420 140,450 210,410 300,450 380,415 460,450 540,420 612,455 612,500 0,500"/>
+  </g>
+
+  <!-- Perspective grid floor -->
+  <g>
+    <!-- ground fill -->
+    <rect x="0" y="500" width="612" height="292" fill="#0E0625"/>
+    <!-- horizontal lines (rec toward vanishing) -->
+    <g stroke="url(#gridFade)" stroke-width="1.2" fill="none">
+      <line x1="0" y1="500" x2="612" y2="500"/>
+      <line x1="-20" y1="520" x2="632" y2="520"/>
+      <line x1="-50" y1="548" x2="662" y2="548"/>
+      <line x1="-90" y1="580" x2="702" y2="580"/>
+      <line x1="-140" y1="620" x2="752" y2="620"/>
+      <line x1="-200" y1="668" x2="812" y2="668"/>
+      <line x1="-280" y1="725" x2="892" y2="725"/>
+    </g>
+    <!-- vertical perspective lines converging to (306, 500) -->
+    <g stroke="#F72585" stroke-width="1" fill="none" opacity="0.85">
+      <line x1="-200" y1="792" x2="306" y2="500"/>
+      <line x1="-60"  y1="792" x2="306" y2="500"/>
+      <line x1="80"   y1="792" x2="306" y2="500"/>
+      <line x1="200"  y1="792" x2="306" y2="500"/>
+      <line x1="306"  y1="792" x2="306" y2="500"/>
+      <line x1="412"  y1="792" x2="306" y2="500"/>
+      <line x1="532"  y1="792" x2="306" y2="500"/>
+      <line x1="672"  y1="792" x2="306" y2="500"/>
+      <line x1="812"  y1="792" x2="306" y2="500"/>
+    </g>
+    <!-- cyan retroflex on leading vertical -->
+    <g stroke="#2EFFF0" stroke-width="0.6" fill="none" opacity="0.7">
+      <line x1="0"   y1="792" x2="306" y2="500"/>
+      <line x1="612" y1="792" x2="306" y2="500"/>
+    </g>
+  </g>
+
+  <!-- Triangle framing device around masthead -->
+  <g stroke="#FEE440" stroke-width="1.2" fill="none" opacity="0.7">
+    <polygon points="306,92 96,310 516,310"/>
+  </g>
+  <g stroke="#2EFFF0" stroke-width="0.6" fill="none" opacity="0.6">
+    <polygon points="306,100 108,306 504,306"/>
+  </g>
+
+  <!-- Iridescent orbs floating -->
+  <g>
+    <circle cx="84"  cy="208" r="22" fill="url(#orb1)"/>
+    <circle cx="528" cy="180" r="30" fill="url(#orb2)"/>
+    <circle cx="500" cy="296" r="16" fill="url(#orb3)"/>
+  </g>
+
+  <!-- ── MASTHEAD: liquid chrome acid type ─────────────────── -->
+  <g font-family="Impact, 'Arial Black', sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+    <!-- ACID row -->
+    <text x="306" y="208" font-size="96" fill="url(#acidChrome)" letter-spacing="4">ACID</text>
+    <text x="306" y="208" font-size="96" fill="url(#chromeSheen)" letter-spacing="4" opacity="0.55">ACID</text>
+    <!-- FUTURE row -->
+    <text x="306" y="288" font-size="76" fill="url(#acidChrome)" letter-spacing="6">FUTURE</text>
+    <text x="306" y="288" font-size="76" fill="url(#chromeSheen)" letter-spacing="6" opacity="0.55">FUTURE</text>
+  </g>
+
+  <!-- Subtitle across the sun -->
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle" fill="#FEE440">
+    <text x="306" y="340" font-size="14" letter-spacing="6" font-weight="700">THREE DAYS OF LIQUID SOUND</text>
+  </g>
+
+  <!-- Lineup block — white with magenta highlight key artist -->
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="306" y="552" font-size="12" letter-spacing="5" fill="#2EFFF0" font-weight="700">— FEATURING —</text>
+    <text x="306" y="592" font-size="32" letter-spacing="2" fill="#FFFFFF" font-weight="900">CARPENTER BRUT</text>
+    <text x="306" y="624" font-size="22" letter-spacing="2" fill="#F72585" font-weight="900">THE MIDNIGHT · GUNSHIP</text>
+    <text x="306" y="650" font-size="16" letter-spacing="1.5" fill="#FFFFFF" font-weight="400">POWER GLOVE · MAGIC SWORD · PERTURBATOR</text>
+    <text x="306" y="672" font-size="14" letter-spacing="1" fill="#2EFFF0" font-weight="400">MEGA DRIVE · DANCE WITH THE DEAD · MITCH MURDER</text>
+  </g>
+
+  <!-- Footer: date, venue, credit -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#FFFFFF">
+    <!-- date block left -->
+    <text x="40" y="728" font-size="11" letter-spacing="3" fill="#FEE440" font-weight="700">07 — 09 AUG 2026</text>
+    <text x="40" y="748" font-size="11" letter-spacing="2" font-weight="400">NAGOYA · JAPAN</text>
+    <text x="40" y="766" font-size="10" letter-spacing="2" fill="#2EFFF0">ACIDFUTURE.FM</text>
+    <!-- tickets right -->
+    <text x="572" y="728" font-size="11" letter-spacing="3" fill="#F72585" text-anchor="end" font-weight="700">TICKETS</text>
+    <text x="572" y="748" font-size="11" letter-spacing="2" text-anchor="end">3-DAY PASS ¥18,000</text>
+    <text x="572" y="766" font-size="10" letter-spacing="2" text-anchor="end" fill="#2EFFF0">EARLY BIRD ¥14,000</text>
+  </g>
+
+  <!-- Horizontal scan band (subtle CRT hint) -->
+  <g opacity="0.08">
+    <rect x="0" y="0" width="612" height="1" fill="#FFFFFF"/>
+    <rect x="0" y="5" width="612" height="1" fill="#FFFFFF"/>
+    <rect x="0" y="790" width="612" height="1" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Grain overlay -->
+  <rect x="0" y="0" width="612" height="792" fill="transparent" filter="url(#grain80s)" opacity="0.45"/>
+</svg>

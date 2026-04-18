@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  TRENDS SHOWCASE 03 — Paula Scher × Editorial Maximalism
+  "AUTHORSHIP" — fictional magazine spread opener
+  2000 × 1333 (2-page landscape spread)
+
+  Style profile : style-profiles/paula-scher.md
+  Trend         : docs/trends-2026.md § Editorial Maximalism
+
+  Why this works:
+  - Scher's signature move is type-as-image, cropped aggressively.
+    Editorial maximalism amplifies that with multi-typeface clash,
+    asymmetric spans, and one saturated accent (Scher's hot orange).
+  - Palette: hot orange + deep red + near-black + cream + acid
+    yellow — all Scher-native.
+  - The body column is tiny on purpose; the display crop is huge.
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="2000" height="1333" viewBox="0 0 2000 1333"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Cream paper -->
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F5F0"/>
+      <stop offset="1" stop-color="#ECE9DE"/>
+    </linearGradient>
+
+    <!-- Paper grain -->
+    <filter id="print-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0.05
+                             0 0 0 0 0.04
+                             0 0 0 0 0.02
+                             0 0 0 0.05 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <!-- Spine shadow gutter -->
+    <linearGradient id="gutter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0E0E0E" stop-opacity="0"/>
+      <stop offset="0.5"  stop-color="#0E0E0E" stop-opacity="0.11"/>
+      <stop offset="1"    stop-color="#0E0E0E" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Halftone dots pattern (Scher loves print texture) -->
+    <pattern id="halftone" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#0E0E0E"/>
+    </pattern>
+
+    <!-- Clip for cropped masthead -->
+    <clipPath id="mastheadClip">
+      <rect x="0" y="40" width="2000" height="520"/>
+    </clipPath>
+  </defs>
+
+  <!-- Paper ground -->
+  <rect width="2000" height="1333" fill="url(#cream)"/>
+
+  <!-- ── MASTHEAD: cropped display type bleeding off left ───────
+       Paula Scher rule: type as image, cropped hard.
+       Trend rule: bleed off edges; letters become shapes.
+  ─────────────────────────────────────────────────────────── -->
+  <g clip-path="url(#mastheadClip)">
+    <g font-family="Impact, 'Arial Black', Helvetica, sans-serif" font-weight="900">
+      <!-- AUTH bleeds off left: only "UTH" visible but scaled huge -->
+      <text x="-240" y="460" font-size="540" fill="#0E0E0E" letter-spacing="-18">AUTH</text>
+      <!-- -ORSHIP in hot orange stacked below, cropped right -->
+      <text x="640" y="460" font-size="300" fill="#F05A28" letter-spacing="-10">ORSHIP?</text>
+    </g>
+  </g>
+
+  <!-- Spine gutter shadow -->
+  <rect x="970" y="0" width="60" height="1333" fill="url(#gutter)"/>
+
+  <!-- Tiny masthead label top-left -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="40" y="40" font-size="11" letter-spacing="4" font-weight="700" fill="#0E0E0E">
+      KERNING QUARTERLY · ISSUE 42 · SPRING 2026
+    </text>
+    <text x="1960" y="40" font-size="11" letter-spacing="4" font-weight="700" fill="#0E0E0E" text-anchor="end">
+      THE AUTHORSHIP ISSUE · 42 · 2026.1
+    </text>
+  </g>
+
+  <!-- Hairline under masthead -->
+  <line x1="40" y1="590" x2="1960" y2="590" stroke="#0E0E0E" stroke-width="1"/>
+
+  <!-- ── LEFT PAGE CONTENT ─────────────────────────────────── -->
+
+  <!-- Deck: italic serif, 3 type sizes clashing -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#0E0E0E">
+    <text x="40" y="660" font-size="52" font-style="italic" font-weight="400">
+      Who wrote this —
+    </text>
+    <text x="40" y="720" font-size="52" font-style="italic" font-weight="700" fill="#D61A3C">
+      really?
+    </text>
+  </g>
+
+  <!-- Byline in all caps grotesk (third typeface clash) -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="40" y="780" font-size="13" letter-spacing="4" font-weight="700" fill="#0E0E0E">
+      BY JUNE OKAFOR    ·    PHOTOGRAPHY MILLIE HESS
+    </text>
+  </g>
+
+  <!-- Body column (intentionally tiny — maximalism contrast) -->
+  <g font-family="Georgia, serif" fill="#0E0E0E" font-size="11">
+    <text x="40" y="830"><tspan x="40" dy="0">In the small hours of a January morning in 2025, a junior</tspan>
+      <tspan x="40" dy="16">editor at a mid-list New York imprint fed the last quarter</tspan>
+      <tspan x="40" dy="16">of a manuscript into a language model and asked it, politely,</tspan>
+      <tspan x="40" dy="16">to finish the novel. The machine obliged. The author — who</tspan>
+      <tspan x="40" dy="16">was, at that moment, asleep in a guest house in Tbilisi — was</tspan>
+      <tspan x="40" dy="16">not informed. Three months later the book was on shelves. It</tspan>
+      <tspan x="40" dy="16">won a prize. The junior editor, now a senior editor, has told</tspan>
+      <tspan x="40" dy="16">this story at exactly two parties and one podcast. Nobody</tspan>
+      <tspan x="40" dy="16">has asked to see the chapter in question. The author has</tspan>
+      <tspan x="40" dy="16">reread it, once, and says she cannot tell.</tspan>
+    </text>
+    <text x="40" y="1050" font-size="11" font-style="italic" fill="#5A5A5A">
+      continued on page 18 →
+    </text>
+  </g>
+
+  <!-- Pull quote: giant, serif italic, crossing column boundary -->
+  <g font-family="Georgia, serif" fill="#0E0E0E">
+    <text x="470" y="900" font-size="56" font-style="italic" font-weight="400">"She has reread</text>
+    <text x="470" y="958" font-size="56" font-style="italic" font-weight="400">it, once, and says</text>
+    <text x="470" y="1016" font-size="56" font-style="italic" font-weight="700" fill="#F05A28">she cannot tell."</text>
+  </g>
+
+  <!-- Acid yellow rectangle anchor bottom-left -->
+  <rect x="40" y="1160" width="200" height="140" fill="#F5E04A"/>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#0E0E0E">
+    <text x="58" y="1190" font-size="10" letter-spacing="3" font-weight="700">ALSO THIS ISSUE</text>
+    <text x="58" y="1218" font-size="15" font-weight="700">Print is finally</text>
+    <text x="58" y="1238" font-size="15" font-weight="700">back. Again.</text>
+    <text x="58" y="1272" font-size="11" font-style="italic">p. 34</text>
+  </g>
+
+  <!-- Page number left -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="40" y="1310" font-size="11" letter-spacing="3" font-weight="700" fill="#0E0E0E">12</text>
+  </g>
+
+  <!-- ── RIGHT PAGE CONTENT ────────────────────────────────── -->
+
+  <!-- Big hot-orange block headline -->
+  <rect x="1040" y="620" width="920" height="180" fill="#F05A28"/>
+  <g font-family="Impact, 'Arial Black', Helvetica, sans-serif" font-weight="900" fill="#0E0E0E">
+    <text x="1070" y="728" font-size="128" letter-spacing="-4">THE GHOST</text>
+    <text x="1070" y="780" font-size="42" font-style="italic" letter-spacing="-1" fill="#F5F5F0">in every draft</text>
+  </g>
+
+  <!-- Black header band -->
+  <rect x="1040" y="818" width="920" height="70" fill="#0E0E0E"/>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#F5F5F0">
+    <text x="1070" y="848" font-size="12" letter-spacing="4" font-weight="700">
+      A CONVERSATION · 9 WRITERS · 1 QUESTION · ZERO EASY ANSWERS
+    </text>
+    <text x="1070" y="872" font-size="11" letter-spacing="2" font-style="italic" fill="#F5E04A">
+      continued from p. 12 through 31
+    </text>
+  </g>
+
+  <!-- Numbered list of contributors, grid-break typography -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#0E0E0E">
+    <g font-size="13" font-weight="700" letter-spacing="2">
+      <text x="1070" y="950">01</text><text x="1110" y="950" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22">Rhea Alomkar</text>
+      <text x="1400" y="950" font-size="11" letter-spacing="1">Poet · Kolkata</text>
+
+      <text x="1070" y="990">02</text><text x="1110" y="990" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22">Søren Lindgren</text>
+      <text x="1400" y="990" font-size="11" letter-spacing="1">Novelist · Aarhus</text>
+
+      <text x="1070" y="1030">03</text><text x="1110" y="1030" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22" fill="#D61A3C">Marta Zayas</text>
+      <text x="1400" y="1030" font-size="11" letter-spacing="1">Screenwriter · CDMX</text>
+
+      <text x="1070" y="1070">04</text><text x="1110" y="1070" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22">Oluwatobi Reed</text>
+      <text x="1400" y="1070" font-size="11" letter-spacing="1">Essayist · Lagos</text>
+
+      <text x="1070" y="1110">05</text><text x="1110" y="1110" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22">Hanna Koskinen</text>
+      <text x="1400" y="1110" font-size="11" letter-spacing="1">Translator · Helsinki</text>
+
+      <text x="1070" y="1150">06</text><text x="1110" y="1150" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="22" fill="#F05A28">+4 MORE</text>
+      <text x="1400" y="1150" font-size="11" letter-spacing="1">See p. 24</text>
+    </g>
+  </g>
+
+  <!-- Halftone swatch, bottom right -->
+  <rect x="1680" y="950" width="260" height="260" fill="url(#halftone)" opacity="0.8"/>
+  <rect x="1680" y="950" width="260" height="260" fill="none" stroke="#0E0E0E" stroke-width="2"/>
+
+  <!-- Red tag over halftone -->
+  <g transform="translate(1720,990) rotate(-6)">
+    <rect x="0" y="0" width="160" height="40" fill="#D61A3C"/>
+    <text x="12" y="27" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" font-weight="900" fill="#F5F5F0">READ THIS FIRST</text>
+  </g>
+
+  <!-- Footer band right -->
+  <line x1="1040" y1="1260" x2="1960" y2="1260" stroke="#0E0E0E" stroke-width="1"/>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#0E0E0E">
+    <text x="1040" y="1284" font-size="11" letter-spacing="3" font-weight="700">KERNINGQUARTERLY.COM</text>
+    <text x="1960" y="1284" font-size="11" letter-spacing="3" font-weight="700" text-anchor="end">13</text>
+  </g>
+
+  <!-- Blue saturated dot accent top-right (Scher's occasional blue) -->
+  <circle cx="1920" cy="620" r="26" fill="#176AA3"/>
+  <text x="1920" y="625" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="2" font-weight="900" fill="#F5F5F0" text-anchor="middle">NEW</text>
+
+  <!-- Red dotted boundary to right of body (scher print mark) -->
+  <line x1="460" y1="810" x2="460" y2="1090" stroke="#D61A3C" stroke-width="1" stroke-dasharray="1 3"/>
+
+  <!-- Paper grain overlay on everything -->
+  <rect x="0" y="0" width="2000" height="1333" fill="transparent" filter="url(#print-grain)" opacity="0.45"/>
+</svg>

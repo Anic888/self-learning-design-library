@@ -190,6 +190,46 @@ def open_in_preview(path: Path):
         subprocess.run(["xdg-open", str(path)], check=False)
 
 
+def _print_welcome(lib: "StyleLibrary"):
+    """Friendly intro when generate.py is run with no arguments."""
+    backend = detect_backend()
+    backend_line = {
+        "hf": "HuggingFace token detected — ready to generate.",
+        "gemini": "Gemini key detected — ready to generate.",
+        None: "No API key set. You can still build prompts with --prompt-only.",
+    }[backend]
+
+    print(f"""
+Image Studio — style-aware AI image generation
+{'=' * 46}
+
+You have {len(lib.designers)} designer style profiles available.
+{backend_line}
+
+Three things you can do right now:
+
+  1. BUILD A PROMPT (no key needed):
+     uv run tools/generate.py "festival poster" \\
+       --style james-white-signalnoise --prompt-only
+
+  2. GENERATE AN IMAGE (needs HF_TOKEN or GEMINI_API_KEY):
+     uv run tools/generate.py "dark alley at night" \\
+       --style ash-thorp --lighting chiaroscuro --film-stock cinestill-800t
+
+  3. MIX TWO STYLES:
+     uv run tools/generate.py "book cover" \\
+       --style "kenya-hara+yoji-shinkawa" --size 2K
+
+Explore:
+  --list-styles              see all designer styles
+  --list-cinema              see all cinematography options
+  --help                     full reference
+
+New to this? Start with QUICKSTART.md in the repo root.
+Visual trend cheatsheet: docs/trends-2026.md
+""".rstrip())
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Image Studio — style-aware AI image generation",
@@ -251,7 +291,8 @@ Examples:
         return
 
     if not args.subject:
-        parser.error("subject is required (or use --list-styles / --list-cinema)")
+        _print_welcome(lib)
+        return
 
     # Parse styles
     styles = []

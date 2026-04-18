@@ -8,6 +8,10 @@
 
 > A structured reference library for working with LLM coding assistants on design tasks. Distilled designer style profiles, composition principles, and project history — organized so an AI assistant (Claude, GPT, local LLMs) can read relevant context on demand.
 
+**New here?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
+**Want the 2026 visual language?** → [docs/trends-2026.md](docs/trends-2026.md) — 12 current design trends, how to apply, what to avoid.
+**See the proof?** → [my-works/showcase-2026-04-trends/](my-works/showcase-2026-04-trends/) — 4 pieces combining designer voice × 2026 trend.
+
 **Not a training dataset in the machine-learning sense.** It's a **retrieval library** — purpose-built markdown files that an LLM reads at runtime to produce grounded, style-aware design work. Think moodboard + style guide + tactical instructions, rendered as parseable text.
 
 ## Why this exists
@@ -40,6 +44,7 @@ The tactical rules in each style profile are written for an LLM to **actually fo
 
 ```
 design-library/
+├── QUICKSTART.md              # 3-minute start for new users (copy-paste recipes)
 ├── SETUP.md                   # how to use (detailed workflow)
 ├── README.md                  # you are here
 ├── CONTRIBUTING.md            # how to add designers / principles
@@ -54,9 +59,15 @@ design-library/
 ├── style-profiles/            # MAIN WORK ZONE — distilled tactical profiles
 │                              # this is what Claude reads at composition time
 │
+├── docs/
+│   ├── trends-2026.md         # 12 current design trends + how to apply
+│   └── images/                # docs assets (hero image, diagrams)
+│
 ├── analyses/                  # breakdowns of specific works (filled on demand)
 │
 ├── my-works/                  # projects built using the library
+│   ├── showcase-2026-04/           # designer-voice-only proofs (8 pieces)
+│   └── showcase-2026-04-trends/    # designer × 2026-trend proofs (4 pieces)
 │
 ├── tools/                     # CLI tools for image generation
 │   ├── generate.py            # main CLI: style-aware AI image generation

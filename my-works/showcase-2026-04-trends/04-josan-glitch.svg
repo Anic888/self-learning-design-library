@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  TRENDS SHOWCASE 04 — Josan Gonzalez × Glitch / Datamosh
+  "NEO-KYOTO 2089" — fictional cyberpunk game key art
+  1920 × 1080
+
+  Style profile : style-profiles/josan-gonzalez.md
+  Trend         : docs/trends-2026.md § Glitch / Datamosh Revival
+
+  Why this works:
+  - Josan is already dense-maximalist cyberpunk. Adding RGB split,
+    scanlines, CRT curvature, and monospace HUD brings the
+    2010s-cyberpunk-aesthetic forward into 2026's AI-era glitch
+    revival where digital corruption is ornament, not malfunction.
+  - Palette follows Josan: deep purple base + neon pink/cyan/yellow,
+    zero negative space, heavy black outlines on everything.
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1920" height="1080" viewBox="0 0 1920 1080"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Deep purple-black base -->
+    <linearGradient id="baseBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#190032"/>
+      <stop offset="0.55" stop-color="#0A0015"/>
+      <stop offset="1"    stop-color="#03000A"/>
+    </linearGradient>
+
+    <!-- Magenta-cyan-yellow building neon gradient -->
+    <linearGradient id="neonRoof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#FF2EA8"/>
+      <stop offset="0.5" stop-color="#F72585"/>
+      <stop offset="1"   stop-color="#7209B7"/>
+    </linearGradient>
+    <linearGradient id="cyanWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#00E5FF"/>
+      <stop offset="1"   stop-color="#0066AA"/>
+    </linearGradient>
+
+    <!-- Yellow sign -->
+    <linearGradient id="yellowSign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFEE00"/>
+      <stop offset="1" stop-color="#FFB800"/>
+    </linearGradient>
+
+    <!-- CRT curvature clip (barely) -->
+    <clipPath id="crt">
+      <path d="M0,0 Q960,-12 1920,0 L1920,1080 Q960,1092 0,1080 Z"/>
+    </clipPath>
+
+    <!-- Scanlines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="4" height="2" fill="#000" opacity="0.55"/>
+    </pattern>
+
+    <!-- Hero silhouette gradient -->
+    <linearGradient id="heroSil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#190032"/>
+      <stop offset="1"   stop-color="#000000"/>
+    </linearGradient>
+
+    <!-- Rim light coat -->
+    <linearGradient id="coatRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#F72585"/>
+      <stop offset="0.5" stop-color="#00E5FF"/>
+      <stop offset="1"   stop-color="#FFEE00"/>
+    </linearGradient>
+
+    <!-- Noise/grain -->
+    <filter id="glitchGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5"/>
+      <feColorMatrix values="0 0 0 0 1
+                             0 0 0 0 0.2
+                             0 0 0 0 0.6
+                             0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <!-- Small window glow pattern -->
+    <pattern id="windowGrid" x="0" y="0" width="12" height="16" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="6" height="8" fill="#FFEE00" opacity="0.85"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#crt)">
+    <!-- Base -->
+    <rect width="1920" height="1080" fill="url(#baseBg)"/>
+
+    <!-- Distant skyline wash (horizon haze) -->
+    <rect x="0" y="540" width="1920" height="160" fill="#3A0CA3" opacity="0.5"/>
+    <rect x="0" y="560" width="1920" height="140" fill="#7209B7" opacity="0.35"/>
+
+    <!-- Far background towers (silhouettes with neon caps) -->
+    <g opacity="0.9">
+      <rect x="60"   y="420" width="90"  height="280" fill="#1A0033"/>
+      <rect x="60"   y="420" width="90"  height="8"   fill="#F72585"/>
+      <rect x="170"  y="380" width="70"  height="320" fill="#1A0033"/>
+      <rect x="170"  y="380" width="70"  height="6"   fill="#00E5FF"/>
+      <rect x="260"  y="440" width="120" height="260" fill="#1A0033"/>
+      <rect x="260"  y="440" width="120" height="10"  fill="#FFEE00"/>
+      <rect x="400"  y="400" width="80"  height="300" fill="#1A0033"/>
+      <rect x="400"  y="400" width="80"  height="6"   fill="#F72585"/>
+      <rect x="1450" y="410" width="110" height="290" fill="#1A0033"/>
+      <rect x="1450" y="410" width="110" height="8"   fill="#00E5FF"/>
+      <rect x="1580" y="380" width="70"  height="320" fill="#1A0033"/>
+      <rect x="1580" y="380" width="70"  height="6"   fill="#F72585"/>
+      <rect x="1670" y="430" width="100" height="270" fill="#1A0033"/>
+      <rect x="1670" y="430" width="100" height="10"  fill="#FFEE00"/>
+      <rect x="1790" y="390" width="90"  height="310" fill="#1A0033"/>
+      <rect x="1790" y="390" width="90"  height="8"   fill="#00E5FF"/>
+    </g>
+
+    <!-- Window grids on far towers -->
+    <rect x="72"  y="440" width="66" height="240" fill="url(#windowGrid)" opacity="0.55"/>
+    <rect x="280" y="460" width="90" height="220" fill="url(#windowGrid)" opacity="0.45"/>
+    <rect x="1462" y="430" width="86" height="260" fill="url(#windowGrid)" opacity="0.5"/>
+    <rect x="1680" y="450" width="80" height="230" fill="url(#windowGrid)" opacity="0.55"/>
+
+    <!-- Mid-ground buildings with signage blocks -->
+    <g>
+      <!-- Left tall magenta tower -->
+      <rect x="540" y="220" width="140" height="480" fill="#1A0033" stroke="#000" stroke-width="3"/>
+      <rect x="540" y="220" width="140" height="30" fill="url(#neonRoof)"/>
+      <rect x="560" y="270" width="100" height="16" fill="#F72585"/>
+      <rect x="560" y="300" width="100" height="12" fill="#FFEE00"/>
+      <!-- Japanese-ish signage block — using safe Unicode -->
+      <g font-family="Impact, 'Arial Black', sans-serif" fill="#FFEE00">
+        <text x="556" y="350" font-size="22" font-weight="900">NEO</text>
+        <text x="556" y="380" font-size="22" font-weight="900" fill="#00E5FF">KYOTO</text>
+        <text x="556" y="410" font-size="16" font-weight="900" fill="#F72585">2089</text>
+      </g>
+      <g stroke="#00E5FF" stroke-width="2" fill="none">
+        <rect x="555" y="430" width="110" height="50"/>
+      </g>
+      <rect x="590" y="500" width="40" height="180" fill="#F72585" opacity="0.6"/>
+
+      <!-- Cyan "HOTEL" block mid -->
+      <rect x="700" y="300" width="100" height="400" fill="url(#cyanWall)" stroke="#000" stroke-width="3"/>
+      <rect x="700" y="300" width="100" height="18" fill="#FFEE00"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-weight="900" fill="#0A0015">
+        <text x="710" y="356" font-size="28" letter-spacing="1">HOTEL</text>
+        <text x="710" y="380" font-size="13" letter-spacing="2" fill="#FFEE00">ROOMS BY THE HOUR</text>
+      </g>
+      <rect x="710" y="400" width="80" height="280" fill="url(#windowGrid)" opacity="0.75"/>
+
+      <!-- Yellow vertical sign -->
+      <rect x="820" y="240" width="40" height="460" fill="url(#yellowSign)" stroke="#000" stroke-width="3"/>
+      <g font-family="Impact, sans-serif" font-weight="900" fill="#0A0015">
+        <text x="840" y="280" font-size="22" text-anchor="middle">R</text>
+        <text x="840" y="310" font-size="22" text-anchor="middle">A</text>
+        <text x="840" y="340" font-size="22" text-anchor="middle">M</text>
+        <text x="840" y="370" font-size="22" text-anchor="middle">E</text>
+        <text x="840" y="400" font-size="22" text-anchor="middle">N</text>
+        <text x="840" y="456" font-size="16" text-anchor="middle" fill="#F72585">24H</text>
+      </g>
+
+      <!-- Data tower right -->
+      <rect x="1180" y="240" width="160" height="460" fill="#1A0033" stroke="#000" stroke-width="3"/>
+      <rect x="1180" y="240" width="160" height="26" fill="#F72585"/>
+      <rect x="1200" y="290" width="120" height="20" fill="#FFEE00"/>
+      <g font-family="Impact, sans-serif" font-weight="900" font-size="18" text-anchor="middle" fill="#0A0015">
+        <text x="1260" y="306" letter-spacing="4">SHIBUYA/DATA</text>
+      </g>
+      <rect x="1200" y="330" width="120" height="340" fill="url(#windowGrid)" opacity="0.6"/>
+      <!-- vertical neon strip -->
+      <rect x="1336" y="240" width="6" height="460" fill="#00E5FF"/>
+
+      <!-- Pink billboard -->
+      <rect x="1370" y="360" width="80" height="180" fill="#1A0033" stroke="#000" stroke-width="3"/>
+      <rect x="1374" y="364" width="72" height="172" fill="url(#neonRoof)"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-weight="900" text-anchor="middle" fill="#FFEE00">
+        <text x="1410" y="420" font-size="22">LOVE</text>
+        <text x="1410" y="460" font-size="22">HOTEL</text>
+        <text x="1410" y="500" font-size="12" letter-spacing="2" fill="#0A0015">¥6800</text>
+      </g>
+    </g>
+
+    <!-- Wire tangle mid-ground (Josan signature: zero negative space) -->
+    <g stroke="#000" stroke-width="2.5" fill="none" opacity="0.9">
+      <path d="M680,260 Q900,230 1180,270"/>
+      <path d="M680,310 Q820,300 820,240"/>
+      <path d="M540,270 Q620,240 700,320"/>
+      <path d="M800,320 Q900,340 1180,310"/>
+      <path d="M860,300 Q1020,360 1180,330"/>
+      <path d="M1340,290 Q1410,320 1410,360"/>
+    </g>
+    <g stroke="#F72585" stroke-width="0.8" fill="none" opacity="0.7">
+      <path d="M680,264 Q900,236 1180,274"/>
+      <path d="M540,276 Q620,246 700,324"/>
+    </g>
+
+    <!-- Street level wet-reflection -->
+    <rect x="0" y="700" width="1920" height="380" fill="#0A0015"/>
+    <rect x="0" y="700" width="1920" height="380" fill="#F72585" opacity="0.08"/>
+    <rect x="0" y="700" width="1920" height="2" fill="#00E5FF" opacity="0.6"/>
+
+    <!-- Vertical neon reflections on wet street -->
+    <g opacity="0.4">
+      <rect x="592" y="700" width="10" height="260" fill="#F72585"/>
+      <rect x="740" y="700" width="10" height="260" fill="#00E5FF"/>
+      <rect x="834" y="700" width="6"  height="260" fill="#FFEE00"/>
+      <rect x="1260" y="700" width="8"  height="260" fill="#FFEE00"/>
+      <rect x="1406" y="700" width="8"  height="260" fill="#F72585"/>
+    </g>
+
+    <!-- HERO figure silhouette, center-left on wet street -->
+    <g transform="translate(960,880)">
+      <!-- long coat body -->
+      <path d="M-40,-210 L-60,-20 L-65,110 L65,110 L60,-20 L40,-210 Z" fill="url(#heroSil)" stroke="#000" stroke-width="3"/>
+      <!-- rim light edge -->
+      <path d="M-40,-210 L-60,-20 L-65,110" fill="none" stroke="url(#coatRim)" stroke-width="3"/>
+      <path d="M40,-210 L60,-20 L65,110"   fill="none" stroke="#00E5FF" stroke-width="2.5" opacity="0.9"/>
+      <!-- head -->
+      <circle cx="0" cy="-240" r="28" fill="#190032" stroke="#000" stroke-width="3"/>
+      <!-- helmet visor glowing -->
+      <rect x="-22" y="-250" width="44" height="10" fill="#F72585"/>
+      <rect x="-22" y="-249" width="44" height="2"  fill="#FFEE00"/>
+      <!-- cable from back of head -->
+      <path d="M18,-230 Q60,-220 80,-150 Q70,-100 100,-60" stroke="#00E5FF" stroke-width="3" fill="none"/>
+      <!-- Gun/blade hint -->
+      <line x1="-55" y1="40" x2="-120" y2="110" stroke="#000" stroke-width="5"/>
+      <line x1="-55" y1="40" x2="-120" y2="110" stroke="#F72585" stroke-width="2"/>
+      <!-- shadow pool under feet -->
+      <ellipse cx="0" cy="115" rx="70" ry="9" fill="#000" opacity="0.55"/>
+    </g>
+
+    <!-- Low rain streaks -->
+    <g stroke="#00E5FF" stroke-width="0.8" opacity="0.4">
+      <line x1="120" y1="140" x2="108" y2="270"/>
+      <line x1="300" y1="100" x2="286" y2="240"/>
+      <line x1="480" y1="160" x2="466" y2="290"/>
+      <line x1="1100" y1="120" x2="1086" y2="260"/>
+      <line x1="1500" y1="90" x2="1486" y2="230"/>
+      <line x1="1700" y1="170" x2="1686" y2="310"/>
+      <line x1="1820" y1="120" x2="1806" y2="260"/>
+    </g>
+
+    <!-- ────── GLITCH LAYER: RGB SPLIT TITLE ────── -->
+    <g font-family="'Courier New', Courier, monospace" font-weight="900" text-anchor="start">
+      <!-- shadow/red channel shifted -->
+      <text x="90"  y="232" font-size="140" fill="#FF003C" letter-spacing="-4" opacity="0.85">NEO-KYOTO</text>
+      <!-- cyan channel shifted opposite -->
+      <text x="82"  y="236" font-size="140" fill="#00E5FF" letter-spacing="-4" opacity="0.85">NEO-KYOTO</text>
+      <!-- white channel on top -->
+      <text x="86"  y="234" font-size="140" fill="#FFFFFF" letter-spacing="-4">NEO-KYOTO</text>
+      <!-- year stencil -->
+      <text x="90"  y="320" font-size="90"  fill="#FFEE00" letter-spacing="4">2089</text>
+    </g>
+
+    <!-- Datamosh smear across upper-right -->
+    <g opacity="0.75">
+      <rect x="1220" y="120" width="700" height="12" fill="#F72585"/>
+      <rect x="1180" y="148" width="740" height="4"  fill="#00E5FF"/>
+      <rect x="1260" y="170" width="660" height="8"  fill="#FFEE00"/>
+      <rect x="1320" y="196" width="600" height="3"  fill="#FFFFFF"/>
+      <rect x="1150" y="230" width="770" height="16" fill="#190032"/>
+      <rect x="1140" y="262" width="780" height="2"  fill="#F72585"/>
+      <rect x="1200" y="290" width="720" height="10" fill="#00E5FF" opacity="0.7"/>
+    </g>
+
+    <!-- Scanline overlay -->
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#scanlines)" opacity="0.35"/>
+
+    <!-- CRT edge darkening -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.8">
+      <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#000" stop-opacity="0.75"/>
+    </radialGradient>
+    <rect width="1920" height="1080" fill="url(#vignette)"/>
+
+    <!-- HUD overlay: timestamp + filename (dreamcore/glitch signature) -->
+    <g font-family="'Courier New', Courier, monospace" fill="#00FF66" opacity="0.9">
+      <text x="40" y="40" font-size="16">REC ●  00:23:41:12</text>
+      <text x="40" y="60" font-size="12" opacity="0.75">CH1 · NEOKYOTO.ARC · 2089-04-18</text>
+      <text x="1760" y="40" font-size="14" text-anchor="end">TRACK  0x7A9F</text>
+      <text x="1760" y="60" font-size="12" text-anchor="end" opacity="0.75">SIGNAL LOSS 04%</text>
+    </g>
+
+    <!-- Bottom HUD: tagline + system line -->
+    <g font-family="'Courier New', Courier, monospace">
+      <text x="86" y="990" font-size="28" fill="#FFFFFF" font-weight="900">A CITY REMEMBERS YOU BEFORE YOU ARRIVE.</text>
+      <text x="86" y="1024" font-size="14" fill="#FFEE00" letter-spacing="4">COMING WINTER 2026   ·   PS6 / XBOX / PC / CLOUD</text>
+      <text x="86" y="1050" font-size="12" fill="#F72585" letter-spacing="4">[SYS] :: LOADING MEMORY SHARDS ██████████ 94%</text>
+    </g>
+
+    <!-- Studio mark bottom right -->
+    <g font-family="'Courier New', Courier, monospace" text-anchor="end">
+      <text x="1870" y="990" font-size="14" fill="#00E5FF" letter-spacing="3">VAPORSHIFT STUDIO</text>
+      <text x="1870" y="1010" font-size="11" fill="#FFFFFF" letter-spacing="3">EST. 2081</text>
+      <text x="1870" y="1050" font-size="10" fill="#FFFFFF" opacity="0.6" letter-spacing="2">RATED M FOR MEMORY</text>
+    </g>
+  </g>
+
+  <!-- grain -->
+  <rect x="0" y="0" width="1920" height="1080" fill="transparent" filter="url(#glitchGrain)" opacity="0.28"/>
+</svg>
