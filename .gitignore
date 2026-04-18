@@ -45,3 +45,4 @@ drafts/
 # Allow SVG (source-editable vector, used in my-works)
 !*.svg
 __pycache__/
+Thumbs.db
