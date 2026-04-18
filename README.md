@@ -10,7 +10,7 @@
 
 **New here?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
 **Want the 2026 visual language?** → [docs/trends-2026.md](docs/trends-2026.md) — 12 current design trends, how to apply, what to avoid.
-**See the proof?** → [my-works/showcase-2026-04-trends/](my-works/showcase-2026-04-trends/) — 4 pieces combining designer voice × 2026 trend.
+**See the proof?** → [NEO-GENESIS poster](my-works/2026-04-cyber-art-expo/NEO-GENESIS-poster-v2-thorp.svg) (Ash Thorp) and [Shinkawa ink mecha](my-works/showcase-2026-04/02-shinkawa-ink-mecha.svg) — reference works that set the quality bar.
 
 **Not a training dataset in the machine-learning sense.** It's a **retrieval library** — purpose-built markdown files that an LLM reads at runtime to produce grounded, style-aware design work. Think moodboard + style guide + tactical instructions, rendered as parseable text.
 
@@ -66,8 +66,8 @@ design-library/
 ├── analyses/                  # breakdowns of specific works (filled on demand)
 │
 ├── my-works/                  # projects built using the library
-│   ├── showcase-2026-04/           # designer-voice-only proofs (8 pieces)
-│   └── showcase-2026-04-trends/    # designer × 2026-trend proofs (4 pieces)
+│   ├── 2026-04-cyber-art-expo/     # NEO-GENESIS poster (Ash Thorp reference)
+│   └── showcase-2026-04/           # Shinkawa ink mecha (legibility reference)
 │
 ├── tools/                     # CLI tools for image generation
 │   ├── generate.py            # main CLI: style-aware AI image generation
@@ -101,7 +101,7 @@ design-library/
 **3 deep analyses:** Thorp GITS UI, Shinkawa MGS5 Sahelanthropus, Carson Ray Gun spread
 **3 collections:** Envato Elements index, Canva favorites, Behance cyberpunk (templates)
 **3 principles:** color theory, typography hierarchy, composition & grids
-**8 showcase works + 1 synthesis test:** `my-works/showcase-2026-04/` validates profiles produce legibly distinct outputs
+**Reference works:** `my-works/2026-04-cyber-art-expo/NEO-GENESIS-poster-v2-thorp.svg` (Ash Thorp — cinematic UI minimalism) and `my-works/showcase-2026-04/02-shinkawa-ink-mecha.svg` (Yoji Shinkawa — wet-brush mecha). These set the quality bar for new work.
 
 ## Two pipelines: when to use what
 
@@ -201,7 +201,7 @@ The library is **medium-agnostic in principle** (it describes visual design appr
 
 **Need both?** → Image Studio for background + SVG pipeline for type/layout → composite in Photoshop.
 
-All 8 showcase pieces in `my-works/showcase-2026-04/` are SVG pipeline. Image Studio demo in `my-works/2026-04-16-demo/`.
+Both reference pieces (NEO-GENESIS poster, Shinkawa ink mecha) are SVG pipeline. Image Studio demo in `my-works/2026-04-16-demo/`.
 
 ## Getting started
 

@@ -280,12 +280,14 @@ Each trend below includes:
 [designer voice] × [trend era/aesthetic] = your piece
 ```
 
-Three examples from [my-works/showcase-2026-04-trends/](../my-works/showcase-2026-04-trends/):
+Examples of combinations that work:
 
 1. **kenya-hara × bento-grid** → ultra-minimal wellness app hero
 2. **james-white-signalnoise × acid-graphics** → iridescent chrome synthwave poster
 3. **paula-scher × editorial-maximalism** → magazine opener with cropped type
 4. **josan-gonzalez × glitch-datamosh** → dense cyberpunk key art with RGB split
+5. **kilian-eng × dark-academia** → arthouse sci-fi film poster with serif revival
+6. **refik-anadol × aurora-gradient** → AI conference keynote with data-cloud backdrop
 
 The designer profile locks palette, composition, typographic voice. The trend adds contemporary finish: bento modularity, aurora bloom, chrome lettering, glitch overlay.
 

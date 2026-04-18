@@ -125,7 +125,7 @@ Cinematography options: `uv run tools/generate.py --list-cinema`
 | Anti-corporate / rebellious | david-carson, stefan-sagmeister |
 | Industrial / sci-fi realism | syd-mead, ash-thorp |
 
-Combine two when you want a hybrid (`--style ash-thorp+david-carson`). Profiles are designed to mix without turning to mush — see [my-works/showcase-2026-04/08-combination-test.svg](my-works/showcase-2026-04/08-combination-test.svg).
+Combine two when you want a hybrid (`--style ash-thorp+david-carson`). Profiles are designed to mix without turning to mush.
 
 ---
 
@@ -155,7 +155,7 @@ The AI gives you SVG (vector, editable) or PNG (raster, final). Both land in `my
 - **SVG** opens in any browser, editable in Illustrator / Figma / Inkscape. Great for print — infinite resolution.
 - **PNG** is the final export — share-ready, but fixed size.
 
-Browse [my-works/showcase-2026-04/](my-works/showcase-2026-04/) for 8 reference pieces, and [my-works/showcase-2026-04-trends/](my-works/showcase-2026-04-trends/) for the trend-flavored examples.
+Two reference pieces set the quality bar: [NEO-GENESIS poster](my-works/2026-04-cyber-art-expo/NEO-GENESIS-poster-v2-thorp.svg) (Ash Thorp — cold cinematic UI) and [Shinkawa ink mecha](my-works/showcase-2026-04/02-shinkawa-ink-mecha.svg) (Yoji Shinkawa — wet-brush restraint). Browse them, then make yours.
 
 ---
 
@@ -174,5 +174,5 @@ The profiles exist to make LLMs *follow rules they'd otherwise ignore*. If outpu
 Next:
 - Full style profiles → [style-profiles/](style-profiles/)
 - Trend reference → [docs/trends-2026.md](docs/trends-2026.md)
-- Reference works → [my-works/showcase-2026-04/](my-works/showcase-2026-04/)
+- Reference works → [my-works/2026-04-cyber-art-expo/](my-works/2026-04-cyber-art-expo/) and [my-works/showcase-2026-04/](my-works/showcase-2026-04/)
 - Tool details → [SETUP.md](SETUP.md)

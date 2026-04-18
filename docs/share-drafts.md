@@ -84,8 +84,9 @@ Paula Scher, Kenya Hara, Peter Saville, Vignelli, Refik Anadol). Each profile
 has extracted palettes (hex + %), typography specs, composition rules, signature
 moves, AND explicit negative rules ("don't use RGB split on Thorp" etc.).
 
-The LLM reads the profile and actually follows the constraints. The 8 showcase
-SVGs in my-works/showcase-2026-04/ demonstrate this across styles.
+The LLM reads the profile and actually follows the constraints. Reference
+works in my-works/ demonstrate this (NEO-GENESIS poster in Ash Thorp,
+Shinkawa ink mecha, with more to come).
 
 Architecture is deliberately boring: plain markdown, no tooling, works with
 any LLM that can read files. The cleverness is in the tactical "do / don't"
@@ -193,11 +194,11 @@ Library includes:
 
 **Tweet 4:**
 ```
-Stress test: I generated 8 SVG posters in 8 radically different styles using
-the same tool (Claude + SVG), changing only which profile was referenced.
+Stress test: I generate SVG posters in radically different styles using
+the same tool (Claude + SVG), changing only which profile is referenced.
 
-Put the synthwave one next to the sumi-e one next to the chaos-typography one
-— they're unmistakable. Proof is in my-works/showcase-2026-04/.
+Put a Thorp one next to a Shinkawa one — they're unmistakable. Reference
+pieces live in my-works/.
 ```
 
 **Tweet 5 (closing):**

@@ -90,7 +90,7 @@ Claude читает `style-profiles/*.md` → синтезирует → соз�
 
 **Collections:** envato-saved, canva-favorites, behance-cyberpunk (placeholders)
 **Principles:** color-theory, typography-hierarchy, composition-grids
-**Works:** 2026-04-cyber-art-expo (Thorp V2) + showcase-2026-04 (8 style demonstrations + combination test)
+**Works:** 2026-04-cyber-art-expo (Thorp NEO-GENESIS) + showcase-2026-04 (Shinkawa ink mecha) — two reference pieces setting the quality bar
 
 **GitHub infrastructure (as of v1.2.0):**
 - .github/ISSUE_TEMPLATE/ — 4 structured forms (new-designer, profile-refinement, new-principle, bug) + config
