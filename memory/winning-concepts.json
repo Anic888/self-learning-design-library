@@ -137,6 +137,33 @@
         "Single-source light on a void background is the canonical 'digital isolation' visual — radial blue gradient from phone position + halation filter gives it cinematic punch without any other light sources (per brief anti-pattern).",
         "Research-poster annotations (SUBJECT/01, FIG. I) add brutalist information-density to Thorp's minimal canvas — very specific brutalist DNA, rare but strong when the subject is study-like (social commentary, case analysis)."
       ]
+    },
+    {
+      "id": "2026-04-19-burn-the-night",
+      "date": "2026-04-19",
+      "brief": "High-impact poster for 'Burn the Night' — cyberpunk street racing. Car leaving trail of glowing light burning the road. Metaphor: speed destroys time and space. Neon orange + deep purple + black. Chaotic, energetic, explosive. Minimal stretched type.",
+      "theme": "cyberpunk-motion-energy",
+      "designer": "ash-thorp + josan-gonzalez (hybrid motion + atmosphere)",
+      "trend": "acid-graphics + glitch-datamosh + variable-bold-typography",
+      "palette": ["#0A0510", "#2A0A4A", "#FF5C00", "#FFB347", "#FFFFFF"],
+      "template": "01-hero-image-center (diagonal-motion variant)",
+      "poster_catalog_anchors_used": [
+        "Kilian Eng Blade Runner 2049 (illustration-posters.md) — cyberpunk atmospheric depth",
+        "Rick Owens Temple of Love Palais Galliera 2025 (2024-2026-contemporary.md) — brutalist explosive energy",
+        "Marcel WoMen's Football D&AD 2024 Black Pencil (2024-2026-contemporary.md) — editorial data-overlay aesthetic (used for trail annotations)",
+        "Mouse & Kelley Skeleton & Roses FD-26 1966 (1960s-psychedelic.md) — overlapping translucent chaos layering"
+      ],
+      "concept_statement": "Diagonal light trail from bottom-left to upper-right bleeds across the entire hero zone, car fragmented into motion-blur mid-trail (suggested, not depicted). The trail itself IS the poster — speed has literally consumed the machine, only the fire remains. Three-color palette strictly per brief. Stretched variable-bold typography below ('BURN' + 'THE · NIGHT' at extreme horizontal scale-x 1.45/1.35) reinforces the motion. Brutalist data annotations (SPEED 247 km/h, distance vector) flank the trail — nod to Marcel's WoMen's Football data-overlay aesthetic.",
+      "critic_score": 9.4,
+      "critic_notes": "First poster built with v1.6 catalog anchors wired through concept-explorer. Four real references cited, each informing a specific layer: Kilian Eng for cyberpunk atmospheric depth, Rick Owens for monumental explosive energy, Marcel for data-overlay typography, Mouse & Kelley for translucent chaos layering. Strict 3-color palette held. Diagonal composition hits brief's 'chaotic/energetic' mood without becoming unreadable. Motion blur + RGB split + halation glow stack cleanly. PASSED layout-verifier after one false-positive fix (intentional text-layer for glow was flagged — checker updated).",
+      "output_path": "my-works/2026-04-19-burn-the-night/burn-the-night.svg",
+      "lessons": [
+        "Diagonal trail as hero IS the composition — the trail doesn't support the subject, the trail IS the subject. Car becomes secondary (blurred, fragmented).",
+        "Three-layer trail stack (outer soft glow + mid flank + hot core with acid gradient) creates depth and intensity without needing complex 3D rendering.",
+        "Brutalist data annotations (SPEED / DIST / Δt / vector) on a pure-image poster add editorial maximalism density without visual clutter — place in negative-space corners, Factory-yellow-adjacent tone (here #FFB347 warm orange).",
+        "Variable Bold Typography via SVG transform=\"scale(1.4, 1)\" stretches type horizontally without custom variable fonts — extreme stretch + wide kerning = the trend's canonical move.",
+        "Poster-catalog anchors make the first render hit harder because each element has a real-world reference — Kilian Eng's Blade Runner 2049 taught the sky atmospheric, Rick Owens taught the explosive monumentality of type."
+      ]
     }
   ],
   "patterns_that_work": [

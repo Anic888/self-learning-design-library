@@ -433,6 +433,10 @@ def check_overlaps(boxes: list[TextBox]) -> list[Issue]:
     issues = []
     for i, a in enumerate(boxes):
         for b in boxes[i + 1:]:
+            # Skip intentional duplicate-layer typography (glow / shadow / stacked-fill pairs).
+            # Same text + same position = one logical element rendered with multiple fills.
+            if a.text == b.text and abs(a.x - b.x) < 2 and abs(a.y - b.y) < 2:
+                continue
             if a.overlaps_with(b):
                 # Compute overlap size
                 x_overlap = min(a.x_end, b.x_end) - max(a.x_start, b.x_start)

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "BURN THE NIGHT"
+  Cyberpunk street racing
+  612 × 888
+
+  Brief: cyberpunk street racing — diagonal motion / long exposure,
+  car leaving trail of glowing light, metaphor "speed destroys
+  time and space". Neon orange + deep purple + black. Chaotic,
+  energetic, explosive. Minimal stretched type.
+
+  Winning concept: Image-forward diagonal motion blur (Concept A).
+
+  Poster-catalog anchors cited from v1.6:
+  - Kilian Eng "Blade Runner 2049" (illustration-posters.md) —
+    cyberpunk atmospheric depth, warm neon against cold city
+  - Rick Owens "Temple of Love" Palais Galliera 2025
+    (2024-2026-contemporary.md) — brutalist explosive energy,
+    monumental type against dark void
+  - Marcel "WoMen's Football" D&AD 2024 Black Pencil
+    (2024-2026-contemporary.md) — editorial-maximalist data
+    overlay aesthetic (here used for trail-annotations)
+  - 1960s psychedelic chaos layering (Mouse & Kelley) —
+    overlapping translucent light forms
+
+  Designer voice: hybrid — Ash Thorp cinematic atmosphere (cold
+  monochrome base + single saturated accent) bent with Josan
+  Gonzalez motion-energy (density suggested through trails, not
+  packed detail).
+
+  Trend layer: Acid Graphics / Liquid Chrome (iridescent hot
+  core of trail) + Glitch/Datamosh (fragmented car silhouette
+  via RGB displacement).
+
+  Strict 3-color palette (per brief):
+  - #0A0510 — near-black void base (deep purple-black)
+  - #2A0A4A — deep purple (ambient atmosphere)
+  - #FF5C00 — neon orange (primary accent, the fire)
+  + auxiliary: #FFB347 (warmer orange, hottest points)
+  + auxiliary: #FFFFFF (white-hot flash at trail core only)
+
+  ─── GRID PLAN ──────────────────────────────────────────
+  Outer frame: y=28 → y=860 (thin orange rule, low opacity)
+  Usable x: 56 → 556
+
+  Vertical anchors:
+    y=56   top meta (race league + vs line)
+    y=70   hairline
+    y=100-650 hero zone (massive diagonal trail + car)
+    y=678  divider rule (orange)
+    y=720  "BURN" (102pt, stretched)
+    y=780  "THE NIGHT" (84pt, stretched)
+    y=830  footer minimal
+    y=856  bottom meta
+  ─────────────────────────────────────────────────────────
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Base void: deep purple-black with subtle radial falloff -->
+    <radialGradient id="voidBase" cx="0.2" cy="0.85" r="0.95">
+      <stop offset="0"    stop-color="#2A0A4A" stop-opacity="0.9"/>
+      <stop offset="0.35" stop-color="#140822"/>
+      <stop offset="0.7"  stop-color="#0A0510"/>
+      <stop offset="1"    stop-color="#050208"/>
+    </radialGradient>
+
+    <!-- Atmospheric purple bloom (ambient neon near the road) -->
+    <radialGradient id="ambientPurple" cx="0.15" cy="0.92" r="0.6">
+      <stop offset="0"   stop-color="#6B1AAF" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#3D0A5A" stop-opacity="0.3"/>
+      <stop offset="1"   stop-color="#140822" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ORANGE TRAIL CORE — white-hot center -->
+    <linearGradient id="trailCore" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.15" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="0.4"  stop-color="#FFB347" stop-opacity="1"/>
+      <stop offset="0.7"  stop-color="#FF5C00" stop-opacity="0.9"/>
+      <stop offset="1"    stop-color="#FF5C00" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Trail outer glow — radial soft -->
+    <radialGradient id="trailGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFB347" stop-opacity="0.85"/>
+      <stop offset="0.3"  stop-color="#FF5C00" stop-opacity="0.55"/>
+      <stop offset="0.7"  stop-color="#8B1A3E" stop-opacity="0.25"/>
+      <stop offset="1"    stop-color="#2A0A4A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary flanking trail (thinner, desaturated) -->
+    <linearGradient id="trailFlank" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#FF5C00" stop-opacity="0"/>
+      <stop offset="0.3"  stop-color="#FFB347" stop-opacity="0.45"/>
+      <stop offset="0.6"  stop-color="#FF5C00" stop-opacity="0.7"/>
+      <stop offset="1"    stop-color="#6B1AAF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Iridescent acid-graphics gradient (hottest point) -->
+    <linearGradient id="acidCore" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0"    stop-color="#FFFFFF"/>
+      <stop offset="0.2"  stop-color="#FFB347"/>
+      <stop offset="0.5"  stop-color="#FF5C00"/>
+      <stop offset="0.8"  stop-color="#A02480"/>
+      <stop offset="1"    stop-color="#2A0A4A"/>
+    </linearGradient>
+
+    <!-- Motion blur filters (heavy Gaussian along diagonal) -->
+    <filter id="motionBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <filter id="hotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- RGB split for chromatic aberration (glitch edge) -->
+    <filter id="rgbSplit" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset in="SourceGraphic" dx="-1.5" dy="0" result="red"/>
+      <feColorMatrix in="red" values="1 0 0 0 0
+                                      0 0 0 0 0
+                                      0 0 0 0 0
+                                      0 0 0 1 0" result="redOnly"/>
+      <feOffset in="SourceGraphic" dx="1.5" dy="0" result="cyan"/>
+      <feColorMatrix in="cyan" values="0 0 0 0 0
+                                       0 1 0 0 0
+                                       0 0 1 0 0
+                                       0 0 0 1 0" result="cyanOnly"/>
+      <feMerge>
+        <feMergeNode in="redOnly"/>
+        <feMergeNode in="cyanOnly"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Digital grain -->
+    <filter id="digitalGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="2" seed="37"/>
+      <feColorMatrix values="0 0 0 0 1
+                             0 0 0 0 0.6
+                             0 0 0 0 0.3
+                             0 0 0 0.06 0"/>
+    </filter>
+
+    <!-- Clip for hero zone -->
+    <clipPath id="heroZone">
+      <rect x="28" y="28" width="556" height="650"/>
+    </clipPath>
+  </defs>
+
+  <!-- ════════ VOID BASE ═══════════════════════════════════ -->
+  <rect width="612" height="888" fill="url(#voidBase)"/>
+
+  <!-- Ambient purple bloom from lower-left (where the race starts) -->
+  <rect width="612" height="888" fill="url(#ambientPurple)"/>
+
+  <!-- ════════ HERO ZONE — Diagonal motion composition ═════ -->
+  <g clip-path="url(#heroZone)">
+
+    <!-- Perspective suggestion: fading grid lines from bottom-left -->
+    <g stroke="#6B1AAF" stroke-width="0.5" opacity="0.22" fill="none">
+      <line x1="-40" y1="620" x2="660" y2="420"/>
+      <line x1="-40" y1="640" x2="660" y2="445"/>
+      <line x1="-40" y1="660" x2="660" y2="470"/>
+      <line x1="-40" y1="680" x2="660" y2="500"/>
+      <!-- lateral grid lines (vanishing point upper-right) -->
+      <line x1="100" y1="680" x2="560" y2="460"/>
+      <line x1="180" y1="680" x2="600" y2="480"/>
+      <line x1="270" y1="680" x2="630" y2="500"/>
+      <line x1="360" y1="680" x2="650" y2="520"/>
+    </g>
+
+    <!-- Distant city silhouette along horizon (fading into purple) -->
+    <g fill="#140822" opacity="0.88">
+      <rect x="20" y="400" width="35" height="28"/>
+      <rect x="60" y="390" width="20" height="38"/>
+      <rect x="86" y="405" width="42" height="23"/>
+      <rect x="134" y="385" width="28" height="43"/>
+      <rect x="170" y="395" width="18" height="33"/>
+      <rect x="196" y="380" width="30" height="48"/>
+      <rect x="232" y="400" width="25" height="28"/>
+      <rect x="262" y="388" width="35" height="40"/>
+      <rect x="304" y="395" width="22" height="33"/>
+      <rect x="332" y="378" width="38" height="50"/>
+      <rect x="378" y="398" width="18" height="30"/>
+      <rect x="402" y="390" width="28" height="38"/>
+      <rect x="436" y="408" width="26" height="20"/>
+      <rect x="468" y="395" width="32" height="33"/>
+      <rect x="506" y="408" width="22" height="20"/>
+      <rect x="534" y="398" width="28" height="30"/>
+    </g>
+    <!-- Tiny window lights on skyline -->
+    <g fill="#FF5C00" opacity="0.55">
+      <rect x="68" y="400" width="1.5" height="1.5"/>
+      <rect x="142" y="395" width="1.5" height="1.5"/>
+      <rect x="206" y="395" width="1.5" height="1.5"/>
+      <rect x="278" y="400" width="1.5" height="1.5"/>
+      <rect x="346" y="390" width="1.5" height="1.5"/>
+      <rect x="412" y="402" width="1.5" height="1.5"/>
+      <rect x="478" y="405" width="1.5" height="1.5"/>
+      <rect x="544" y="410" width="1.5" height="1.5"/>
+    </g>
+
+    <!-- ════════ MAIN DIAGONAL TRAIL — multiple layers ════════
+         Path goes from bottom-left (x=40, y=620) to upper-right
+         (x=570, y=160) — strong diagonal motion per brief.
+    ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Outer soft ambient glow (very blurred) -->
+    <path d="M 40,620 Q 306,460 570,160 L 590,200 Q 330,500 60,640 Z"
+          fill="#FF5C00" opacity="0.18" filter="url(#softGlow)"/>
+
+    <!-- Secondary flank trail (below main) -->
+    <path d="M 20,680 Q 306,500 590,200 L 600,240 Q 330,540 40,700 Z"
+          fill="url(#trailFlank)" opacity="0.5" filter="url(#motionBlur)"/>
+
+    <!-- Mid-layer trail glow -->
+    <path d="M 40,630 Q 306,470 570,170 L 580,200 Q 320,490 50,660 Z"
+          fill="url(#trailFlank)" opacity="0.7" filter="url(#motionBlur)"/>
+
+    <!-- Main bright trail (thick with core gradient) -->
+    <path d="M 30,620 Q 306,465 570,155 L 572,185 Q 316,488 38,648 Z"
+          fill="url(#trailCore)" opacity="0.95" filter="url(#hotGlow)"/>
+
+    <!-- Hot white core (thinnest + brightest) -->
+    <path d="M 60,605 Q 306,460 550,170 L 552,188 Q 308,475 64,620 Z"
+          fill="url(#acidCore)" opacity="0.92"/>
+
+    <!-- Upper flank trail (fainter, going further up-right) -->
+    <path d="M 80,580 Q 306,430 540,140 L 555,158 Q 316,450 85,598 Z"
+          fill="#FF5C00" opacity="0.35" filter="url(#motionBlur)"/>
+
+    <!-- ════════ CAR — Fragmented silhouette at midpoint ════
+         Center of trail at approx (290, 360). Car is mostly
+         dissolved into motion blur — only suggested via
+         fragmented shapes + rgb-split outline.
+    ══════════════════════════════════════════════════════════ -->
+    <g transform="translate(290,360) rotate(-28)" filter="url(#rgbSplit)">
+      <!-- Car body silhouette (simplified low-poly) -->
+      <g fill="#0A0510" filter="url(#motionBlur)">
+        <!-- Chassis -->
+        <path d="M -50,-8 L -58,0 L -58,8 L 50,8 L 62,0 L 62,-6 L 48,-14 L 20,-18 L -20,-18 L -42,-14 Z"/>
+        <!-- Cabin -->
+        <path d="M -25,-14 L -20,-26 L 18,-26 L 25,-14 Z"/>
+        <!-- Wheels (blur makes them streak) -->
+        <ellipse cx="-35" cy="6" rx="10" ry="4"/>
+        <ellipse cx="38" cy="6" rx="10" ry="4"/>
+      </g>
+
+      <!-- Orange glow under car (reflecting fire on chassis) -->
+      <ellipse cx="0" cy="8" rx="70" ry="6" fill="#FF5C00" opacity="0.75" filter="url(#hotGlow)"/>
+
+      <!-- Sharp orange edge highlights on car (rim lit by trail) -->
+      <g stroke="#FFB347" stroke-width="1.2" fill="none" opacity="0.9">
+        <path d="M -50,-8 L -42,-14 L -20,-18"/>
+        <path d="M 20,-18 L 48,-14 L 62,-6"/>
+      </g>
+
+      <!-- Twin taillights glowing (leaving the fire) -->
+      <circle cx="-54" cy="-2" r="2.5" fill="#FFFFFF" opacity="0.95"/>
+      <circle cx="-54" cy="-2" r="5" fill="#FFB347" opacity="0.7"/>
+      <circle cx="-54" cy="-2" r="12" fill="#FF5C00" opacity="0.35" filter="url(#hotGlow)"/>
+    </g>
+
+    <!-- Speed-streak particles along the trail -->
+    <g fill="#FFB347" opacity="0.9">
+      <rect x="90" y="595" width="1.5" height="6" transform="rotate(-28 90 595)"/>
+      <rect x="150" y="555" width="1.2" height="8" transform="rotate(-28 150 555)"/>
+      <rect x="220" y="505" width="1.5" height="5" transform="rotate(-28 220 505)"/>
+      <rect x="290" y="455" width="1" height="7" transform="rotate(-28 290 455)"/>
+      <rect x="360" y="405" width="1.5" height="6" transform="rotate(-28 360 405)"/>
+      <rect x="430" y="355" width="1.2" height="8" transform="rotate(-28 430 355)"/>
+      <rect x="500" y="305" width="1.5" height="5" transform="rotate(-28 500 305)"/>
+    </g>
+    <g fill="#FFFFFF" opacity="0.85">
+      <rect x="120" y="575" width="1" height="4" transform="rotate(-28 120 575)"/>
+      <rect x="200" y="520" width="1" height="3" transform="rotate(-28 200 520)"/>
+      <rect x="280" y="465" width="1" height="4" transform="rotate(-28 280 465)"/>
+      <rect x="340" y="420" width="1" height="3" transform="rotate(-28 340 420)"/>
+      <rect x="420" y="365" width="1" height="4" transform="rotate(-28 420 365)"/>
+      <rect x="480" y="315" width="1" height="3" transform="rotate(-28 480 315)"/>
+    </g>
+
+    <!-- Chromatic aberration on trail edge (glitch subtle) -->
+    <path d="M 30,620 Q 306,465 570,155" stroke="#00D9FF" stroke-width="0.6" fill="none" opacity="0.35"/>
+    <path d="M 32,624 Q 308,469 572,159" stroke="#FF1E8A" stroke-width="0.6" fill="none" opacity="0.35"/>
+
+    <!-- Ember sparks scattered -->
+    <g fill="#FFB347">
+      <circle cx="82" cy="610" r="1.2" opacity="0.9"/>
+      <circle cx="145" cy="562" r="0.8" opacity="0.8"/>
+      <circle cx="210" cy="515" r="1" opacity="0.85"/>
+      <circle cx="368" cy="388" r="1.2" opacity="0.9"/>
+      <circle cx="465" cy="318" r="0.9" opacity="0.8"/>
+      <circle cx="540" cy="205" r="1" opacity="0.9"/>
+      <circle cx="118" cy="588" r="0.7" opacity="0.7"/>
+      <circle cx="265" cy="478" r="0.7" opacity="0.65"/>
+      <circle cx="402" cy="352" r="0.8" opacity="0.7"/>
+    </g>
+    <g fill="#FFFFFF" opacity="0.85">
+      <circle cx="98" cy="600" r="0.6"/>
+      <circle cx="180" cy="538" r="0.5"/>
+      <circle cx="310" cy="445" r="0.6"/>
+      <circle cx="440" cy="340" r="0.5"/>
+      <circle cx="520" cy="222" r="0.6"/>
+    </g>
+
+    <!-- Brutalist race-data annotations flanking trail (nod to Marcel WoMen's Football data overlay) -->
+    <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#FFB347" fill-opacity="0.7">
+      <text x="60" y="130" font-size="8" letter-spacing="2" font-weight="700">SPEED ▸ 247 km/h</text>
+      <text x="60" y="144" font-size="7" letter-spacing="1.5" fill="#FF5C00">Δt · 00:00:47:92</text>
+    </g>
+    <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#FFB347" fill-opacity="0.7" text-anchor="end">
+      <text x="550" y="660" font-size="8" letter-spacing="2" font-weight="700">DIST ▸ 14.8 km</text>
+      <text x="550" y="674" font-size="7" letter-spacing="1.5" fill="#FF5C00">vector · NE · 28°</text>
+    </g>
+
+    <!-- Digital grain over everything -->
+    <rect x="28" y="28" width="556" height="650" filter="url(#digitalGrain)" opacity="0.65"/>
+  </g>
+
+  <!-- Bottom frame hairline (below hero) — orange accent -->
+  <line x1="56" y1="682" x2="556" y2="682" stroke="#FF5C00" stroke-width="0.8" stroke-opacity="0.6"/>
+  <line x1="56" y1="686" x2="556" y2="686" stroke="#FF5C00" stroke-width="0.3" stroke-opacity="0.3"/>
+
+  <!-- ════════ TOP META LINE ═══════════════════════════════ -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="56"  y="56" font-size="10" letter-spacing="4" font-weight="700" fill="#FFB347">NIGHT RACE SERIES · SEASON 03</text>
+    <text x="556" y="56" font-size="10" letter-spacing="4" font-weight="400" fill="#FF5C00" text-anchor="end">OSAKA ▸ NAGOYA · MMXXVI</text>
+  </g>
+  <line x1="56" y1="68" x2="556" y2="68" stroke="#FFB347" stroke-width="0.4" stroke-opacity="0.5"/>
+
+  <!-- Outer frame (orange thin, low opacity) -->
+  <rect x="28" y="28" width="556" height="832" fill="none" stroke="#FF5C00" stroke-width="0.6" stroke-opacity="0.35"/>
+
+  <!-- ════════ TYPOGRAPHY: "BURN THE NIGHT" stretched ══════
+       Variable Bold Typography: extreme horizontal stretch,
+       scale-x 1.5 + wide letter-spacing = variable-width extreme.
+       Two-line stack: BURN / THE NIGHT with size contrast.
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- BURN — top line, stretched wider -->
+  <g transform="translate(306, 728) scale(1.45, 1)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="0" y="0" font-size="72" font-weight="900" letter-spacing="-3" fill="#FFB347">BURN</text>
+    <!-- Subtle underlayer glow -->
+    <text x="0" y="0" font-size="72" font-weight="900" letter-spacing="-3" fill="#FF5C00" opacity="0.5" filter="url(#hotGlow)">BURN</text>
+  </g>
+
+  <!-- THE NIGHT — bottom line, slightly smaller but wider stretch -->
+  <g transform="translate(306, 790) scale(1.35, 1)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="0" y="0" font-size="56" font-weight="900" letter-spacing="-2" fill="#F8E8D4">THE · NIGHT</text>
+  </g>
+
+  <!-- Thin accent rule under title -->
+  <line x1="200" y1="808" x2="412" y2="808" stroke="#FF5C00" stroke-width="1" stroke-opacity="0.75"/>
+
+  <!-- ════════ FOOTER — minimal race meta ══════════════════ -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="306" y="830" font-size="9" letter-spacing="4" font-weight="700" fill="#FFB347" fill-opacity="0.85">
+      14 · 8 km  ·  SINGLE LAP  ·  ZERO PIT  ·  ALL OR NOTHING
+    </text>
+  </g>
+
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#FF5C00" fill-opacity="0.5">
+    <text x="56"  y="854" font-size="6.5" letter-spacing="1.5">CAT · BTN-03 / 19-APR-2026</text>
+    <text x="556" y="854" font-size="6.5" letter-spacing="1.5" text-anchor="end">NIGHT RACE LEAGUE · TOKYO</text>
+  </g>
+</svg>
