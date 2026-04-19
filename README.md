@@ -11,7 +11,19 @@
 **Want the autonomous agent?** → [CREATOR.md](CREATOR.md) — describe a poster in one sentence, the agent picks the designer voice, applies the trend layer, renders SVG, self-verifies layout, and opens the preview. No manual composition, no QA on your end.
 **New here? Prefer manual workflow?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
 **Want the 2026 visual language?** → [docs/trends-2026.md](docs/trends-2026.md) — 12 current design trends, how to apply, what to avoid.
-**See the proof?** → [6 themed reference posters](my-works/showcase-themed-2026/) (cinema/art/music/games/hi-tech/electronic) — gold standards the agent is calibrated against.
+**See the proof?** → [6 themed reference posters](my-works/showcase-themed-2026/) + [7 agent-generated posters](my-works/) across 6 structural archetypes.
+
+## Status — April 2026
+
+Current release: **v1.7** (autonomous design-creator agent + structural-variance rotation).
+
+- **158 verified real-world poster references** in [`sources/research/poster-catalog/`](sources/research/poster-catalog/) — historical (1890s→1990s) + contemporary (2020-2026, heavy emphasis on 2024-2026 D&AD / Tokyo TDC / AIGA / Behance / It's Nice That)
+- **18-file core knowledge base** — 5 design books (Bringhurst, Müller-Brockmann, Hara, Tschichold, Rand), 8 era files, 3 drawing principles, 2 photography principles, trends-by-decade
+- **12 structural archetypes** codified in [`sources/principles/structural-variance.md`](sources/principles/structural-variance.md) with mandatory rotation rule to prevent output monotony
+- **Autonomous agent** ([`CREATOR.md`](CREATOR.md)) orchestrates 7 subagents: concept-explorer × 3 (parallel angles), design-critic (two-pass evaluation), layout-verifier (Python-backed QA), color-research (live Colorhunt), research-agent, periodic-research (monthly refresh)
+- **Python layout-checker** ([`tools/check-layout.py`](tools/check-layout.py)) verifies every render automatically — no text overflow, overlaps, or stacked elements slip through
+- **64 trending palettes** from Colorhunt snapshot in [`sources/research/palettes/colorhunt-trending-2026.md`](sources/research/palettes/colorhunt-trending-2026.md)
+- **Memory system** — agent logs winning patterns, rejected crutches, and layout recipes after each run, biasing future work toward what works
 
 **Not a training dataset in the machine-learning sense.** It's a **retrieval library** — purpose-built markdown files that an LLM reads at runtime to produce grounded, style-aware design work. Think moodboard + style guide + tactical instructions, rendered as parseable text.
 
