@@ -87,6 +87,52 @@
     "refik-anadol": "warm paper, classical serif, recognizable figures",
     "massimo-vignelli": "more than 6 typefaces, gradients, illustration flourishes"
   },
+  "structural_monotony_crutches": {
+    "observed": "After 3 consecutive posters (Digital Loneliness / Burn the Night / LAST SIGNAL v1) user flagged them as structurally identical despite palette/subject variation. Root cause: Claude defaults to Archetype 1 (Classical Centered Hero) with fixed sub-elements regardless of brief.",
+    "forbidden_unless_brief_explicitly_demands": [
+      {
+        "pattern": "Thin hairline outer frame at 28,28,556,832",
+        "flag_if_present": "Is this a formal/institutional poster brief? If not, drop it.",
+        "alternatives": "full-bleed (no frame), thick brutal frame (stroke 2-3px), asymmetric frame breaking one edge, no frame but inset content with margin-as-frame"
+      },
+      {
+        "pattern": "Top meta line split L/R (studio + catalog number)",
+        "flag_if_present": "Is brief cinema/museum/label identity? If not, drop it.",
+        "alternatives": "no top meta at all, single centered wordmark, vertical wordmark along one edge, type-as-image starts at top"
+      },
+      {
+        "pattern": "Hero zone above → divider rule → typography block → footer split below",
+        "flag_if_present": "This is the most-defaulted sequence. Break it.",
+        "alternatives": "type above with image below, image bleeding around type, type wrapping image shape, single-element composition with no zones, full-bleed atmospheric with type as overlay, diagonal layout axis, vertical stacked type along edge"
+      },
+      {
+        "pattern": "Brutalist research annotations (SUBJECT/01, SPEED 247, SIGNAL 4%, O₂ 11:34, D/EARTH 14.2 AU, FIG. I)",
+        "flag_if_present": "Did brief mention 'research poster' / 'technical manual' / 'data-dense' / 'specification'? If not, these are Claude's crutch — remove.",
+        "alternatives": "silence — just the primary composition. Or use real narrative elements that belong to the subject, not simulated research."
+      },
+      {
+        "pattern": "Coordinate rings circling subject",
+        "flag_if_present": "Is this a mission briefing or cartography subject? If not, drop.",
+        "alternatives": "no annotation at all, or annotation that belongs to the actual subject matter"
+      },
+      {
+        "pattern": "Footer catalog split: 'CAT · XXX-001 / DATE' left + 'STUDIO' right at font-size 6.5",
+        "flag_if_present": "This is the most tiring repeated signature.",
+        "alternatives": "single centered credit, no footer at all, credit as part of title block, credit hidden in margin"
+      },
+      {
+        "pattern": "Stacked italic elements: over-title italic + subtitle italic + tagline italic + credit italic",
+        "flag_if_present": "More than 2 italic elements in same poster = italic fatigue.",
+        "alternatives": "pick ONE italic — usually subtitle. Title and credits stay roman."
+      },
+      {
+        "pattern": "Letter-spacing > 8 on anything other than small-caps labels",
+        "flag_if_present": "Bringhurst: caps track 5-12%, lower-case body 0 to -2%. Nothing else needs 8+px tracking.",
+        "alternatives": "match Bringhurst conventions: caps +5-12%, lowercase ≈0, display tight or negative."
+      }
+    ],
+    "enforcement": "concept-explorer.md Step 8 now reads structural-variance.md and forbids Archetype 1 when last 3 winning concepts used it. design-creator SKILL.md must verify output does not contain forbidden-signature patterns above."
+  },
   "overflow_prevention_rules": [
     "For text-anchor=middle: calculate total width with current font + letter-spacing BEFORE placing. If > 500px, reduce one variable.",
     "For text-anchor=start+end on same line: sum widths + 30px minimum gap. Total ≤ 470px or split lines.",
