@@ -94,15 +94,61 @@ The skill enforces these automatically — you stop being the QA:
 
 ## Monthly research refresh
 
-A scheduled task runs on the 1st of each month at 9:00 AM local. It:
-
-1. Dispatches `color-research` to refresh Colorhunt palettes (all tags)
-2. Dispatches `research-agent` to scan for new competition announcements and trending work
-3. Writes dated snapshot files: `sources/research/palettes/colorhunt-YYYY-MM.md`, `sources/research/observations/behance-YYYY-MM.md`, etc.
-4. Updates the synthesis file `sources/research/trends-verified-2026.md`
-5. Commits + pushes to GitHub
+The `periodic-research` subagent is designed to run on the 1st of each month to keep the research corpus fresh (Colorhunt palettes, Behance popular, Awwwards SOTD, new competition announcements). It dispatches `color-research` + `research-agent` in parallel, writes dated snapshot files to `sources/research/palettes/` and `sources/research/observations/`, updates the synthesis in `trends-verified-2026.md`, and commits + pushes.
 
 Over a year, you accumulate a chronicle of 2026's visual design trends, evidence-based.
+
+### Setting up the schedule (macOS launchd, persists across reboots)
+
+Claude Code's in-session cron tool auto-expires after 7 days, so for a true monthly cadence use macOS `launchd`. Save this plist to `~/Library/LaunchAgents/com.design-library.monthly-research.plist`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.design-library.monthly-research</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>-c</string>
+    <string>/Users/roxyproxy/Documents/design-library/scripts/monthly-research.sh &gt;&gt; /Users/roxyproxy/Documents/design-library/logs/monthly.log 2&gt;&amp;1</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Day</key>
+    <integer>1</integer>
+    <key>Hour</key>
+    <integer>9</integer>
+    <key>Minute</key>
+    <integer>3</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/roxyproxy/Documents/design-library/logs/monthly.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/roxyproxy/Documents/design-library/logs/monthly.err</string>
+</dict>
+</plist>
+```
+
+Load it:
+
+```bash
+launchctl load ~/Library/LaunchAgents/com.design-library.monthly-research.plist
+```
+
+It fires on the 1st of each month at 9:03 AM local (minute :03 chosen over :00 so the cron fleet doesn't stampede the API at midnight). Log output lands in `logs/monthly.log`.
+
+### Or: trigger manually whenever you want
+
+```bash
+scripts/monthly-research.sh            # full refresh + commit + push
+scripts/monthly-research.sh --dry-run  # research only, no commit
+```
+
+Useful for the first-month setup (do it once to seed the `observations/` folder) or when you notice trends shifting.
 
 ## Usage tips
 

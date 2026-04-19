@@ -79,6 +79,11 @@ DEFAULT_GLYPH_FACTOR = 0.55
 CAP_HEIGHT_FACTOR = 0.72
 # Descender depth as fraction of font-size
 DESCENDER_FACTOR = 0.22
+# Reduced descender factor for text without lowercase descenders (ALL CAPS, numerals, etc.)
+DESCENDER_FACTOR_NO_LC = 0.05
+
+# Characters that typically have descenders below baseline
+DESCENDER_CHARS = set("gjpqy,;_()[]{}")
 
 # ── VALIDATION THRESHOLDS ────────────────────────────────────────────────
 
@@ -208,6 +213,27 @@ def resolve_text_x_range(x_attr: float, anchor: str, width: float) -> tuple[floa
         return (x_attr, x_attr + width)
 
 
+TRANSLATE_RE = re.compile(r"translate\(\s*([-+]?[\d.]+)(?:\s*,\s*|\s+)([-+]?[\d.]+)?\s*\)")
+
+
+def accumulate_translate(elem, parent_map) -> tuple[float, float]:
+    """Walk up parent chain, sum translate(dx, dy) transforms applied to each g/text."""
+    dx, dy = 0.0, 0.0
+    current = elem
+    while current is not None:
+        transform = current.get("transform")
+        if transform:
+            # Only handle translate() here — rotate/scale/skew would need proper matrix math
+            # but translate is overwhelmingly the common case in our SVGs.
+            for match in TRANSLATE_RE.finditer(transform):
+                tx = float(match.group(1))
+                ty = float(match.group(2)) if match.group(2) else 0.0
+                dx += tx
+                dy += ty
+        current = parent_map.get(id(current))
+    return dx, dy
+
+
 def extract_text_boxes(root: ET.Element) -> list[TextBox]:
     """Walk SVG and build TextBox estimates for every <text> element."""
     boxes: list[TextBox] = []
@@ -270,6 +296,11 @@ def extract_text_boxes(root: ET.Element) -> list[TextBox]:
         except ValueError:
             continue
 
+        # Resolve accumulated translate() transforms up the parent chain
+        dx, dy = accumulate_translate(elem, parent_map)
+        x += dx
+        y += dy
+
         font_size_raw = resolve_inherited_attr(elem, "font-size", "12")
         font_size_raw = re.sub(r"[a-zA-Z]+$", "", str(font_size_raw))
         try:
@@ -291,8 +322,13 @@ def extract_text_boxes(root: ET.Element) -> list[TextBox]:
         width = estimate_text_width(text, font_size, font_family, letter_spacing)
         x_start, x_end = resolve_text_x_range(x, anchor, width)
 
+        # Smarter descender depth: if text has no descender-containing chars,
+        # use the minimal-descender factor (caps / numerals only)
+        has_descender = any(c in DESCENDER_CHARS for c in text)
+        descender_factor = DESCENDER_FACTOR if has_descender else DESCENDER_FACTOR_NO_LC
+
         y_top = y - font_size * CAP_HEIGHT_FACTOR
-        y_bottom = y + font_size * DESCENDER_FACTOR
+        y_bottom = y + font_size * descender_factor
 
         boxes.append(TextBox(
             text=text,
