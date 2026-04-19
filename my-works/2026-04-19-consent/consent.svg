@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "Consent"
+  Conceptual European graphic design / invisible boundaries
+  612 × 888
+
+  Structural archetype: 4 (Object-Bleed Hybrid) — both hands
+  cropped from opposite edges bleeding into frame. Previous 3
+  posters used 12 / 6 / 2 — this brings structural rotation.
+
+  Brief: two hands almost touching, separated by thin transparent
+  barrier. Metaphor: invisible boundaries. Extreme close-up,
+  cropped hands. Strong negative space. Skin tones + muted gray +
+  ONE red accent line. Soft directional light. Small discreet
+  text. Tension, discomfort, awareness.
+
+  What Claude is NOT adding (anti-monotony):
+  - No outer frame rule
+  - No top-meta catalog line
+  - No hero/divider/type/footer sequence
+  - No "brutalist research annotations"
+  - No coordinate rings
+  - No split L/R footer
+  - No bold stretched title
+  - No "Consent" word on poster itself — European conceptual
+    design refuses to label itself; the image does the work.
+
+  What remains:
+  - Muted gray paper ground
+  - Two hand shapes bleeding from opposite edges
+  - A thin red vertical line between fingertips — the invisible
+    barrier made visible
+  - ONE discreet tagline in italic serif, lower-right
+
+  Catalog anchors (from sources/research/poster-catalog/):
+  - Saville "Closer" Joy Division 1980 (photo-based-posters.md)
+    — photograph as concept carrier, title whispered
+  - Mevis & Van Deursen Dutch restraint (type-only-posters.md
+    notes)
+  - Marcel "WoMen's Football" D&AD 2024 Black Pencil
+    (2024-2026-contemporary.md) — contemporary European
+    conceptual, data-as-image
+  - Kenya Hara emptiness (sources/principles/books/hara-emptiness.md)
+    — the gap between hands IS the poster
+
+  Palette:
+  - #D8D4CE — warm gray paper (70% of canvas)
+  - #E8C9B0 — skin warm mid-tone
+  - #C4A088 — skin shadow
+  - #F2DCC2 — skin highlight
+  - #C8302A — oxblood-red single accent line (< 0.2% area)
+  - #1A1A1A — near-black for tagline
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Warm gray paper gradient (very subtle, one-direction soft light) -->
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#DCD8D2"/>
+      <stop offset="1"   stop-color="#D0CCC6"/>
+    </linearGradient>
+
+    <!-- Skin base gradient (left hand — light from upper-left) -->
+    <radialGradient id="skinLeft" cx="0.3" cy="0.35" r="0.8">
+      <stop offset="0"   stop-color="#F2DCC2"/>
+      <stop offset="0.45" stop-color="#E8C9B0"/>
+      <stop offset="0.85" stop-color="#C4A088"/>
+      <stop offset="1"   stop-color="#A8876B"/>
+    </radialGradient>
+
+    <!-- Skin base gradient (right hand — light from upper-left still, so shadow side) -->
+    <radialGradient id="skinRight" cx="0.7" cy="0.35" r="0.85">
+      <stop offset="0"   stop-color="#ECD0B6"/>
+      <stop offset="0.45" stop-color="#DCB89A"/>
+      <stop offset="0.85" stop-color="#B89878"/>
+      <stop offset="1"   stop-color="#9A8060"/>
+    </radialGradient>
+
+    <!-- Soft fingertip highlight -->
+    <radialGradient id="fingertip" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#F8E8D0" stop-opacity="0.9"/>
+      <stop offset="0.7" stop-color="#E8C9B0" stop-opacity="0.3"/>
+      <stop offset="1"   stop-color="#E8C9B0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Very subtle paper grain -->
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="19"/>
+      <feColorMatrix values="0 0 0 0 0.06
+                             0 0 0 0 0.05
+                             0 0 0 0 0.04
+                             0 0 0 0.05 0"/>
+    </filter>
+
+    <!-- Soft shadow filter for hands (directional — light from upper-left) -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <!-- ════════ WARM GRAY PAPER GROUND ══════════════════════ -->
+  <rect width="612" height="888" fill="url(#paper)"/>
+
+  <!-- ════════ LEFT HAND — bleeds in from lower-left ══════
+       Close-up view. Fingers extend upward and slightly right,
+       reaching toward center. Index finger extended, other
+       fingers curled. Thumb hidden behind palm.
+
+       Positioned so palm occupies x=30-240, fingertip of index
+       reaches to approximately (286, 410).
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- Soft drop shadow beneath hand -->
+  <g opacity="0.25" filter="url(#softShadow)">
+    <path d="M -20,890
+             L -20,680
+             Q -10,620 30,560
+             Q 70,500 110,460
+             L 140,420
+             Q 180,380 220,375
+             L 280,420
+             Q 260,470 220,510
+             Q 170,560 140,620
+             Q 110,700 90,780
+             Q 60,860 -20,890 Z"
+          fill="#8A7358"/>
+  </g>
+
+  <!-- Left hand main mass -->
+  <path d="M -20,890
+           L -20,680
+           Q -10,620 30,560
+           Q 70,500 110,460
+           L 140,420
+           Q 180,380 220,375
+           Q 248,378 268,390
+           L 286,410
+           Q 290,418 282,424
+           Q 260,440 230,450
+           Q 200,460 175,470
+           Q 150,480 130,500
+           Q 100,540 75,590
+           Q 50,650 35,720
+           Q 15,800 -20,890 Z"
+        fill="url(#skinLeft)"/>
+
+  <!-- Index finger highlight line (light on top-edge of finger) -->
+  <path d="M 138,425 Q 178,390 218,383 Q 248,385 268,395"
+        stroke="#F8E8D0" stroke-width="1.2" fill="none" opacity="0.8"/>
+
+  <!-- Fingertip glow (soft highlight where light catches) -->
+  <ellipse cx="272" cy="402" rx="14" ry="8" fill="url(#fingertip)" opacity="0.9"/>
+
+  <!-- Nail hint on index fingertip -->
+  <path d="M 262,395 Q 274,390 282,400 Q 276,408 265,405 Z" fill="#F2DCC2" opacity="0.6"/>
+
+  <!-- Knuckle fold hints (subtle shadow lines showing hand anatomy) -->
+  <g stroke="#A8876B" stroke-width="0.7" fill="none" opacity="0.55">
+    <path d="M 180,440 Q 195,448 215,445"/>
+    <path d="M 145,480 Q 165,488 190,483"/>
+    <path d="M 120,528 Q 140,536 162,532"/>
+  </g>
+
+  <!-- Subtle shadow along palm-crease side (underside) -->
+  <path d="M -20,870
+           Q 10,780 30,700
+           Q 55,620 85,560
+           Q 60,600 40,660
+           Q 15,750 -15,870 Z"
+        fill="#A8876B" opacity="0.35"/>
+
+  <!-- ════════ RIGHT HAND — bleeds in from lower-right ═════
+       Mirror of left: fingers extending upward and slightly left,
+       reaching toward center. Fingertip of index at (326, 414).
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- Soft drop shadow -->
+  <g opacity="0.25" filter="url(#softShadow)">
+    <path d="M 632,890
+             L 632,680
+             Q 622,620 582,560
+             Q 542,500 502,460
+             L 472,420
+             Q 432,380 392,378
+             L 332,424
+             Q 352,472 392,510
+             Q 442,560 472,620
+             Q 502,700 522,780
+             Q 552,860 632,890 Z"
+          fill="#8A7358"/>
+  </g>
+
+  <!-- Right hand main mass -->
+  <path d="M 632,890
+           L 632,680
+           Q 622,620 582,560
+           Q 542,500 502,460
+           L 472,420
+           Q 432,380 392,378
+           Q 362,382 342,396
+           L 326,414
+           Q 322,422 330,428
+           Q 352,442 382,452
+           Q 412,462 437,472
+           Q 462,482 482,502
+           Q 512,542 537,592
+           Q 562,652 577,722
+           Q 597,800 632,890 Z"
+        fill="url(#skinRight)"/>
+
+  <!-- Index finger highlight -->
+  <path d="M 468,427 Q 432,388 392,385 Q 362,389 342,400"
+        stroke="#F8E8D0" stroke-width="1.2" fill="none" opacity="0.75"/>
+
+  <!-- Fingertip glow -->
+  <ellipse cx="340" cy="406" rx="14" ry="8" fill="url(#fingertip)" opacity="0.85"/>
+
+  <!-- Nail hint -->
+  <path d="M 348,400 Q 336,394 328,404 Q 334,412 345,409 Z" fill="#F2DCC2" opacity="0.55"/>
+
+  <!-- Knuckle fold hints -->
+  <g stroke="#8A7358" stroke-width="0.7" fill="none" opacity="0.5">
+    <path d="M 420,440 Q 405,448 390,445"/>
+    <path d="M 455,480 Q 435,488 412,483"/>
+    <path d="M 478,528 Q 458,536 436,532"/>
+  </g>
+
+  <!-- Palm-crease deeper shadow -->
+  <path d="M 632,870
+           Q 600,780 580,700
+           Q 555,620 525,560
+           Q 548,610 568,670
+           Q 595,760 630,870 Z"
+        fill="#8A7358" opacity="0.4"/>
+
+  <!-- ════════ THE INVISIBLE BARRIER — thin red vertical line ═
+       The poster's conceptual center. A single hairline red rule
+       between the two almost-touching fingertips. NO label, NO
+       annotation — the line itself is the statement.
+
+       Placed at x=306 (exact canvas center). Height limited to
+       just between the fingertip zone (~y=370 to y=460).
+  ══════════════════════════════════════════════════════════════ -->
+  <line x1="306" y1="356" x2="306" y2="466" stroke="#C8302A" stroke-width="1.1" opacity="0.95"/>
+
+  <!-- Tiny tick marks extending from line (suggesting barrier extends infinitely, just here cropped) -->
+  <line x1="302" y1="356" x2="310" y2="356" stroke="#C8302A" stroke-width="0.5" opacity="0.75"/>
+  <line x1="302" y1="466" x2="310" y2="466" stroke="#C8302A" stroke-width="0.5" opacity="0.75"/>
+
+  <!-- ════════ DISCREET TAGLINE ═════════════════════════════
+       Small, italic, placed lower-right rather than centered —
+       European conceptual discretion. Reader must find the text.
+  ══════════════════════════════════════════════════════════ -->
+  <text x="556" y="830" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#1A1A1A" text-anchor="end" letter-spacing="0.5">
+    Not everything visible is allowed.
+  </text>
+
+  <!-- Paper grain overlay — very subtle tactility -->
+  <rect width="612" height="888" fill="transparent" filter="url(#paperGrain)" opacity="0.4"/>
+</svg>

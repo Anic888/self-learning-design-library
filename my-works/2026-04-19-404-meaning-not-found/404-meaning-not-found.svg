@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "404: Meaning Not Found"
+  Digital minimalism / absence of meaning
+  612 × 888
+
+  Structural archetype: 6 (Figure + Vast Negative Space) — with
+  TEXT as the figure, not image. Previous 3 posters used
+  archetypes 1, 2, 12 — archetype 6 is the structural rotation.
+
+  Brief is ruthlessly reductive:
+  - Subject: empty space with small glitching text
+  - Palette: white + black (strictly 2 colors)
+  - Extreme negative space
+  - Avoid: decoration, imagery overload
+
+  Composition: 97% white void. Text is tiny, centered, at y=500.
+  Character corruption via Unicode missing-glyph boxes (▯) and
+  a small rectangular char-replacement. Below the text: a blinking
+  cursor abstraction (thin horizontal bar, underscore-like).
+  Nothing else. No frame. No meta. No catalog. No footer.
+
+  Philosophy: Hara's 白 (haku / emptiness) — silence is active,
+  not passive. The white IS the content.
+
+  Catalog anchors:
+  - Kenya Hara emptiness principle (sources/principles/books/hara-emptiness.md)
+  - Vignelli + Lars Müller type-only posters (type-only-posters.md)
+  - Apple Silicon M1 keynote 2020 digital minimalism baseline
+    (2020-2023-ai-era-dawn.md)
+
+  2-color palette (strict):
+  - #FFFFFF — pure white (97% of canvas)
+  - #0A0A0A — near-black (3% — text + glyph boxes)
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <!-- Pure white ground -->
+  <rect width="612" height="888" fill="#FFFFFF"/>
+
+  <!-- ════════ THE ONLY CONTENT ═══════════════════════════
+       One line of tiny monospace text. Centered. With two
+       character-replacement glitch boxes where letters
+       should be. That's the entire poster.
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- ERROR LINE — 11pt monospace, centered at y=500, single element.
+       Glitch executed via Unicode ▮ (U+25AE BLACK VERTICAL RECTANGLE)
+       replacing letters I and O — the missing-glyph block is the
+       canonical digital-corruption signifier. -->
+  <text x="306" y="500" font-family="'Courier New', 'Andale Mono', Courier, monospace" font-size="11" letter-spacing="2.5" font-weight="400" fill="#0A0A0A" text-anchor="middle">404: MEAN▮NG NOT F▮UND</text>
+
+  <!-- ════════ BLINKING CURSOR (static suggestion) ═════════
+       A thin horizontal bar below the text, like a terminal
+       cursor blinking in an empty prompt. One more tiny mark.
+  ══════════════════════════════════════════════════════════ -->
+  <rect x="294" y="514" width="24" height="1.5" fill="#0A0A0A"/>
+</svg>
