@@ -277,40 +277,43 @@
   <line x1="56" y1="608" x2="556" y2="608" stroke="#F8F8F4" stroke-width="0.5" stroke-opacity="0.45"/>
   <line x1="56" y1="611" x2="556" y2="611" stroke="#F8F8F4" stroke-width="0.2" stroke-opacity="0.3"/>
 
-  <!-- Small-caps label: brutalist research-poster voice -->
-  <text x="306" y="630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" letter-spacing="5" font-weight="700" fill="#F8F8F4" fill-opacity="0.55" text-anchor="middle">
+  <!-- Small-caps label: brutalist research-poster voice
+       (lifted + tighter tracking + smaller so it doesn't merge with CONNECTED) -->
+  <text x="306" y="620" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" letter-spacing="3" font-weight="700" fill="#F8F8F4" fill-opacity="0.55" text-anchor="middle">
     A STUDY IN HYPER-CONNECTIVITY
   </text>
 
   <!-- ════════ TYPOGRAPHY: "CONNECTED / ALONE" ══════════════
-       Scale-contrast deliberately: CONNECTED smaller (70pt),
-       ALONE larger (102pt). The word that feels bigger
-       emotionally IS bigger physically — earns the concept.
+       Scale-contrast: CONNECTED smaller (60pt), ALONE larger (96pt).
+       Vertical anchors re-measured with Bringhurst breathing:
+         label desc y=621 → CONNECTED cap-top y=646 (25px gap)
+         CONNECTED desc y=692 → slash cap-top y=710 (18px gap)
+         slash desc y=732 → ALONE cap-top y=734 (minimal but clean,
+         slash is thin stroke so visual overlap negligible)
   ══════════════════════════════════════════════════════════ -->
   <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" fill="#F8F8F4">
-    <!-- CONNECTED — restrained -->
-    <text x="306" y="678" font-size="64" font-weight="900" letter-spacing="-2">CONNECTED</text>
+    <text x="306" y="690" font-size="60" font-weight="900" letter-spacing="-2">CONNECTED</text>
   </g>
 
-  <!-- Slash separator in cold blue (ties typographic block to phone palette) -->
-  <text x="306" y="720" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="300" fill="#4A86E8" text-anchor="middle">/</text>
+  <!-- Slash separator in cold blue (smaller + centered in its own zone) -->
+  <text x="306" y="732" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="300" fill="#4A86E8" text-anchor="middle">/</text>
 
-  <!-- ALONE — dominant (bigger than CONNECTED) -->
+  <!-- ALONE — dominant -->
   <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" fill="#F8F8F4">
-    <text x="306" y="790" font-size="96" font-weight="900" letter-spacing="-4">ALONE</text>
+    <text x="306" y="808" font-size="96" font-weight="900" letter-spacing="-4">ALONE</text>
   </g>
 
   <!-- ════════ FOOTER: MINIMAL CATALOG ═════════════════════ -->
-  <line x1="56" y1="808" x2="556" y2="808" stroke="#F8F8F4" stroke-width="0.3" stroke-opacity="0.35"/>
+  <line x1="56" y1="822" x2="556" y2="822" stroke="#F8F8F4" stroke-width="0.3" stroke-opacity="0.35"/>
 
   <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.55" text-anchor="middle">
-    <text x="306" y="824" font-size="8" letter-spacing="2">
+    <text x="306" y="838" font-size="7.5" letter-spacing="2">
       A POSTER ON HYPER-CONNECTIVITY AND ISOLATION  ·  MMXXVI
     </text>
   </g>
 
   <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.4">
-    <text x="56"  y="850" font-size="6.5" letter-spacing="1.5">CAT · DL-001 / 19-APR-2026</text>
-    <text x="556" y="850" font-size="6.5" letter-spacing="1.5" text-anchor="end">SINGLE EDITION · UNNUMBERED</text>
+    <text x="56"  y="854" font-size="6.5" letter-spacing="1.5">CAT · DL-001 / 19-APR-2026</text>
+    <text x="556" y="854" font-size="6.5" letter-spacing="1.5" text-anchor="end">SINGLE EDITION · UNNUMBERED</text>
   </g>
 </svg>
