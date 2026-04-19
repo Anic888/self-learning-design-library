@@ -116,6 +116,27 @@
         "Saville × Variable Bold is essentially Factory Records translated to 2026 — natural pairing",
         "Factory yellow as single accent can be applied to any monochrome base; becomes a 'stamp of identity'"
       ]
+    },
+    {
+      "id": "2026-04-19-digital-loneliness",
+      "date": "2026-04-19",
+      "brief": "High-impact poster for 'Digital Loneliness' — brutalist Swiss design × cinematic cyberpunk. Lone human in darkness, face lit only by smartphone. Metaphor: screen as only 'sun', everything else void.",
+      "theme": "conceptual-social-commentary",
+      "designer": "ash-thorp + massimo-vignelli (hybrid)",
+      "trend": "anti-design-brutalism + dark-editorial",
+      "palette": ["#080808", "#4A86E8", "#F8F8F4"],
+      "template": "01-hero-image-center (brutalist-annotation variant)",
+      "concept_statement": "Hunched lone figure illuminated solely by smartphone screen — the cold blue glow is the sole light-source in the void. Off-center framing (x=270) creates tension. Below, scale-contrast typography: CONNECTED small (64pt), ALONE large (96pt) — the word that feels bigger emotionally IS bigger physically. Brutalist research-poster annotations (SUBJECT/01, FIG. I, isolation metrics) flank the figure, reinforcing cold-studied tone.",
+      "critic_score": 9.3,
+      "critic_notes": "Hybrid Ash Thorp + Vignelli rare but natively compatible — both are discipline-first voices. Anti-design annotations add the brutalist edge without breaking Swiss discipline. Strict 3-color palette (#080808 + #4A86E8 + #F8F8F4) makes the cold blue phone glow carry all the emotional weight. PASSED layout-verifier on first iteration.",
+      "output_path": "my-works/2026-04-19-digital-loneliness/digital-loneliness.svg",
+      "lessons": [
+        "When brief says 'brutalist Swiss × cinematic cyberpunk', hybrid Thorp + Vignelli + Anti-Design annotations is the cleanest resolution — Thorp carries atmosphere, Vignelli carries grid discipline, Anti-Design carries the brutalist edge.",
+        "Scale-contrast typography (CONNECTED small, ALONE large) is the strongest way to make a two-word concept earn its meaning — visual hierarchy mirrors emotional hierarchy.",
+        "Off-center framing (x=270 instead of 306) on a 612-wide canvas creates tension without breaking composition — figure still within Swiss grid rules (safe zone 56-556).",
+        "Single-source light on a void background is the canonical 'digital isolation' visual — radial blue gradient from phone position + halation filter gives it cinematic punch without any other light sources (per brief anti-pattern).",
+        "Research-poster annotations (SUBJECT/01, FIG. I) add brutalist information-density to Thorp's minimal canvas — very specific brutalist DNA, rare but strong when the subject is study-like (social commentary, case analysis)."
+      ]
     }
   ],
   "patterns_that_work": [

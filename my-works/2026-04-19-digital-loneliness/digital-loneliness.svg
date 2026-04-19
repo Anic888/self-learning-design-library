@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "DIGITAL LONELINESS"
+  A conceptual poster on hyper-connectivity and isolation
+  612 × 888
+
+  Brief: brutalist Swiss design × cinematic cyberpunk
+  Winning concept: Ash Thorp × Brutalist Typography (Concept B)
+
+  Concept statement:
+  A lone figure hunched over a smartphone, face and hands illuminated
+  only by cold blue light — the screen as the sole "sun" in a void.
+  Everything outside the glow dissolves into deep black. The typography
+  below anchors the metaphor: CONNECTED small, ALONE large — the word
+  "alone" physically bigger because it's the dominant feeling.
+  Slightly off-center framing (figure at x=270) creates tension.
+
+  Style enforcement:
+  - Ash Thorp rules: hairline details (0.3-0.6px), 60%+ negative space,
+    cold near-black base, single saturated accent (here the blue glow,
+    not Thorp's usual amber — but same restraint principle).
+  - Massimo Vignelli brutalist: strict grid, grotesk caps, Swiss
+    precision in type placement.
+  - Anti-Design brutalism: intentional research-poster annotations
+    ("SUBJECT/01", "FIG. I") flanking the figure.
+  - Bringhurst: em-dashes, curly quotes, letter-spaced caps.
+
+  Strict 3-color palette:
+  - #080808 — near-black base
+  - #4A86E8 — cold screen blue (single saturated accent)
+  - #F8F8F4 — bone-white typography
+
+  ─── GRID PLAN ──────────────────────────────────────────
+  Outer frame: y=28 → y=860 (thin white rule, 0.35 opacity)
+  Usable x: 56 → 556
+
+  Vertical anchors:
+    y=56   top meta (catalog left + title right)
+    y=68   hairline
+    y=90   hairline (doubled for brutalist density)
+    y=100-580 hero figure zone (cropped vignette)
+    y=608  rule divider
+    y=624  "A STUDY IN" small caps label
+    y=662  "CONNECTED" (70pt) — smaller, restrained
+    y=700  "/" slash in cold blue (36pt)
+    y=770  "ALONE" (102pt) — larger, dominant emotional weight
+    y=808  footer: full caption in tiny grotesk
+    y=830  tiny catalog line
+    y=860  frame bottom
+  ─────────────────────────────────────────────────────────
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Deep near-black base -->
+    <radialGradient id="voidBg" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0"    stop-color="#0E0E10"/>
+      <stop offset="0.6"  stop-color="#080808"/>
+      <stop offset="1"    stop-color="#030304"/>
+    </radialGradient>
+
+    <!-- Phone screen glow: primary radial (cold blue) -->
+    <radialGradient id="phoneGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#A8C9F8" stop-opacity="1"/>
+      <stop offset="0.08" stop-color="#7BA5E8" stop-opacity="0.95"/>
+      <stop offset="0.25" stop-color="#4A86E8" stop-opacity="0.75"/>
+      <stop offset="0.55" stop-color="#285FB0" stop-opacity="0.35"/>
+      <stop offset="0.85" stop-color="#101830" stop-opacity="0.1"/>
+      <stop offset="1"    stop-color="#080808" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Screen-itself: bright blue-white rectangle core -->
+    <linearGradient id="screenItself" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#D8E8FF"/>
+      <stop offset="0.5" stop-color="#88B4F2"/>
+      <stop offset="1"   stop-color="#4A86E8"/>
+    </linearGradient>
+
+    <!-- Face-lit gradient (where phone light hits skin) -->
+    <radialGradient id="faceLit" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#6BAACF" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#3E6A9E" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#101830" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Hand-lit gradient (hands holding phone, underlit) -->
+    <radialGradient id="handLit" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0"   stop-color="#88B4F2" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#4A86E8" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#101830" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle digital grain -->
+    <filter id="digitalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="31"/>
+      <feColorMatrix values="0 0 0 0 0.3
+                             0 0 0 0 0.4
+                             0 0 0 0 0.55
+                             0 0 0 0.05 0"/>
+    </filter>
+
+    <!-- Soft glow filter for phone screen halation -->
+    <filter id="screenHalation" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip for hero zone (prevents glow bleeding into type area) -->
+    <clipPath id="heroZone">
+      <rect x="28" y="28" width="556" height="580"/>
+    </clipPath>
+  </defs>
+
+  <!-- ════════ VOID BACKGROUND ═════════════════════════════ -->
+  <rect width="612" height="888" fill="url(#voidBg)"/>
+
+  <!-- Digital grain overlay across everything (very subtle) -->
+  <rect width="612" height="888" fill="transparent" filter="url(#digitalNoise)" opacity="0.6"/>
+
+  <!-- ════════ OUTER FRAME (brutalist thin white rule) ═════ -->
+  <rect x="28" y="28" width="556" height="832" fill="none" stroke="#F8F8F4" stroke-width="0.5" stroke-opacity="0.35"/>
+
+  <!-- ════════ TOP META LINE ═══════════════════════════════ -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4">
+    <text x="56"  y="56" font-size="10" letter-spacing="4" font-weight="700">A POSTER STUDY</text>
+    <text x="556" y="56" font-size="10" letter-spacing="4" text-anchor="end" fill-opacity="0.7">DIGITAL LONELINESS · N°001 · MMXXVI</text>
+  </g>
+
+  <!-- Doubled hairline for brutalist density -->
+  <line x1="56" y1="68" x2="556" y2="68" stroke="#F8F8F4" stroke-width="0.5" stroke-opacity="0.5"/>
+  <line x1="56" y1="71" x2="556" y2="71" stroke="#F8F8F4" stroke-width="0.2" stroke-opacity="0.3"/>
+
+  <!-- ════════ HERO: FIGURE IN THE VOID ════════════════════
+       Subject at (270, ...) — slightly LEFT of center for tension
+       per brief. Phone position (270, 400). Radial blue glow
+       emanates from phone. Figure silhouette takes everything
+       outside the glow back to void-black.
+  ══════════════════════════════════════════════════════════ -->
+  <g clip-path="url(#heroZone)">
+
+    <!-- Blue radial glow (large, soft, emanating from phone) -->
+    <circle cx="270" cy="400" r="180" fill="url(#phoneGlow)"/>
+
+    <!-- Figure silhouette — hunched, knees up, phone held low -->
+    <g fill="#080808">
+      <!-- Knees / legs pulled up (bottom of composition) -->
+      <path d="M 180,580 L 180,470
+               C 180,445 200,430 225,432
+               C 248,432 260,452 265,475
+               C 270,500 260,525 248,540
+               L 260,580 Z" />
+      <path d="M 320,580 L 325,470
+               C 325,445 310,428 288,432
+               C 270,435 262,456 265,478
+               C 268,502 278,528 288,545
+               L 295,580 Z" />
+
+      <!-- Torso mass (hunched forward) -->
+      <path d="M 200,470
+               C 195,440 200,410 215,390
+               L 240,380
+               L 310,380
+               L 335,405
+               C 340,430 335,455 325,475
+               Z"/>
+
+      <!-- Arms descending from shoulders, bent toward phone at (270, 400) -->
+      <path d="M 215,395
+               C 210,405 215,420 230,415
+               C 250,410 260,400 262,395
+               Z"/>
+      <path d="M 325,395
+               C 330,407 323,420 308,415
+               C 290,410 282,400 280,395
+               Z"/>
+
+      <!-- Head (tilted forward, looking down at phone) -->
+      <ellipse cx="273" cy="350" rx="26" ry="32"/>
+
+      <!-- Shoulder blur into torso -->
+      <path d="M 240,380
+               L 240,395
+               L 305,395
+               L 310,380 Z"/>
+    </g>
+
+    <!-- ── LIGHT LAYER: face partially lit (phone light hits face) ── -->
+    <g>
+      <!-- Face-lit underside (chin + lower face caught in upward glow) -->
+      <ellipse cx="273" cy="362" rx="22" ry="16" fill="url(#faceLit)" opacity="0.95"/>
+
+      <!-- Softer spill on cheek / lower brow -->
+      <ellipse cx="275" cy="354" rx="18" ry="12" fill="url(#faceLit)" opacity="0.65"/>
+
+      <!-- Minimal highlight on nose/chin tip (brightest point on face) -->
+      <circle cx="278" cy="366" r="3" fill="#A8C9F8" opacity="0.8"/>
+      <circle cx="265" cy="358" r="2.5" fill="#88B4F2" opacity="0.6"/>
+    </g>
+
+    <!-- ── HANDS: holding phone, underlit by screen ─────────── -->
+    <g>
+      <!-- Left hand gripping phone bottom-left -->
+      <path d="M 252,398
+               C 246,402 244,410 248,416
+               L 262,412
+               L 268,404
+               Z"
+            fill="#1A2A45"/>
+      <path d="M 252,400
+               C 248,404 248,412 252,414
+               L 262,410
+               Z"
+            fill="url(#handLit)" opacity="0.85"/>
+
+      <!-- Right hand gripping phone bottom-right -->
+      <path d="M 288,398
+               C 294,402 296,410 292,416
+               L 278,412
+               L 272,404
+               Z"
+            fill="#1A2A45"/>
+      <path d="M 288,400
+               C 292,404 292,412 288,414
+               L 278,410
+               Z"
+            fill="url(#handLit)" opacity="0.85"/>
+    </g>
+
+    <!-- ── THE PHONE: bright blue screen, the only "sun" ─────── -->
+    <g filter="url(#screenHalation)">
+      <!-- Phone body -->
+      <rect x="256" y="388" width="28" height="20" rx="2" fill="#0A0A0A"/>
+      <!-- Phone screen (the light source) -->
+      <rect x="258" y="390" width="24" height="16" rx="1" fill="url(#screenItself)"/>
+      <!-- Thin detail lines on screen (status bar abstraction) -->
+      <rect x="260" y="392" width="14" height="0.8" fill="#FFFFFF" opacity="0.8"/>
+      <rect x="260" y="398" width="20" height="0.6" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="260" y="401" width="18" height="0.6" fill="#FFFFFF" opacity="0.5"/>
+      <rect x="260" y="404" width="16" height="0.6" fill="#FFFFFF" opacity="0.4"/>
+    </g>
+
+    <!-- Subtle light spill on upper chest (phone illuminates below neck) -->
+    <ellipse cx="273" cy="393" rx="40" ry="12" fill="url(#handLit)" opacity="0.4"/>
+
+    <!-- ── BRUTALIST RESEARCH-POSTER ANNOTATIONS ──────────── -->
+    <!-- Thin hairline annotations flanking the figure (Thorp HUD DNA) -->
+    <g stroke="#F8F8F4" stroke-width="0.35" stroke-opacity="0.4" fill="none">
+      <!-- Left annotation bracket -->
+      <path d="M 130,380 L 140,380 L 140,420 L 130,420"/>
+      <line x1="100" y1="400" x2="140" y2="400"/>
+      <!-- Right annotation bracket -->
+      <path d="M 482,380 L 472,380 L 472,420 L 482,420"/>
+      <line x1="472" y1="400" x2="512" y2="400"/>
+    </g>
+
+    <!-- Left label -->
+    <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.55">
+      <text x="68" y="398" font-size="8" letter-spacing="2" font-weight="700">SUBJECT / 01</text>
+      <text x="68" y="410" font-size="7" letter-spacing="1.5">single-source illum.</text>
+      <text x="68" y="420" font-size="7" letter-spacing="1.5">≈ 400 nits · 6500K</text>
+    </g>
+
+    <!-- Right label -->
+    <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.55" text-anchor="end">
+      <text x="544" y="398" font-size="8" letter-spacing="2" font-weight="700">FIG. I</text>
+      <text x="544" y="410" font-size="7" letter-spacing="1.5">isolation metric:</text>
+      <text x="544" y="420" font-size="7" letter-spacing="1.5">6.8h / 24h daily</text>
+    </g>
+  </g>
+
+  <!-- ════════ DIVIDER RULE ════════════════════════════════ -->
+  <line x1="56" y1="608" x2="556" y2="608" stroke="#F8F8F4" stroke-width="0.5" stroke-opacity="0.45"/>
+  <line x1="56" y1="611" x2="556" y2="611" stroke="#F8F8F4" stroke-width="0.2" stroke-opacity="0.3"/>
+
+  <!-- Small-caps label: brutalist research-poster voice -->
+  <text x="306" y="630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" letter-spacing="5" font-weight="700" fill="#F8F8F4" fill-opacity="0.55" text-anchor="middle">
+    A STUDY IN HYPER-CONNECTIVITY
+  </text>
+
+  <!-- ════════ TYPOGRAPHY: "CONNECTED / ALONE" ══════════════
+       Scale-contrast deliberately: CONNECTED smaller (70pt),
+       ALONE larger (102pt). The word that feels bigger
+       emotionally IS bigger physically — earns the concept.
+  ══════════════════════════════════════════════════════════ -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" fill="#F8F8F4">
+    <!-- CONNECTED — restrained -->
+    <text x="306" y="678" font-size="64" font-weight="900" letter-spacing="-2">CONNECTED</text>
+  </g>
+
+  <!-- Slash separator in cold blue (ties typographic block to phone palette) -->
+  <text x="306" y="720" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="300" fill="#4A86E8" text-anchor="middle">/</text>
+
+  <!-- ALONE — dominant (bigger than CONNECTED) -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" fill="#F8F8F4">
+    <text x="306" y="790" font-size="96" font-weight="900" letter-spacing="-4">ALONE</text>
+  </g>
+
+  <!-- ════════ FOOTER: MINIMAL CATALOG ═════════════════════ -->
+  <line x1="56" y1="808" x2="556" y2="808" stroke="#F8F8F4" stroke-width="0.3" stroke-opacity="0.35"/>
+
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.55" text-anchor="middle">
+    <text x="306" y="824" font-size="8" letter-spacing="2">
+      A POSTER ON HYPER-CONNECTIVITY AND ISOLATION  ·  MMXXVI
+    </text>
+  </g>
+
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#F8F8F4" fill-opacity="0.4">
+    <text x="56"  y="850" font-size="6.5" letter-spacing="1.5">CAT · DL-001 / 19-APR-2026</text>
+    <text x="556" y="850" font-size="6.5" letter-spacing="1.5" text-anchor="end">SINGLE EDITION · UNNUMBERED</text>
+  </g>
+</svg>
