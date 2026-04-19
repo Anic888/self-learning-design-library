@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "THE FINAL LOOP"
+  Christopher Nolan cinematic / recursive identity
+  612 × 888
+
+  Structural archetype: 1 (Classical Centered Hero) executed
+  WITHOUT skeleton crutches. Previous 3 posters used 12/6/4 —
+  archetype 1 is not in recent window. But deliberately omit:
+  - No hairline outer frame
+  - No top-meta catalog line
+  - No hero→divider→type→footer sequence
+  - No brutalist research annotations
+  - No stacked italics
+  - No split footer
+
+  What's here: symmetrical one-point perspective corridor
+  (Nolan/Kubrick signature), multiple silhouetted figures
+  receding toward vanishing point, amber end-of-corridor glow,
+  desaturated cool palette, minimal cinematic serif title.
+
+  Brief honored:
+  - Main subject: man walking through repeating copies of himself
+    → 8 figures along central axis, each smaller as it recedes
+  - Metaphor: time trapping identity
+    → each figure is IDENTICAL — no individuation
+  - Layered perspective + recursive visuals
+    → one-point perspective, hallway + overhead lights recede
+  - Desaturated + muted orange highlights
+    → concrete gray base + single amber glow at vanishing point
+  - Realistic cinematic light
+    → backlit figures, rim-light from corridor end
+  - Minimal small type
+    → "THE FINAL LOOP" small cinematic serif, one credit line
+  - Cerebral, tense mood
+    → Kubrick/Nolan-symmetry + IMAX-scale haze
+  - Avoid bright colors + obvious sci-fi clichés
+    → palette entirely desaturated, no neon, no "futuristic" UI
+
+  Catalog anchors (from sources/research/poster-catalog/):
+  - Kilian Eng "Blade Runner 2049" (illustration-posters.md)
+    — cinematic atmospheric depth
+  - Apple visionOS D&AD 2024 Black Pencil (2024-2026-contemporary.md)
+    — minimalist tech restraint
+  - Saul Bass cinematic title lineage — classical serif
+  - Ash Thorp cold cinematic UI — hairline restraint
+
+  Palette:
+  - #1A1C20 — deepest shadow (corridor floor, deep ceiling)
+  - #252A32 — cool blue-gray shadow (walls in shadow)
+  - #3A3D42 — concrete mid-gray (lit surfaces)
+  - #E0DDD4 — off-white (highlight edges)
+  - #C89A5A — muted amber (Nolan-signature, ONE accent at
+    corridor end)
+  - #0A0C10 — near-black (figures, type)
+
+  Vanishing point: (306, 440) — just above geometric center.
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Corridor end glow: amber sunset/ominous light -->
+    <radialGradient id="endGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#E8B870"/>
+      <stop offset="0.3"  stop-color="#C89A5A"/>
+      <stop offset="0.65" stop-color="#8A6030" stop-opacity="0.7"/>
+      <stop offset="1"    stop-color="#1A1C20" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ceiling gradient (dark top, light toward center) -->
+    <linearGradient id="ceiling" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#0A0C10"/>
+      <stop offset="0.5" stop-color="#1A1C20"/>
+      <stop offset="1"   stop-color="#252A32"/>
+    </linearGradient>
+
+    <!-- Left wall gradient (in shadow) -->
+    <linearGradient id="leftWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#1A1C20"/>
+      <stop offset="1"   stop-color="#2A2E35"/>
+    </linearGradient>
+
+    <!-- Right wall gradient (mirror) -->
+    <linearGradient id="rightWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#2A2E35"/>
+      <stop offset="1"   stop-color="#1A1C20"/>
+    </linearGradient>
+
+    <!-- Floor: darker foreground, faintly lit deep -->
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#3A3D42"/>
+      <stop offset="0.5" stop-color="#2A2E35"/>
+      <stop offset="1"   stop-color="#1A1C20"/>
+    </linearGradient>
+
+    <!-- Atmospheric haze for depth -->
+    <radialGradient id="haze" cx="0.5" cy="0.5" r="0.35">
+      <stop offset="0"   stop-color="#C89A5A" stop-opacity="0.18"/>
+      <stop offset="0.5" stop-color="#5A5040" stop-opacity="0.1"/>
+      <stop offset="1"   stop-color="#1A1C20" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Film grain for cinematic quality -->
+    <filter id="cinemaGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="2" seed="53"/>
+      <feColorMatrix values="0 0 0 0 0.75
+                             0 0 0 0 0.72
+                             0 0 0 0 0.65
+                             0 0 0 0.06 0"/>
+    </filter>
+
+    <!-- Soft glow for corridor-end -->
+    <filter id="endBloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- ════════ BASE: DEEP SHADOW ═══════════════════════════ -->
+  <rect width="612" height="888" fill="#0A0C10"/>
+
+  <!-- ════════ CORRIDOR ARCHITECTURE (one-point perspective) ══
+       Vanishing point at (306, 440). Ceiling at top, floor at
+       bottom, walls on sides — all converging to VP.
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- Ceiling (trapezoidal, converges to VP) -->
+  <polygon points="0,80 612,80 406,440 206,440" fill="url(#ceiling)"/>
+
+  <!-- Floor (trapezoidal, converges to VP) -->
+  <polygon points="0,888 612,888 406,440 206,440" fill="url(#floor)"/>
+
+  <!-- Left wall (trapezoidal) -->
+  <polygon points="0,80 206,440 206,440 0,888" fill="url(#leftWall)"/>
+
+  <!-- Right wall (trapezoidal) -->
+  <polygon points="612,80 406,440 406,440 612,888" fill="url(#rightWall)"/>
+
+  <!-- End of corridor: rectangular opening with amber glow -->
+  <rect x="206" y="260" width="200" height="260" fill="#1A1C20"/>
+
+  <!-- Amber glow from end of corridor -->
+  <ellipse cx="306" cy="440" rx="180" ry="200" fill="url(#endGlow)" filter="url(#endBloom)"/>
+  <ellipse cx="306" cy="440" rx="120" ry="130" fill="url(#endGlow)" opacity="0.85"/>
+  <ellipse cx="306" cy="440" rx="60" ry="70" fill="#E8B870" opacity="0.6"/>
+
+  <!-- ════════ OVERHEAD LIGHT FIXTURES ═════════════════════
+       Receding rectangles on ceiling, diminishing per perspective.
+  ══════════════════════════════════════════════════════════ -->
+  <g fill="#E0DDD4">
+    <!-- Foreground lights (left side) -->
+    <rect x="60" y="120" width="70" height="6" opacity="0.85"/>
+    <rect x="110" y="180" width="55" height="5" opacity="0.8"/>
+    <rect x="150" y="240" width="42" height="4" opacity="0.75"/>
+    <rect x="180" y="290" width="32" height="3" opacity="0.7"/>
+    <rect x="200" y="330" width="22" height="2.5" opacity="0.65"/>
+    <rect x="215" y="365" width="15" height="2" opacity="0.6"/>
+    <rect x="225" y="390" width="10" height="1.5" opacity="0.55"/>
+    <!-- Mirror right side -->
+    <rect x="482" y="120" width="70" height="6" opacity="0.85"/>
+    <rect x="447" y="180" width="55" height="5" opacity="0.8"/>
+    <rect x="420" y="240" width="42" height="4" opacity="0.75"/>
+    <rect x="400" y="290" width="32" height="3" opacity="0.7"/>
+    <rect x="390" y="330" width="22" height="2.5" opacity="0.65"/>
+    <rect x="382" y="365" width="15" height="2" opacity="0.6"/>
+    <rect x="377" y="390" width="10" height="1.5" opacity="0.55"/>
+  </g>
+
+  <!-- Light glow underneath each fixture (cinematic) -->
+  <g fill="#E8B870" opacity="0.12">
+    <ellipse cx="95" cy="140" rx="70" ry="30"/>
+    <ellipse cx="137" cy="195" rx="55" ry="22"/>
+    <ellipse cx="170" cy="250" rx="40" ry="16"/>
+    <ellipse cx="517" cy="140" rx="70" ry="30"/>
+    <ellipse cx="475" cy="195" rx="55" ry="22"/>
+    <ellipse cx="442" cy="250" rx="40" ry="16"/>
+  </g>
+
+  <!-- ════════ WALL PANEL LINES (subtle architectural grid) ═ -->
+  <g stroke="#3A3D42" stroke-width="0.5" opacity="0.5" fill="none">
+    <!-- Left wall vertical panels -->
+    <line x1="40" y1="100" x2="198" y2="420"/>
+    <line x1="80" y1="100" x2="200" y2="430"/>
+    <line x1="120" y1="100" x2="202" y2="435"/>
+    <line x1="160" y1="100" x2="204" y2="438"/>
+    <!-- Left wall horizontal divider line -->
+    <line x1="0" y1="180" x2="206" y2="440"/>
+    <line x1="0" y1="260" x2="206" y2="440"/>
+    <line x1="0" y1="340" x2="206" y2="440"/>
+    <!-- Right wall mirror -->
+    <line x1="572" y1="100" x2="414" y2="420"/>
+    <line x1="532" y1="100" x2="412" y2="430"/>
+    <line x1="492" y1="100" x2="410" y2="435"/>
+    <line x1="452" y1="100" x2="408" y2="438"/>
+    <line x1="612" y1="180" x2="406" y2="440"/>
+    <line x1="612" y1="260" x2="406" y2="440"/>
+    <line x1="612" y1="340" x2="406" y2="440"/>
+  </g>
+
+  <!-- Floor grid lines (perspective tiles) -->
+  <g stroke="#3A3D42" stroke-width="0.5" opacity="0.4" fill="none">
+    <line x1="0" y1="600" x2="612" y2="600"/>
+    <line x1="0" y1="700" x2="612" y2="700"/>
+    <line x1="0" y1="800" x2="612" y2="800"/>
+    <!-- Perspective vertical lines -->
+    <line x1="-100" y1="888" x2="306" y2="440"/>
+    <line x1="100" y1="888" x2="306" y2="440"/>
+    <line x1="200" y1="888" x2="306" y2="440"/>
+    <line x1="300" y1="888" x2="306" y2="440"/>
+    <line x1="412" y1="888" x2="306" y2="440"/>
+    <line x1="512" y1="888" x2="306" y2="440"/>
+    <line x1="712" y1="888" x2="306" y2="440"/>
+  </g>
+
+  <!-- ════════ 8 RECURSIVE FIGURES — receding toward VP ═════
+       All IDENTICAL silhouettes (time trapping identity).
+       Each smaller than previous. All centered on x=306 axis.
+       Front-view, arms at sides, walking pose suggested.
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- Figure 8 (furthest, at vanishing point — tiny dot) -->
+  <g fill="#0A0C10">
+    <rect x="304" y="432" width="4" height="10" rx="0.5"/>
+    <circle cx="306" cy="430" r="1.8"/>
+  </g>
+
+  <!-- Figure 7 -->
+  <g fill="#0A0C10">
+    <rect x="302" y="424" width="8" height="18" rx="1"/>
+    <circle cx="306" cy="421" r="3"/>
+    <!-- Amber rim -->
+    <rect x="302" y="424" width="8" height="18" rx="1" fill="none" stroke="#C89A5A" stroke-width="0.4" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Figure 6 -->
+  <g fill="#0A0C10">
+    <rect x="298" y="412" width="16" height="30" rx="1.5"/>
+    <circle cx="306" cy="408" r="5"/>
+    <rect x="298" y="412" width="16" height="30" rx="1.5" fill="none" stroke="#C89A5A" stroke-width="0.5" stroke-opacity="0.65"/>
+  </g>
+
+  <!-- Figure 5 -->
+  <g fill="#0A0C10">
+    <rect x="292" y="394" width="28" height="48" rx="2"/>
+    <circle cx="306" cy="387" r="8"/>
+    <rect x="292" y="394" width="28" height="48" rx="2" fill="none" stroke="#C89A5A" stroke-width="0.6" stroke-opacity="0.7"/>
+  </g>
+
+  <!-- Figure 4 -->
+  <g fill="#0A0C10">
+    <rect x="284" y="370" width="44" height="72" rx="3"/>
+    <circle cx="306" cy="358" r="12"/>
+    <!-- Amber backlight rim -->
+    <rect x="284" y="370" width="44" height="72" rx="3" fill="none" stroke="#C89A5A" stroke-width="0.8" stroke-opacity="0.8"/>
+    <!-- Arms hint -->
+    <rect x="278" y="388" width="8" height="34" rx="1.5"/>
+    <rect x="326" y="388" width="8" height="34" rx="1.5"/>
+    <!-- Legs hint -->
+    <rect x="290" y="436" width="10" height="6"/>
+    <rect x="312" y="436" width="10" height="6"/>
+  </g>
+
+  <!-- Figure 3 -->
+  <g fill="#0A0C10">
+    <rect x="272" y="340" width="68" height="108" rx="4"/>
+    <circle cx="306" cy="322" r="17"/>
+    <rect x="272" y="340" width="68" height="108" rx="4" fill="none" stroke="#C89A5A" stroke-width="1" stroke-opacity="0.85"/>
+    <!-- Arms -->
+    <rect x="262" y="360" width="12" height="50" rx="2"/>
+    <rect x="338" y="360" width="12" height="50" rx="2"/>
+    <!-- Legs/feet hint -->
+    <rect x="282" y="442" width="14" height="10"/>
+    <rect x="316" y="442" width="14" height="10"/>
+    <!-- Head shadow -->
+    <ellipse cx="306" cy="336" rx="16" ry="4" fill="#0A0C10" opacity="0.8"/>
+  </g>
+
+  <!-- Figure 2 -->
+  <g fill="#0A0C10">
+    <rect x="254" y="294" width="104" height="164" rx="5"/>
+    <!-- Head -->
+    <circle cx="306" cy="270" r="25"/>
+    <!-- Shoulder/neck transition -->
+    <ellipse cx="306" cy="296" rx="28" ry="6"/>
+    <!-- Amber rim light (backlit by corridor end) -->
+    <rect x="254" y="294" width="104" height="164" rx="5" fill="none" stroke="#C89A5A" stroke-width="1.2" stroke-opacity="0.9"/>
+    <circle cx="306" cy="270" r="25" fill="none" stroke="#C89A5A" stroke-width="1.2" stroke-opacity="0.9"/>
+    <!-- Arms -->
+    <rect x="238" y="318" width="18" height="74" rx="3"/>
+    <rect x="356" y="318" width="18" height="74" rx="3"/>
+    <!-- Legs -->
+    <rect x="270" y="452" width="22" height="14"/>
+    <rect x="320" y="452" width="22" height="14"/>
+  </g>
+
+  <!-- Figure 1 (FOREGROUND — largest, most detailed) -->
+  <g fill="#0A0C10">
+    <!-- Long cast shadow ahead of figure (on floor) -->
+    <ellipse cx="306" cy="720" rx="80" ry="14" opacity="0.45"/>
+    <path d="M 306,640 L 260,720 L 352,720 Z" opacity="0.55"/>
+
+    <!-- Body torso + legs -->
+    <rect x="226" y="220" width="160" height="260" rx="8"/>
+    <!-- Head -->
+    <circle cx="306" cy="180" r="42"/>
+    <!-- Neck/shoulder -->
+    <ellipse cx="306" cy="218" rx="46" ry="10"/>
+    <!-- Arms -->
+    <rect x="196" y="260" width="30" height="126" rx="6"/>
+    <rect x="386" y="260" width="30" height="126" rx="6"/>
+    <!-- Legs -->
+    <rect x="246" y="478" width="34" height="142" rx="4"/>
+    <rect x="332" y="478" width="34" height="142" rx="4"/>
+    <!-- Shoes -->
+    <rect x="238" y="616" width="46" height="16" rx="3"/>
+    <rect x="328" y="616" width="46" height="16" rx="3"/>
+
+    <!-- Amber rim light on body edges (strong backlit) -->
+    <g fill="none" stroke="#C89A5A" stroke-width="1.6" stroke-opacity="1">
+      <circle cx="306" cy="180" r="42"/>
+      <path d="M 226,220 L 226,478"/>
+      <path d="M 386,220 L 386,478"/>
+      <path d="M 196,260 L 196,386"/>
+      <path d="M 416,260 L 416,386"/>
+    </g>
+
+    <!-- Secondary amber glow halo (very soft around silhouette) -->
+    <g fill="none" stroke="#C89A5A" stroke-width="3" stroke-opacity="0.35">
+      <circle cx="306" cy="180" r="44"/>
+      <rect x="224" y="219" width="164" height="262" rx="10"/>
+    </g>
+  </g>
+
+  <!-- Atmospheric haze overlay in center (depth-fog) -->
+  <rect width="612" height="888" fill="url(#haze)"/>
+
+  <!-- Distant dust-motes in amber glow -->
+  <g fill="#E8B870" opacity="0.5">
+    <circle cx="290" cy="398" r="0.5"/>
+    <circle cx="320" cy="405" r="0.4"/>
+    <circle cx="298" cy="415" r="0.5"/>
+    <circle cx="312" cy="420" r="0.35"/>
+    <circle cx="302" cy="425" r="0.4"/>
+    <circle cx="316" cy="430" r="0.3"/>
+  </g>
+
+  <!-- Cinema grain overlay -->
+  <rect width="612" height="888" filter="url(#cinemaGrain)" opacity="0.38"/>
+
+  <!-- ════════ MINIMAL TITLE — cinematic serif, small ══════
+       Placed below figure, small scale per brief. No frame,
+       no catalog, no credits stack. Just title + one line.
+  ══════════════════════════════════════════════════════════ -->
+  <text x="306" y="776" font-family="Georgia, 'Times New Roman', 'EB Garamond', serif" font-size="38" font-weight="400" fill="#E0DDD4" text-anchor="middle" letter-spacing="10">THE FINAL LOOP</text>
+
+  <!-- One credit line, tiny, all-caps grotesk -->
+  <text x="306" y="812" font-family="Helvetica, 'Helvetica Neue', Arial, sans-serif" font-size="8.5" letter-spacing="5" fill="#C89A5A" fill-opacity="0.75" text-anchor="middle">
+    A FILM BY CHRISTOPHER KERR  ·  MMXXVI
+  </text>
+</svg>
