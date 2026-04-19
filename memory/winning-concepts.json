@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "description": "Winning concepts log. Each entry is a concept that was selected by the design-critic and successfully rendered as a poster. The design-creator reads this file before generating new concepts so it can bias toward patterns that have worked.",
+  "updated_at": "2026-04-19",
+  "entries": [
+    {
+      "id": "2026-04-18-cinema-arrakis",
+      "date": "2026-04-18",
+      "brief": "Create a cinema poster for a fictional arthouse sci-fi film called ARRAKIS: THE SILENT SUN",
+      "theme": "cinema",
+      "designer": "kilian-eng",
+      "trend": "dark-academia",
+      "palette": ["#F2E9D8", "#D95C2A", "#C49220", "#6B3E8C", "#8A2C1E"],
+      "template": "01-hero-image-center",
+      "concept_statement": "Mondo-tradition alternative movie poster. Kilian Eng Mode 1 warm palette. Dark Academia typography (classical serif with drop cap and small caps). Three celestial bodies (signature), tiny silhouette figure, dithered sky, ornamental corners, oxblood drop cap.",
+      "critic_score": 9.2,
+      "critic_notes": "Strong concept (three suns earn the title), Bringhurst-clean, Mondo-canon composition, ornamental density without clutter.",
+      "output_path": "my-works/showcase-themed-2026/01-cinema-arrakis.svg",
+      "lessons": [
+        "Kilian Mode 1 + Dark Academia = natural pairing; classical serif preserves Mondo mystery",
+        "Drop cap in oxblood on warm paper = immediately evocative of limited-edition prints",
+        "Horizon at two-thirds with tiny silhouette for scale is load-bearing for Kilian work"
+      ]
+    },
+    {
+      "id": "2026-04-18-art-aftermachine",
+      "date": "2026-04-18",
+      "brief": "Poster for Tate Modern exhibition AFTER THE MACHINE about art in the age of synthetic authorship",
+      "theme": "art",
+      "designer": "peter-saville",
+      "trend": "neo-futurism-spatial-ui",
+      "palette": ["#F3EEE4", "#8C5636", "#9C6144", "#1A1A1A", "#F72585"],
+      "template": "01-hero-image-center (frosted-card variant)",
+      "concept_statement": "Appropriated Caravaggio-lit classical hand with fingertips dissolving into pixels — the 'machine' creeping into human gesture. Frosted-glass Neo-Futurism card floats over bottom third carrying minimal Saville typography. Iridescent accent mark serves as 'exhibition-open' indicator.",
+      "critic_score": 9.0,
+      "critic_notes": "Concept strength exceptional (pixel-fingertip metaphor earns the exhibition brief). Saville DNA preserved (appropriated image dominant, minimal type). Spatial-UI layer added 2026 finish without undermining classical sophistication.",
+      "output_path": "my-works/showcase-themed-2026/02-art-aftermachine.svg",
+      "lessons": [
+        "Saville × Neo-Futurism works when spatial-UI layer is frosted-glass CARD, not full interface",
+        "Appropriated classical imagery with a single contemporary corruption = the strongest Saville-descended concept move",
+        "Factory catalog numbering (FAC·T·2026·047) always works in cultural-institution posters"
+      ]
+    },
+    {
+      "id": "2026-04-18-music-blue-nothing",
+      "date": "2026-04-18",
+      "brief": "Poster for fictional Blue Note Records jazz quartet album BLUE NOTHING",
+      "theme": "music-jazz",
+      "designer": "stefan-sagmeister",
+      "trend": "editorial-maximalism",
+      "palette": ["#F4EEDE", "#0F2044", "#8A2C1E", "#A03022", "#D4A94A"],
+      "template": "03-object-bleed",
+      "concept_statement": "Giant black vinyl record bleeds off right edge. Label uses classical Blue Note vocabulary (red center, gold ring, spindle hole). Text column left carries wordmark and ensemble list. Hand-drawn scribble = Sagmeister craft-visible signature. Concept: jazz = the silence between notes; vinyl documents that silence physically.",
+      "critic_score": 8.8,
+      "critic_notes": "Image-dominant variant of Sagmeister (second pass: v1 was type-dominant with 'NOTHING' outline letters and musical rest symbol — also strong but less classical). Image-forward variant chosen for Blue Note heritage fit.",
+      "output_path": "my-works/showcase-themed-2026/03-music-blue-nothing.svg",
+      "lessons": [
+        "Object-bleed template with circular object (vinyl, mirror, medallion) is natural for music/ritual subjects",
+        "Blue Note label convention (red + gold arc-text) works as both tribute and contemporary reference",
+        "Hand-drawn scribble + thin rule next to classical type = Sagmeister craft signature without overdoing it"
+      ]
+    },
+    {
+      "id": "2026-04-18-games-ashfall",
+      "date": "2026-04-18",
+      "brief": "Poster for fictional soulslike dark-fantasy game ASHFALL: Kingdom of Ruin (FromSoftware-adjacent)",
+      "theme": "games-darkfantasy",
+      "designer": "yoji-shinkawa",
+      "trend": "dreamcore-liminal",
+      "palette": ["#F5F0E2", "#0E0E0E", "#A33020", "#E8D4D0", "#6A5E58"],
+      "template": "01-hero-image-center",
+      "concept_statement": "Contemplative soulslike frozen in time. Lone ink-brushed kneeling knight with sword planted. Huge ruined torii gate fading into dreamcore pastel fog (wrong-scale: gate enormous, knight tiny). Ash falling as ink tick-marks. Oxblood blood-splatter at sword tip. 灰 (ash) kanji red seal bottom-right.",
+      "critic_score": 9.3,
+      "critic_notes": "Shinkawa discipline preserved (60%+ negative space, monochrome figure, oxblood seal). Dreamcore bent Shinkawa's 'no color' rule only in BACKGROUND wash — figure stays pure. Wrong-scale torii creates liminal tension without breaking Shinkawa composition rules.",
+      "output_path": "my-works/showcase-themed-2026/04-games-ashfall.svg",
+      "lessons": [
+        "Shinkawa × Dreamcore works ONLY when pastel wash stays in background — figure must remain pure ink",
+        "Wrong-scale architecture (torii huge vs knight tiny) is the dreamcore move inside Shinkawa discipline",
+        "East-Asian red seal with kanji works as game-box stamp; doubles as Shinkawa authenticity marker"
+      ]
+    },
+    {
+      "id": "2026-04-18-hitech-compose",
+      "date": "2026-04-18",
+      "brief": "Poster for fictional AI developer conference COMPOSE 2026",
+      "theme": "hitech-ai",
+      "designer": "refik-anadol",
+      "trend": "aurora-mesh-gradient",
+      "palette": ["#0E0428", "#F72585", "#00D9FF", "#FFEE00", "#7B4AFF", "#FFFFFF"],
+      "template": "04-field-over-hero",
+      "concept_statement": "Deep-space base with 4-point aurora mesh (magenta / cyan / yellow / violet blooms heavily blurred). Point cloud (~100 dots) overlays field with glow on anchor dots. Sharp SF-Pro-esque white typography. Speakers grid below hero. Date highlighted in Factory yellow. Complete palette break from posters 1-4 (which were all warm-paper-based).",
+      "critic_score": 9.1,
+      "critic_notes": "Perfect Anadol Mode 1 Neon Data execution. Typography contrast (68pt ultra-bold COMPOSE + 32pt thin '2 0 2 6') works. Aurora + point cloud layered in correct order (blooms first blurred, points last).",
+      "output_path": "my-works/showcase-themed-2026/05-hitech-compose.svg",
+      "lessons": [
+        "Tech conference posters BREAK the paper-base register cleanly — embrace deep space + neon",
+        "Heavy Gaussian blur (stdDeviation=36) on radial gradients is the 'aurora' signature",
+        "Glow filter (Gaussian + merge) on white point-cloud dots gives them the 'data-pulse' feel"
+      ]
+    },
+    {
+      "id": "2026-04-18-electronic-kompakt25",
+      "date": "2026-04-18",
+      "brief": "25th anniversary compilation poster for fictional Kompakt Records",
+      "theme": "music-electronic-label",
+      "designer": "peter-saville",
+      "trend": "variable-bold-typography",
+      "palette": ["#0E0E0E", "#F8F8F4", "#FFD90F"],
+      "template": "02-type-as-image",
+      "concept_statement": "Pure typography — no imagery. Giant '25' at 340pt fills canvas center. Factory-yellow horizontal bar slashes through numerals. Small 'KOMPAKT' ultra-extended wordmark above. Artist grid below. Factory-style yellow catalog stamp. Third distinct palette register (jet+bone+yellow pop).",
+      "critic_score": 9.4,
+      "critic_notes": "Most disciplined Saville execution in the set. Variable Bold trend amplifies Saville's Factory DNA rather than fighting it. 3-color palette shows restraint that makes Factory-yellow pop land harder.",
+      "output_path": "my-works/showcase-themed-2026/06-music-kompakt-25.svg",
+      "lessons": [
+        "Anniversary posters with a 2-digit year at 340pt work for any label / institution with heritage",
+        "Saville × Variable Bold is essentially Factory Records translated to 2026 — natural pairing",
+        "Factory yellow as single accent can be applied to any monochrome base; becomes a 'stamp of identity'"
+      ]
+    }
+  ],
+  "patterns_that_work": [
+    "Warm-paper base + oxblood drop cap on tagline = classical cultural register (cinema, book, museum)",
+    "Deep-space + neon + white grotesk = tech / AI / electronic-music register",
+    "Monochrome + single saturated accent pop (Factory yellow, hot orange, magenta) = label / identity register",
+    "Single ink figure + pastel dreamcore background wash = games / contemplative register",
+    "Circular artifact bleeding off right edge + text column left = music / ritual register",
+    "Giant numeral or word at 300+pt centered = anniversary / milestone register",
+    "Appropriated classical image + frosted glass card overlay = cultural-institution register"
+  ],
+  "patterns_to_avoid": [
+    "Mixing Factory DNA (Saville) with chaos typography (Carson) — incompatible fundamentals",
+    "Hara + neon or gradients — violates his entire philosophy",
+    "Shinkawa with polychrome palette — breaks monochrome discipline",
+    "Anadol with warm paper or classical serif — anti-pattern",
+    "Josan with negative space — goes against zero-negative-space rule",
+    "More than 2 saturated accent colors in the same composition",
+    "Centered symmetric composition for Paula Scher work (she rejects symmetry)"
+  ]
+}

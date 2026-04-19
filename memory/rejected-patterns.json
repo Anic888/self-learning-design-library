@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "description": "Rejected concept patterns log. Each entry is a concept/combination that either failed critic scoring OR produced visual problems in iteration. The design-creator reads this to avoid repeating known-bad combinations.",
+  "updated_at": "2026-04-19",
+  "rejections": [
+    {
+      "id": "blue-nothing-v1-type-dominant",
+      "date": "2026-04-18",
+      "brief": "Poster for fictional Blue Note Records jazz quartet album BLUE NOTHING",
+      "designer": "stefan-sagmeister",
+      "trend": "editorial-maximalism",
+      "what_was_tried": "Giant 'BLUE' cropped off left edge + outline 'NOTHING' letters with paper showing through + musical quarter-rest inside the O",
+      "why_rejected": "User preferred v2 (image-dominant with vinyl record) over v1 (type-dominant). V1 was conceptually strong but read as 'experimental editorial' rather than 'Blue Note label'. The vinyl variant landed the heritage reference more cleanly.",
+      "lesson": "For heritage-label music posters, image-forward (artifact) often beats type-forward (conceptual). Save type-dominant for contemporary / conceptual releases where heritage isn't the anchor."
+    },
+    {
+      "id": "arrakis-v1-footer-overflow",
+      "date": "2026-04-18",
+      "brief": "ARRAKIS cinema poster",
+      "designer": "kilian-eng",
+      "trend": "dark-academia",
+      "what_was_tried": "Footer micro-credits at font-size=7 letter-spacing=2 with 115 characters '/ORIGINAL SCORE JONAS HILLBORG · CINEMATOGRAPHY SHIMA ARAKAWA · EDITED BY CLEMENT DUFOUR · PRODUCED BY AREL NYX/'",
+      "why_rejected": "Text width at those settings computed to 1026px. Safe zone is 500px. ~526px overflow. User caught it visibly.",
+      "lesson": "At font-size=7, max line width is ~70 chars at tracking=1. For 80+ chars, split across 2 lines OR reduce tracking OR shorten text. The layout-verifier now catches this automatically."
+    },
+    {
+      "id": "arrakis-studio-marks-below-frame",
+      "date": "2026-04-18",
+      "brief": "ARRAKIS cinema poster",
+      "designer": "kilian-eng",
+      "trend": "dark-academia",
+      "what_was_tried": "Studio edition marks at y=883 outside the outer frame which ended at y=860",
+      "why_rejected": "Marks rendered BELOW the decorative frame, breaking the composed container. User caught visibly.",
+      "lesson": "When extending content below a frame, EXTEND the frame too (adjust outer rect height). Never let content float below its container. Layout-verifier now catches frame-exit."
+    },
+    {
+      "id": "ashfall-genre-descriptor-overflow",
+      "date": "2026-04-18",
+      "brief": "ASHFALL games poster",
+      "designer": "yoji-shinkawa",
+      "trend": "dreamcore-liminal",
+      "what_was_tried": "'A CONTEMPLATIVE SOULSLIKE · SINGLE PLAYER · FIRST AND THIRD PERSON' at font=9 tracking=4 centered at x=306",
+      "why_rejected": "63 chars × 8.95 width-per-char = 564px. Safe zone 500px. 64px overflow split both sides.",
+      "lesson": "Tracking=4 is aggressive. At that tracking, keep strings under 55 chars. Or drop tracking to 2-3 for longer strings. Fixed by shortening to '1ST / 3RD PERSON' + reducing tracking to 2.5."
+    },
+    {
+      "id": "compose-speaker-footer-overlap",
+      "date": "2026-04-18",
+      "brief": "COMPOSE 2026 hitech poster",
+      "designer": "refik-anadol",
+      "trend": "aurora-mesh-gradient",
+      "what_was_tried": "Footer copy 'compose2026.dev · registration opens 01 MAR 2026 · early bird $890' on left anchor + '© MMXXVI COMPOSE FOUNDATION' on right anchor",
+      "why_rejected": "Left line ended at x=448. Right line started at x=398. 50px horizontal overlap.",
+      "lesson": "When two text blocks flank the same line (left-anchor + right-anchor), sum their widths + 30px minimum gap. If sum > 470px, split onto two lines instead."
+    },
+    {
+      "id": "blue-nothing-arc-text-wrong-y",
+      "date": "2026-04-18",
+      "brief": "Blue Note label arc text on vinyl",
+      "what_was_tried": "textPath with arc defined as 'M 300,460 A 100,100 0 0 1 540,460' but the label center is at (420, 360)",
+      "why_rejected": "Arc path was 100px BELOW the label center. Arc text rendered at completely wrong vertical position, crossed through central title text.",
+      "lesson": "For textPath arcs around a label, compute path coordinates based on (label_cx, label_cy) not arbitrary numbers. radius should be slightly inside label boundary. Verify arc endpoints match circle geometry."
+    },
+    {
+      "id": "arrakis-title-merges-subtitle",
+      "date": "2026-04-18",
+      "brief": "ARRAKIS title block",
+      "what_was_tried": "'A FILM BY LIN KERR' at y=96 (baseline) + ARRAKIS at y=140 (baseline, font-size 60)",
+      "why_rejected": "ARRAKIS cap-top at y=98 (140 - 60*0.72 = 98). Over-title baseline y=96, descenders reach y=99. Vertical gap was literally 0-1px. User caught 'merges together'.",
+      "lesson": "For large titles, always calculate cap-top AND over-title descender-bottom. Minimum 10-15px gap between them. Rule of thumb: space between title and over-title ≥ over-title font-size. Fixed by moving over-title to y=86 (10px lift)."
+    },
+    {
+      "id": "blue-nothing-wordmark-collision",
+      "date": "2026-04-18",
+      "brief": "Blue Nothing wordmark",
+      "what_was_tried": "'Blue' at x=56 font=42 letter-spacing=-1 (width ~78px, ends ~x=134) + 'Nothing' at x=140",
+      "why_rejected": "Only 6px gap between 'Blue' end and 'Nothing' start. Italic 'N' of Nothing overlapped with 'e' of Blue.",
+      "lesson": "Between two words styled differently (weight or italic), gap should be at least one character width (~20-30px for 42pt type). Fixed by moving Nothing to x=168 (34px gap)."
+    }
+  ],
+  "anti-pattern_register_by_style": {
+    "kenya-hara": "neon, gradients, maximalism, drop-shadows, 3+ accent colors",
+    "yoji-shinkawa": "polychrome, digital-flat, sans-serif, photographic realism",
+    "peter-saville": "chaos typography, grunge, mixed-font-per-letter",
+    "paula-scher": "centered symmetric, uniform type size, quiet restraint",
+    "david-carson": "grid-aligned, corporate-clean, uniform legibility",
+    "refik-anadol": "warm paper, classical serif, recognizable figures",
+    "massimo-vignelli": "more than 6 typefaces, gradients, illustration flourishes"
+  },
+  "overflow_prevention_rules": [
+    "For text-anchor=middle: calculate total width with current font + letter-spacing BEFORE placing. If > 500px, reduce one variable.",
+    "For text-anchor=start+end on same line: sum widths + 30px minimum gap. Total ≤ 470px or split lines.",
+    "For large display type: calculate cap-top = y - font_size*0.72 AND descender = y + font_size*0.22. Compare against neighboring elements.",
+    "For word pairs with different styling: gap ≥ one char width of the larger font.",
+    "For multi-line tagline blocks: line-height should be font_size * 1.3 (Bringhurst). If font=14, leading=18.",
+    "For footer stacks: start from frame bottom - 16px margin and work upward."
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "description": "Successful layout-pattern recipes — the grid plans that actually passed layout-verifier on first or second try. design-creator references this before generating SVG structure.",
+  "updated_at": "2026-04-19",
+  "patterns": [
+    {
+      "id": "mondo-classical-vertical",
+      "template": "01-hero-image-center",
+      "viewbox": [612, 888],
+      "frame": {"x": 28, "y": 28, "width": 556, "height": 832},
+      "safe_zone": {"x": 56, "x_max": 556, "y_top": 56, "y_bottom": 876},
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 4, "anchor_split": true},
+        "ornament_divider": {"y": 62, "type": "horizontal_rule_with_center_mark"},
+        "over_title": {"y": 86, "font_size": 12, "tracking": 6, "anchor": "middle", "italic": true},
+        "main_title": {"y": 140, "font_size": 60, "tracking": 12, "anchor": "middle", "weight": 400},
+        "subtitle_rules": {"y": 156, "type": "flanking_lines"},
+        "subtitle": {"y": 161, "font_size": 15, "tracking": 8, "italic": true},
+        "hero_scene": {"y_top": 176, "y_bottom": 706, "height": 530},
+        "mid_ornament": {"y": 722},
+        "tagline_block": {"y_start": 748, "line_height": 18, "lines": 3, "font_size": 14, "italic": true},
+        "drop_cap": {"x": 68, "y": 762, "font_size": 44, "color_hint": "oxblood"},
+        "cast_billing": {"y": 814, "font_size": 11.5, "tracking": 2, "weight": 700},
+        "micro_credits": {"y": 836, "font_size": 8, "tracking": 1, "italic": true},
+        "studio_edition_marks": {"y": 860, "font_size": 6.5, "tracking": 1, "anchor_split": true}
+      },
+      "used_in": ["01-cinema-arrakis.svg"],
+      "works_for": ["cinema", "book cover", "theater", "museum exhibition", "arthouse events"],
+      "passed_verification": true,
+      "notes": "This is the canonical Kilian-Eng-Mondo grid. Frame extended to y=860 accommodates all credits inside. Drop cap baseline y=762 aligns visually with 2nd tagline line."
+    },
+    {
+      "id": "saville-frosted-card-over-hero",
+      "template": "01-hero-image-center (variant)",
+      "viewbox": [612, 888],
+      "frame": {"x": 28, "y": 28, "width": 556, "height": 832},
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 4},
+        "hero_image": {"y_top": 100, "y_bottom": 540, "height": 440},
+        "frosted_card": {
+          "x": 96, "y": 556, "width": 420, "height": 160, "rx": 24,
+          "fill": "rgba(252,250,245,0.92)",
+          "stroke": "rgba(255,255,255,0.7)",
+          "shadow": "multi_layer_soft"
+        },
+        "iridescent_mark": {"cx": 130, "cy": 578, "r": 6},
+        "status_label": {"x": 144, "y": 581, "font_size": 8, "tracking": 2.5, "weight": 700},
+        "section_label": {"x": 494, "y": 581, "font_size": 8, "tracking": 2, "anchor": "end"},
+        "card_title": {"x": 306, "y": 628, "font_size": 30, "tracking": 2, "anchor": "middle"},
+        "card_subtitle": {"x": 306, "y": 653, "font_size": 13, "tracking": 1, "italic": true, "anchor": "middle"},
+        "card_dates": {"x": 118, "y": 692, "font_size": 9, "tracking": 2, "weight": 700},
+        "card_curators": {"x": 118, "y": 706, "font_size": 8.5, "italic": true},
+        "program_quote": {"x": 306, "y": 792, "font_size": 11, "italic": true, "anchor": "middle"},
+        "institution_footer": {"y": 830, "font_size": 8, "tracking": 3, "weight": 700}
+      },
+      "used_in": ["02-art-aftermachine.svg"],
+      "works_for": ["art exhibitions", "cultural institutions", "museum programming"],
+      "passed_verification": true,
+      "notes": "Frosted card partially overlaps hero image (y=540-556 overlap zone). Spatial-UI aesthetic through glassy panel. Multi-layer shadow (3 rects with increasing y-offset + blur) gives depth."
+    },
+    {
+      "id": "object-bleed-vinyl",
+      "template": "03-object-bleed",
+      "viewbox": [612, 888],
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 4},
+        "wordmark_left": {"x": 56, "y": 108, "font_size": 42, "weight": 700},
+        "wordmark_italic": {"x": 168, "y": 108, "font_size": 42, "weight": 400, "italic": true},
+        "wordmark_rule": {"x1": 56, "y1": 122, "x2": 326, "y2": 122, "stroke": "#0F2044"},
+        "tagline": {"x": 56, "y": 144, "font_size": 13, "italic": true, "color_hint": "oxblood"},
+        "hero_object": {
+          "type": "circle",
+          "cx": 420,
+          "cy": 360,
+          "r": 230,
+          "bleeds": "right (>x_frame_right)"
+        },
+        "artist_label": {"x": 56, "y": 198, "font_size": 9, "tracking": 3, "weight": 700},
+        "artist_name": {"x": 56, "y": 228, "font_size": 26, "italic": true, "lines": 2},
+        "ensemble_list": {"x_start": 56, "y_start": 288, "line_height": 18, "font_size": 10},
+        "hand_scribble": {"y_band": [370, 380], "stroke": "oxblood", "width": 1.4},
+        "tracklist_divider": {"x1": 56, "y1": 620, "x2": 556, "y2": 620},
+        "tracklist_headers": {"y": 640, "font_size": 9, "tracking": 3, "columns": 2},
+        "tracklist_rows": {"y_start": 660, "line_height": 18, "font_size": 10.5, "columns": 2},
+        "recording_meta": {"y": 752, "font_size": 8, "tracking": 2, "anchor_split": true},
+        "footer_primary": {"y": 812, "font_size": 9, "tracking": 3, "weight": 700, "anchor_split": true},
+        "footer_secondary": {"y": 830, "font_size": 7, "tracking": 2, "anchor_split": true}
+      },
+      "used_in": ["03-music-blue-nothing.svg"],
+      "works_for": ["music albums", "product launches", "single-artifact posters"],
+      "passed_verification": true,
+      "notes": "Hero circle extends beyond frame right (420+230=650 vs frame_right=584). Text column stays in left quadrant clear of object."
+    },
+    {
+      "id": "shinkawa-lone-figure-dreamcore",
+      "template": "01-hero-image-center",
+      "viewbox": [612, 888],
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 4},
+        "hero_scene": {"y_top": 90, "y_bottom": 520, "height": 430},
+        "lone_figure_position": {"cx": 306, "cy_ground": 488, "bg": "dreamcore_pastel_wash"},
+        "ash_particles": {"scattered_across": "hero_zone", "as": "ink_tick_marks"},
+        "main_title": {"x": 306, "y": 576, "font_size": 56, "weight": 700, "tracking": 6, "anchor": "middle"},
+        "kanji_accent": {"x": 306, "y": 603, "font_size": 16, "color_hint": "oxblood", "anchor": "middle"},
+        "subtitle": {"x": 306, "y": 632, "font_size": 18, "italic": true, "tracking": 3, "anchor": "middle"},
+        "tagline": {"x": 306, "y_lines": [682, 700], "font_size": 13, "italic": true, "anchor": "middle"},
+        "genre_descriptor": {"y": 730, "font_size": 8.5, "tracking": 2.5, "anchor": "middle"},
+        "platform_badges": {"y": 762, "count": 4, "cell_width": 80, "centers": [146, 246, 346, 446]},
+        "studio_footer": {"y": 814, "font_size": 11, "tracking": 3, "weight": 700},
+        "red_seal": {"x": 520, "y": 596, "size": 32, "mark": "kanji_in_oxblood_square"}
+      },
+      "used_in": ["04-games-ashfall.svg"],
+      "works_for": ["games (contemplative)", "dark fantasy", "East-Asian-inflected products"],
+      "passed_verification": true,
+      "notes": "Shinkawa monochrome discipline bent only in hero background wash (dreamcore pastel) — figure itself stays pure ink black. Red seal at (520,596) is the signature stamp."
+    },
+    {
+      "id": "aurora-field-tech-conference",
+      "template": "04-field-over-hero",
+      "viewbox": [612, 888],
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 3.5},
+        "hero_field": {"y_top": 90, "y_bottom": 540, "height": 450, "background": "deep_space_+_aurora_blooms_+_point_cloud"},
+        "title": {"x": 306, "y": 594, "font_size": 68, "weight": 800, "tracking": -2, "anchor": "middle", "color": "white"},
+        "year_sub": {"x": 306, "y": 638, "font_size": 32, "weight": 200, "tracking": 22, "color": "cyan"},
+        "rule_under_title": {"x1": 206, "y1": 654, "x2": 406, "y2": 654, "stroke_opacity": 0.5},
+        "subtitle": {"x": 306, "y": 676, "font_size": 11, "tracking": 3.5, "fill_opacity": 0.85, "anchor": "middle"},
+        "date_line": {"x": 306, "y": 708, "font_size": 12, "tracking": 4, "weight": 700, "color": "yellow"},
+        "location_line": {"x": 306, "y": 728, "font_size": 10, "tracking": 3, "fill_opacity": 0.75},
+        "speakers_header_left": {"x": 56, "y": 750, "font_size": 9, "tracking": 3.5, "weight": 700, "color": "magenta"},
+        "speakers_more_right": {"x": 556, "y": 750, "anchor": "end", "fill_opacity": 0.55},
+        "speaker_grid": {
+          "rows": 2, "cols": 3,
+          "column_x": [56, 232, 408],
+          "row_1_name_y": 776, "row_1_affil_y": 792,
+          "row_2_name_y": 820, "row_2_affil_y": 836,
+          "name_font": 13, "affil_font": 8.5
+        },
+        "footer_hairline": {"y": 850},
+        "footer_split": {"y": 860, "font_size": 7, "tracking": 1.8, "anchor_split": true}
+      },
+      "used_in": ["05-hitech-compose.svg"],
+      "works_for": ["tech conferences", "AI events", "abstract-subject posters"],
+      "passed_verification": true,
+      "notes": "White-on-dark palette. Frame stroke-opacity 0.5 (thin white line on dark). Hero field uses multiple radial gradients with heavy blur + point cloud overlay."
+    },
+    {
+      "id": "monument-giant-numeral",
+      "template": "02-type-as-image",
+      "viewbox": [612, 888],
+      "zones": {
+        "top_meta": {"y": 56, "font_size": 10, "tracking": 4, "anchor_split": true},
+        "hairline": {"y": 68, "stroke_opacity": 0.5},
+        "wordmark": {"x": 306, "y": 122, "font_size": 44, "weight": 900, "tracking": 16, "anchor": "middle"},
+        "sub_labels": {"y": 146, "type": "flanking_hairlines + small_text"},
+        "small_context": {"y": 162, "font_size": 8, "tracking": 3, "anchor_split": true, "fill_opacity": 0.7},
+        "hero_numeral": {"x": 306, "y": 428, "font_size": 340, "weight": 900, "tracking": -20, "anchor": "middle"},
+        "accent_bar": {"x1": 128, "y1": 320, "x2": 484, "y2": 320, "stroke": "accent_color", "width": 3, "passes_through": "hero_numeral"},
+        "accent_caps": {"r": 3.5, "fill": "accent_color", "at_ends_of_bar": true},
+        "divider_hairline": {"y": 454, "stroke_opacity": 0.5},
+        "tagline_block": {"y_lines": [478, 500], "font_sizes": [13, 14], "anchor": "middle", "color_hint_2nd_line": "accent"},
+        "feature_header": {"x": 56, "y": 548, "font_size": 9, "tracking": 3.5, "color": "accent"},
+        "artist_grid": {
+          "rows": 3, "cols": 3,
+          "column_x": [56, 232, 408],
+          "row_1_y": 582, "row_1_affil_y": 598,
+          "row_2_y": 634, "row_2_affil_y": 650,
+          "row_3_y": 686, "row_3_affil_y": 702
+        },
+        "overflow_tag": {"x": 306, "y": 738, "font_size": 10, "italic": true, "fill_opacity": 0.55, "anchor": "middle"},
+        "catalog_stamp": {"x": 306, "y": 770, "width": 168, "height": 28, "fill": "accent"},
+        "footer_primary": {"y": 820, "font_size": 10, "tracking": 3, "weight": 700, "anchor_split": true},
+        "footer_secondary": {"y": 836, "font_size": 7.5, "tracking": 2, "fill_opacity": 0.55, "anchor_split": true}
+      },
+      "used_in": ["06-music-kompakt-25.svg"],
+      "works_for": ["anniversary compilations", "label identity", "milestone communications"],
+      "passed_verification": true,
+      "notes": "Hero numeral dominates — 340pt at y=428 baseline. Accent bar (Factory yellow) passes through middle of numeral at y=320. Catalog stamp below is Saville-Factory DNA."
+    }
+  ],
+  "safe_zones_reminder": {
+    "standard_vertical_poster": {
+      "viewbox": [612, 888],
+      "outer_frame_minimum": {"x": 28, "x_max": 584, "y_top": 28, "y_bottom": 860},
+      "content_safe_zone": {"x": 56, "x_max": 556, "width_usable": 500},
+      "bottom_content_must_end_by_y": 856,
+      "top_content_must_start_by_y": 56
+    }
+  },
+  "typography_scale_in_use": {
+    "micro_footer": [6, 6.5, 7],
+    "small_body": [8, 8.5, 9],
+    "body": [10, 11, 12],
+    "subtitle": [13, 14, 15, 16, 18],
+    "over_title": [10, 11, 12],
+    "title_medium": [26, 28, 32, 42],
+    "title_large": [56, 60, 68],
+    "monumental": [200, 260, 300, 340, 400]
+  },
+  "line_height_table": {
+    "font_size_8": 12,
+    "font_size_10": 15,
+    "font_size_12": 16,
+    "font_size_14": 18,
+    "font_size_16": 22,
+    "font_size_26_italic": 28
+  }
+}

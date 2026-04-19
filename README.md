@@ -8,9 +8,10 @@
 
 > A structured reference library for working with LLM coding assistants on design tasks. Distilled designer style profiles, composition principles, and project history — organized so an AI assistant (Claude, GPT, local LLMs) can read relevant context on demand.
 
-**New here?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
+**Want the autonomous agent?** → [CREATOR.md](CREATOR.md) — describe a poster in one sentence, the agent picks the designer voice, applies the trend layer, renders SVG, self-verifies layout, and opens the preview. No manual composition, no QA on your end.
+**New here? Prefer manual workflow?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
 **Want the 2026 visual language?** → [docs/trends-2026.md](docs/trends-2026.md) — 12 current design trends, how to apply, what to avoid.
-**See the proof?** → [NEO-GENESIS poster](my-works/2026-04-cyber-art-expo/NEO-GENESIS-poster-v2-thorp.svg) (Ash Thorp) and [Shinkawa ink mecha](my-works/showcase-2026-04/02-shinkawa-ink-mecha.svg) — reference works that set the quality bar.
+**See the proof?** → [6 themed reference posters](my-works/showcase-themed-2026/) (cinema/art/music/games/hi-tech/electronic) — gold standards the agent is calibrated against.
 
 **Not a training dataset in the machine-learning sense.** It's a **retrieval library** — purpose-built markdown files that an LLM reads at runtime to produce grounded, style-aware design work. Think moodboard + style guide + tactical instructions, rendered as parseable text.
 
@@ -44,38 +45,70 @@ The tactical rules in each style profile are written for an LLM to **actually fo
 
 ```
 design-library/
-├── QUICKSTART.md              # 3-minute start for new users (copy-paste recipes)
+├── CREATOR.md                 # ★ autonomous design-creator agent — use this first
+├── PLAN.md                    # the v1 blueprint
+├── QUICKSTART.md              # manual workflow (non-agent) with copy-paste recipes
 ├── SETUP.md                   # how to use (detailed workflow)
 ├── README.md                  # you are here
 ├── CONTRIBUTING.md            # how to add designers / principles
 ├── TRAINING.md                # how to extend + thoughts on real ML training
 ├── LICENSE                    # MIT
 │
-├── sources/                   # source-of-truth: links + metadata
+├── memory/                    # ★ agent persistent memory (learns over runs)
+│   ├── winning-concepts.json     # patterns that worked
+│   ├── rejected-patterns.json    # patterns that didn't (with reasons)
+│   └── layout-patterns.json      # known-good grid recipes
+│
+├── sources/
 │   ├── designers/             # one .md per designer with portfolio URLs
 │   ├── collections/           # curated resource libraries (Envato, Canva, Behance)
-│   └── principles/            # universal design knowledge
+│   ├── history/               # ★ history of the poster
+│   │   ├── eras/                 # 8 era files (1870→present)
+│   │   ├── movements/            # movement deep-dives (future)
+│   │   └── masters/              # historical designers (future)
+│   ├── principles/
+│   │   ├── color-theory.md
+│   │   ├── composition-grids.md
+│   │   ├── typography-hierarchy.md
+│   │   ├── style-locks.md        # ★ hard-stop constraints per designer
+│   │   ├── books/                # ★ Bringhurst / Müller-Brockmann / Hara / Tschichold / Rand
+│   │   ├── drawing/              # ★ perspective, composition, light
+│   │   ├── photography/          # ★ exposure triangle, lighting setups
+│   │   └── layout-templates/     # ★ 4 reusable composition schemas
+│   └── research/              # ★ grounded in real-world data
+│       ├── awards/               # 8 competition archives (Brno/Warsaw/TDC/Chaumont/Lahti/Mexico/AIGA/D&AD)
+│       ├── palettes/             # Colorhunt trending snapshot
+│       ├── observations/         # monthly curated observations (populated by scheduled task)
+│       └── trends-verified-2026.md  # synthesis of evidence-backed trends
 │
-├── style-profiles/            # MAIN WORK ZONE — distilled tactical profiles
-│                              # this is what Claude reads at composition time
+├── style-profiles/            # 14 contemporary designer voices (core reference)
 │
 ├── docs/
 │   ├── trends-2026.md         # 12 current design trends + how to apply
-│   └── images/                # docs assets (hero image, diagrams)
+│   ├── trends-by-decade.md    # ★ 1900-2020 cheat-sheet
+│   └── images/
 │
-├── analyses/                  # breakdowns of specific works (filled on demand)
+├── my-works/                  # output — posters generated via agent or manually
+│   ├── 2026-04-cyber-art-expo/     # Ash Thorp NEO-GENESIS
+│   ├── showcase-2026-04/           # Shinkawa ink mecha reference
+│   └── showcase-themed-2026/       # ★ 6 themed reference posters (cinema/art/music/games/hi-tech/electronic)
 │
-├── my-works/                  # projects built using the library
-│   ├── 2026-04-cyber-art-expo/     # NEO-GENESIS poster (Ash Thorp reference)
-│   └── showcase-2026-04/           # Shinkawa ink mecha (legibility reference)
+├── scripts/                   # ★ helper scripts
+│   ├── svg-to-png.sh              # convert generated SVG to PNG
+│   └── monthly-research.sh        # manually trigger research refresh
 │
-├── tools/                     # CLI tools for image generation
-│   ├── generate.py            # main CLI: style-aware AI image generation
-│   ├── prompt_builder.py      # style profile parser + prompt builder
-│   └── requirements.txt       # Python dependencies
+├── tools/                     # CLI tools
+│   ├── check-layout.py            # ★ SVG layout verifier (called by agent)
+│   ├── generate.py                # Image Studio CLI (older raster pipeline)
+│   ├── prompt_builder.py
+│   └── requirements.txt
+│
+├── logs/                      # agent runtime logs (gitignored)
 │
 └── templates/                 # templates for new entries
 ```
+
+Items marked **★** are part of the design-creator agent stack (v1, April 2026). The agent itself lives in `~/.claude/skills/design-creator/SKILL.md` and its 6 subagents in `~/.claude/agents/`.
 
 ## Current inventory (v1.2.0)
 
