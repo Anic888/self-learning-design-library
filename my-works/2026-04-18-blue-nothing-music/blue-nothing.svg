@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER 3 / V2 — MUSIC THEME (alt variant for comparison)
+  "BLUE NOTHING" — same album, IMAGE-DOMINANT interpretation
+  612 × 888
+
+  Style profile : style-profiles/stefan-sagmeister.md
+  Trend         : docs/trends-2026.md § Editorial Maximalism
+
+  Compared to V1 (type-dominant, cropped "BLUE", outline "NOTHING"):
+
+    V1 = typography IS the image (Sagmeister word-as-image)
+    V2 = photograph-of-object IS the image (Sagmeister make-the-thing)
+
+  V2 concept:
+  - Hero is a black vinyl record, dominant, cropped off right edge.
+  - The physical artifact carries the idea. Type stays quieter.
+  - Center label uses the 1950s Blue Note vocabulary
+    (red center, white type, spindle hole, deep-groove rim).
+  - Editorial Maximalism: record CROPS off right (bleed), scale
+    extremes remain (big record vs tiny tracklist), ONE saturated
+    accent (oxblood on label), asymmetric composition.
+  - Sagmeister: the "photograph of a thing made" — here a rendered
+    vinyl pressing, as if documenting the actual release.
+
+  ─── GRID PLAN ──────────────────────────────────────────
+  Outer frame: y=28 → y=860
+  Usable x: 56 → 556
+
+  Vertical anchors:
+    y=56   top meta
+    y=90   "BLUE NOTHING" wordmark (small, classical)
+    y=116  tagline
+    y=150-550  vinyl record hero (400 tall, cx=420 so right side bleeds)
+    y=580  artist handlettered
+    y=610  recording metadata
+    y=640  tracklist header
+    y=660-760  tracklist 2-col
+    y=790  footer
+    y=830  bottom meta
+  ─────────────────────────────────────────────────────────
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Cream paper (same ground as v1 for series unity) -->
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F4EEDE"/>
+      <stop offset="1"   stop-color="#EEE7D2"/>
+    </linearGradient>
+
+    <!-- Vinyl gradient — not pure black, subtle sheen -->
+    <radialGradient id="vinyl" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#0A0A0A"/>
+      <stop offset="0.45" stop-color="#121212"/>
+      <stop offset="0.85" stop-color="#080808"/>
+      <stop offset="1"    stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Vinyl sheen (diagonal reflection highlight) -->
+    <linearGradient id="vinylSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.75" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="1"    stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Blue Note classic red center label -->
+    <radialGradient id="labelRed" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#A03022"/>
+      <stop offset="1"   stop-color="#7A2015"/>
+    </radialGradient>
+
+    <!-- Gold outer ring on label (classic Blue Note) -->
+    <linearGradient id="goldRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D4A94A"/>
+      <stop offset="1" stop-color="#A87B28"/>
+    </linearGradient>
+
+    <!-- Paper grain -->
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="17"/>
+      <feColorMatrix values="0 0 0 0 0.08
+                             0 0 0 0 0.06
+                             0 0 0 0 0.03
+                             0 0 0 0.1 0"/>
+    </filter>
+
+    <!-- Paths for curved label text — centered on label (420,360), radius 90 -->
+    <!-- Top arc: left → right going ABOVE (sweep=0 with left-to-right direction) -->
+    <path id="topArc" d="M 330,360 A 90,90 0 0 0 510,360" fill="none"/>
+    <!-- Bottom arc: right → left going BELOW, so text reads upside-down the authentic vinyl way -->
+    <path id="bottomArc" d="M 510,360 A 90,90 0 0 0 330,360" fill="none"/>
+
+    <!-- Clip bleeds off right edge -->
+    <clipPath id="bleedRight">
+      <rect x="0" y="0" width="612" height="888"/>
+    </clipPath>
+  </defs>
+
+  <!-- ════════ PAPER GROUND ════════════════════════════════ -->
+  <rect width="612" height="888" fill="url(#cream)"/>
+
+  <!-- ════════ OUTER FRAME ═════════════════════════════════ -->
+  <rect x="28" y="28" width="556" height="832" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+
+  <!-- ════════ TOP META LINE ═══════════════════════════════ -->
+  <g font-family="Helvetica, 'Helvetica Neue', Arial, sans-serif" fill="#1A1A1A">
+    <text x="56"  y="56" font-size="10" letter-spacing="4" font-weight="700">BLUE · NOTE · RECORDS</text>
+    <text x="556" y="56" font-size="10" letter-spacing="4" text-anchor="end">BN·LP·2026·047  /  V·II</text>
+  </g>
+  <line x1="56" y1="68" x2="556" y2="68" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- ════════ WORDMARK (small, classical — the opposite of V1) ══
+       V1 screamed BLUE. V2 whispers it, lets the record carry weight.
+  ══════════════════════════════════════════════════════════════ -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="56" y="108" font-size="42" font-weight="700" fill="#0F2044" letter-spacing="-0.5">Blue</text>
+    <text x="168" y="108" font-size="42" font-weight="400" font-style="italic" fill="#0F2044" letter-spacing="-0.3">Nothing</text>
+  </g>
+
+  <!-- Small rule spanning the full wordmark width -->
+  <line x1="56" y1="122" x2="326" y2="122" stroke="#0F2044" stroke-width="1"/>
+
+  <!-- Tagline in oxblood italic (Sagmeister craft accent) -->
+  <text x="56" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#8A2C1E">
+    the silence between the notes.
+  </text>
+
+  <!-- ════════ HERO: VINYL RECORD ══════════════════════════
+       Record center at (420, 360), radius 230.
+       Right edge of record: 420 + 230 = 650 — bleeds past x=612.
+       Left edge: 420 - 230 = 190.
+       Top: 360 - 230 = 130
+       Bottom: 360 + 230 = 590
+  ══════════════════════════════════════════════════════════ -->
+  <g>
+    <!-- soft shadow -->
+    <ellipse cx="422" cy="366" rx="230" ry="230" fill="#000" opacity="0.15" filter="url(#paperGrain)"/>
+    <ellipse cx="420" cy="362" rx="230" ry="230" fill="#000" opacity="0.1"/>
+
+    <!-- Vinyl disc body -->
+    <circle cx="420" cy="360" r="230" fill="url(#vinyl)"/>
+
+    <!-- Groove rings (concentric) -->
+    <g fill="none" stroke="#2A2A2A" stroke-width="0.4" opacity="0.7">
+      <circle cx="420" cy="360" r="225"/>
+      <circle cx="420" cy="360" r="218"/>
+      <circle cx="420" cy="360" r="212"/>
+      <circle cx="420" cy="360" r="205"/>
+      <circle cx="420" cy="360" r="198"/>
+      <circle cx="420" cy="360" r="192"/>
+      <circle cx="420" cy="360" r="186"/>
+      <circle cx="420" cy="360" r="180"/>
+      <circle cx="420" cy="360" r="174"/>
+      <circle cx="420" cy="360" r="168"/>
+      <circle cx="420" cy="360" r="162"/>
+      <circle cx="420" cy="360" r="156"/>
+      <circle cx="420" cy="360" r="150"/>
+      <circle cx="420" cy="360" r="144"/>
+      <circle cx="420" cy="360" r="138"/>
+      <circle cx="420" cy="360" r="132"/>
+      <circle cx="420" cy="360" r="126"/>
+      <circle cx="420" cy="360" r="120"/>
+    </g>
+    <!-- Secondary finer grooves -->
+    <g fill="none" stroke="#1A1A1A" stroke-width="0.2" opacity="0.8">
+      <circle cx="420" cy="360" r="222"/>
+      <circle cx="420" cy="360" r="215"/>
+      <circle cx="420" cy="360" r="208"/>
+      <circle cx="420" cy="360" r="201"/>
+      <circle cx="420" cy="360" r="194"/>
+      <circle cx="420" cy="360" r="187"/>
+      <circle cx="420" cy="360" r="182"/>
+      <circle cx="420" cy="360" r="176"/>
+      <circle cx="420" cy="360" r="170"/>
+      <circle cx="420" cy="360" r="164"/>
+      <circle cx="420" cy="360" r="158"/>
+      <circle cx="420" cy="360" r="152"/>
+      <circle cx="420" cy="360" r="146"/>
+      <circle cx="420" cy="360" r="140"/>
+      <circle cx="420" cy="360" r="134"/>
+      <circle cx="420" cy="360" r="128"/>
+      <circle cx="420" cy="360" r="122"/>
+    </g>
+
+    <!-- Sheen highlight (diagonal reflection) -->
+    <circle cx="420" cy="360" r="230" fill="url(#vinylSheen)"/>
+
+    <!-- Dead-wax lead-out (last inch before label, glossier) -->
+    <circle cx="420" cy="360" r="115" fill="none" stroke="#0A0A0A" stroke-width="4"/>
+
+    <!-- ── CENTER LABEL ──────────────────────────────────
+         Classic Blue Note aesthetic: oxblood red, gold ring,
+         centered type, spindle hole.
+    ──────────────────────────────────────────────────── -->
+    <!-- Gold outer ring -->
+    <circle cx="420" cy="360" r="108" fill="url(#goldRing)"/>
+    <!-- Red label body -->
+    <circle cx="420" cy="360" r="102" fill="url(#labelRed)"/>
+    <!-- Inner thin gold ring -->
+    <circle cx="420" cy="360" r="102" fill="none" stroke="#D4A94A" stroke-width="0.8"/>
+    <circle cx="420" cy="360" r="96"  fill="none" stroke="#D4A94A" stroke-width="0.3" opacity="0.7"/>
+
+    <!-- Label top arc: Blue Note wordmark -->
+    <g font-family="Helvetica, Arial, sans-serif" fill="#F4EEDE">
+      <text font-size="9" letter-spacing="4" font-weight="900" text-anchor="middle">
+        <textPath href="#topArc" startOffset="50%">BLUE · NOTE · RECORDS</textPath>
+      </text>
+    </g>
+
+    <!-- Label bottom arc: catalog -->
+    <g font-family="Helvetica, Arial, sans-serif" fill="#F4EEDE">
+      <text font-size="7.5" letter-spacing="3" text-anchor="middle">
+        <textPath href="#bottomArc" startOffset="50%">BN·LP·2026·047  ·  SIDE  A  ·  33⅓ RPM</textPath>
+      </text>
+    </g>
+
+    <!-- Label center stack -->
+    <g text-anchor="middle" fill="#F4EEDE">
+      <!-- Album title -->
+      <text x="420" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" letter-spacing="1">BLUE NOTHING</text>
+      <!-- thin rule -->
+      <line x1="372" y1="358" x2="468" y2="358" stroke="#D4A94A" stroke-width="0.5"/>
+      <!-- Artist -->
+      <text x="420" y="374" font-family="Georgia, serif" font-size="10" font-style="italic">Kendra Osei Quartet</text>
+      <!-- Tiny credit -->
+      <text x="420" y="392" font-family="Helvetica, Arial, sans-serif" font-size="6" letter-spacing="2">PRODUCED BY  DON WAS  ·  2026</text>
+    </g>
+
+    <!-- Spindle hole -->
+    <circle cx="420" cy="360" r="5" fill="#F4EEDE"/>
+    <circle cx="420" cy="360" r="3.5" fill="#EEE7D2"/>
+    <!-- subtle shadow in hole -->
+    <circle cx="420" cy="360" r="3.5" fill="none" stroke="#5A5A5A" stroke-width="0.4"/>
+  </g>
+
+  <!-- ════════ ARTIST BLOCK (left of/below vinyl) ══════════
+       Not cropped this time. Classical, elegant, quieter than V1.
+  ══════════════════════════════════════════════════════════ -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1A">
+    <text x="56" y="198" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="3" font-weight="700" fill="#5A5A5A">PERFORMED BY</text>
+    <text x="56" y="228" font-size="26" font-style="italic">Kendra Osei</text>
+    <text x="56" y="256" font-size="26" font-style="italic">Quartet</text>
+  </g>
+
+  <!-- Ensemble list -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1A" font-size="10">
+    <text x="56" y="288"><tspan font-family="Helvetica, Arial, sans-serif" font-weight="700" letter-spacing="2" fill="#5A5A5A">TENOR SAX</tspan>  Kendra Osei</text>
+    <text x="56" y="306"><tspan font-family="Helvetica, Arial, sans-serif" font-weight="700" letter-spacing="2" fill="#5A5A5A">PIANO</tspan>  Ravi Coltrane Jr.</text>
+    <text x="56" y="324"><tspan font-family="Helvetica, Arial, sans-serif" font-weight="700" letter-spacing="2" fill="#5A5A5A">BASS</tspan>  Esperanza Vicuña</text>
+    <text x="56" y="342"><tspan font-family="Helvetica, Arial, sans-serif" font-weight="700" letter-spacing="2" fill="#5A5A5A">DRUMS</tspan>  Makaya McCraven</text>
+  </g>
+
+  <!-- Hand-drawn scribble (Sagmeister "see the hand") -->
+  <g stroke="#8A2C1E" stroke-width="1.4" fill="none">
+    <path d="M 56,370 Q 90,366 125,372 T 195,368"/>
+    <path d="M 58,376 Q 92,372 128,378 T 196,374" opacity="0.55" stroke-width="0.9"/>
+  </g>
+
+  <!-- ════════ LOWER SECTION: TRACKLIST + QUOTE ════════════ -->
+
+  <!-- Divider above tracklist -->
+  <line x1="56" y1="620" x2="556" y2="620" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- Tracklist headers -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#5A5A5A">
+    <text x="56"  y="640" font-size="9" letter-spacing="3" font-weight="700">SIDE A</text>
+    <text x="316" y="640" font-size="9" letter-spacing="3" font-weight="700">SIDE B</text>
+  </g>
+
+  <!-- Tracklist -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1A1A1A" font-size="10.5">
+    <!-- Side A -->
+    <text x="56" y="660"><tspan font-weight="700">01</tspan>   <tspan font-style="italic">Monk, in Absence</tspan>              <tspan fill="#5A5A5A">5:42</tspan></text>
+    <text x="56" y="678"><tspan font-weight="700">02</tspan>   <tspan font-style="italic">Cage's Question</tspan>               <tspan fill="#5A5A5A">8:13</tspan></text>
+    <text x="56" y="696"><tspan font-weight="700">03</tspan>   <tspan font-style="italic">Blue Nothing</tspan>                  <tspan fill="#5A5A5A">6:28</tspan></text>
+    <text x="56" y="714"><tspan font-weight="700">04</tspan>   <tspan font-style="italic">Coltrane, Paused</tspan>              <tspan fill="#5A5A5A">4:17</tspan></text>
+    <!-- Side B -->
+    <text x="316" y="660"><tspan font-weight="700">01</tspan>   <tspan font-style="italic">The Unspoken Chord</tspan>            <tspan fill="#5A5A5A">7:09</tspan></text>
+    <text x="316" y="678"><tspan font-weight="700">02</tspan>   <tspan font-style="italic">4'33" (After Cage)</tspan>            <tspan fill="#5A5A5A">4:33</tspan></text>
+    <text x="316" y="696"><tspan font-weight="700">03</tspan>   <tspan font-style="italic">Silence for Ornette</tspan>           <tspan fill="#5A5A5A">9:54</tspan></text>
+    <text x="316" y="714"><tspan font-weight="700">04</tspan>   <tspan font-style="italic">Where the Horn Went Quiet</tspan>     <tspan fill="#5A5A5A">6:51</tspan></text>
+  </g>
+
+  <!-- Recording meta row under tracklist -->
+  <line x1="56" y1="736" x2="556" y2="736" stroke="#1A1A1A" stroke-width="0.3"/>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#5A5A5A" font-size="8" letter-spacing="2">
+    <text x="56"  y="752">RECORDED  SEAR SOUND NYC  ·  APRIL 14—17 2026</text>
+    <text x="556" y="752" text-anchor="end">MASTERED BY BERNIE GRUNDMAN  ·  STEREO</text>
+  </g>
+
+  <!-- ════════ FOOTER ══════════════════════════════════════ -->
+  <line x1="56" y1="790" x2="556" y2="790" stroke="#1A1A1A" stroke-width="0.4"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1A1A1A">
+    <text x="56"  y="812" font-size="9" letter-spacing="3" font-weight="700">BLUE NOTE · EST. 1939</text>
+    <text x="556" y="812" font-size="9" letter-spacing="3" font-weight="700" text-anchor="end">LP · 047 / 500</text>
+  </g>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#5A5A5A">
+    <text x="56"  y="830" font-size="7" letter-spacing="2">PRESSED ON 180G AUDIOPHILE VINYL  ·  HAND-NUMBERED</text>
+    <text x="556" y="830" font-size="7" letter-spacing="2" text-anchor="end">MADE IN THE USA  ·  MMXXVI</text>
+  </g>
+
+  <line x1="56" y1="842" x2="556" y2="842" stroke="#1A1A1A" stroke-width="0.2"/>
+
+  <text x="306" y="854" font-family="Helvetica, Arial, sans-serif" font-size="6.5" letter-spacing="1.5" fill="#5A5A5A" text-anchor="middle">
+    ℗ &amp; © MMXXVI BLUE NOTE RECORDS · A DIVISION OF UNIVERSAL MUSIC GROUP · VARIANT II / II
+  </text>
+
+  <!-- ════════ GLOBAL MICRO-GRAIN ══════════════════════════ -->
+  <rect x="0" y="0" width="612" height="888" filter="url(#paperGrain)" opacity="0.2"/>
+</svg>

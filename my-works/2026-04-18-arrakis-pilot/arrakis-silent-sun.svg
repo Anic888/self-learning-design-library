@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  PILOT POSTER — CINEMA THEME
+  "ARRAKIS: THE SILENT SUN" — fictional arthouse sci-fi film
+  612 × 888 (Mondo-proportion alternative movie poster)
+
+  Style profile : style-profiles/kilian-eng.md (Mode 1 — Warm Mondo)
+  Trend         : docs/trends-2026.md § Dark Academia / Editorial Serif Revival
+
+  Why this combo:
+  - Kilian Eng Mode 1 is the DNA of alt movie posters (Mondo tradition)
+    — burnt sienna, mustard, dusty purple, cream, forest green.
+  - Dark Academia complements it through classical serif typography
+    (transitional serif, drop cap, small caps), warm paper, oxblood
+    accents — the literary-scholar finish that re-anchors Mondo's
+    70s sci-fi romance for 2026.
+  - Result: a movie poster that feels simultaneously like a first-
+    edition book cover and a 1977 Heavy Metal print.
+
+  Kilian rules enforced:
+    - Horizon at two-thirds down, massive sky
+    - Hero central (sun disc)
+    - 3 celestial bodies (Kilian signature: "multiple suns/moons")
+    - Tiny silhouette figure for scale on a dune crest
+    - Layered atmospheric depth (distant desaturates)
+    - Dithered gradient bands (not smooth)
+    - Ornamental art-nouveau corner motifs
+    - Halftone/engraving grain
+    - Simulated CMYK misregistration
+    - Painterly, not vector-flat
+
+  Dark Academia rules enforced:
+    - Warm cream paper ground
+    - Transitional serif (Georgia family → Garamond-flavour)
+    - Small caps + italic for credits
+    - Oxblood drop cap on the tagline
+    - Muted jewel-tone accents (forest green, dusty purple)
+    - Generous leading
+    - Classical border engraving motif
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- ─ Paper ground with warm variance ─────────────────── -->
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F2E9D8"/>
+      <stop offset="0.5" stop-color="#EDE1CC"/>
+      <stop offset="1"   stop-color="#E8DCC0"/>
+    </linearGradient>
+
+    <!-- Dusk sky: warm → dusty purple, DITHERED via stops ─── -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#6B3E8C"/>
+      <stop offset="0.18" stop-color="#8B4B7E"/>
+      <stop offset="0.34" stop-color="#B05B56"/>
+      <stop offset="0.52" stop-color="#D07540"/>
+      <stop offset="0.7"  stop-color="#E0903A"/>
+      <stop offset="0.88" stop-color="#D9A832"/>
+      <stop offset="1"    stop-color="#C49220"/>
+    </linearGradient>
+
+    <!-- Big sun radial -->
+    <radialGradient id="bigSun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#F5E6B2"/>
+      <stop offset="0.35" stop-color="#E9B340"/>
+      <stop offset="0.75" stop-color="#D95C2A"/>
+      <stop offset="1"    stop-color="#8A2C1E"/>
+    </radialGradient>
+
+    <!-- Second celestial body (moon) -->
+    <radialGradient id="moonSm" cx="0.4" cy="0.4" r="0.6">
+      <stop offset="0"   stop-color="#E8DCC0"/>
+      <stop offset="0.8" stop-color="#9E8A66"/>
+      <stop offset="1"   stop-color="#6B5440"/>
+    </radialGradient>
+
+    <!-- Third distant planet -->
+    <radialGradient id="planetDist" cx="0.42" cy="0.42" r="0.6">
+      <stop offset="0"   stop-color="#4E2A6B"/>
+      <stop offset="0.8" stop-color="#2C1B40"/>
+      <stop offset="1"   stop-color="#1A0F2A"/>
+    </radialGradient>
+
+    <!-- Distant mountain haze -->
+    <linearGradient id="mtnFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#8F5E3E"/>
+      <stop offset="1"   stop-color="#6B4330"/>
+    </linearGradient>
+    <linearGradient id="mtnMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#5E3A27"/>
+      <stop offset="1"   stop-color="#3E241A"/>
+    </linearGradient>
+    <linearGradient id="dunesFg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#2A1A10"/>
+      <stop offset="1"   stop-color="#120A06"/>
+    </linearGradient>
+
+    <!-- Halftone pattern (screen-print simulation) -->
+    <pattern id="halftone" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.7" fill="#1A1A1A" opacity="0.55"/>
+    </pattern>
+    <pattern id="halftoneLight" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.6" fill="#1A1A1A" opacity="0.35"/>
+    </pattern>
+
+    <!-- Engraving grain overlay -->
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.08
+                             0 0 0 0 0.06
+                             0 0 0 0 0.03
+                             0 0 0 0.11 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <!-- Dust haze over sky -->
+    <filter id="dustHaze">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="4"/>
+      <feColorMatrix values="0 0 0 0 0.85
+                             0 0 0 0 0.62
+                             0 0 0 0 0.28
+                             0 0 0 0.2 0"/>
+    </filter>
+
+    <!-- Clip to inner frame area -->
+    <clipPath id="innerFrame">
+      <rect x="56" y="176" width="500" height="530"/>
+    </clipPath>
+
+    <!-- Dither steps for sky (simulating screenprint limit) -->
+    <pattern id="ditherSky" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="3" height="3" fill="#1A1A1A" opacity="0"/>
+      <rect x="0" y="0" width="1" height="1" fill="#1A1A1A" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <!-- ════════ PAPER GROUND ════════════════════════════════ -->
+  <rect width="612" height="888" fill="url(#paper)"/>
+
+  <!-- ════════ CMYK MISREGISTRATION LAYER (background hint) ═
+       Kilian signature: offset color channels as if printed
+       with plates slightly out of alignment. Here as subtle
+       cyan/magenta edge on the outer frame.
+  ══════════════════════════════════════════════════════════ -->
+  <g opacity="0.18">
+    <rect x="27" y="29" width="558" height="830" fill="none" stroke="#2A6DAB" stroke-width="2"/>
+    <rect x="29" y="27" width="558" height="830" fill="none" stroke="#B5249C" stroke-width="2"/>
+  </g>
+
+  <!-- ════════ OUTER ORNAMENTAL BORDER ═════════════════════
+       Classical engraving-style double rule + corner fleurons
+  ══════════════════════════════════════════════════════════ -->
+  <g stroke="#1A1A1A" fill="none" stroke-width="1.2">
+    <rect x="28" y="28" width="556" height="848"/>
+    <rect x="36" y="36" width="540" height="832"/>
+  </g>
+
+  <!-- Corner fleurons (art-nouveau motif — Kilian ornamental) -->
+  <g fill="#1A1A1A">
+    <!-- TL -->
+    <g transform="translate(44,44)">
+      <path d="M0,0 L18,0 L18,2 L2,2 L2,18 L0,18 Z"/>
+      <circle cx="10" cy="10" r="2.2"/>
+      <path d="M6,6 Q10,2 14,6 Q10,10 6,6 Z"/>
+    </g>
+    <!-- TR -->
+    <g transform="translate(568,44) scale(-1,1)">
+      <path d="M0,0 L18,0 L18,2 L2,2 L2,18 L0,18 Z"/>
+      <circle cx="10" cy="10" r="2.2"/>
+      <path d="M6,6 Q10,2 14,6 Q10,10 6,6 Z"/>
+    </g>
+    <!-- BL + BR removed to avoid overlap with bottom credits -->
+  </g>
+
+  <!-- Top ornamental divider mid-band (lifted to clear title) -->
+  <g stroke="#1A1A1A" stroke-width="0.8" fill="#1A1A1A">
+    <line x1="100" y1="62" x2="250" y2="62"/>
+    <line x1="362" y1="62" x2="512" y2="62"/>
+    <circle cx="306" cy="62" r="3"/>
+    <line x1="286" y1="62" x2="296" y2="62"/>
+    <line x1="316" y1="62" x2="326" y2="62"/>
+    <path d="M270,62 L278,58 L278,66 Z" fill="#1A1A1A"/>
+    <path d="M342,62 L334,58 L334,66 Z" fill="#1A1A1A"/>
+  </g>
+
+  <!-- ════════ TITLE BLOCK (top) — lifted to clear scene edge ═ -->
+  <g font-family="Georgia, 'Times New Roman', 'EB Garamond', serif" text-anchor="middle">
+    <!-- Italic small-caps over-title (lifted for breathing room above ARRAKIS) -->
+    <text x="306" y="86" font-size="12" letter-spacing="6" fill="#5E3A27" font-style="italic">
+      A FILM BY LIN KERR
+    </text>
+
+    <!-- Main title ARRAKIS in engraved serif, spaced like carved stone -->
+    <text x="306" y="140" font-size="60" font-weight="400" fill="#1A1A1A" letter-spacing="12">
+      ARRAKIS
+    </text>
+
+    <!-- Subtitle in italic with rule lines -->
+    <g stroke="#1A1A1A" stroke-width="0.8">
+      <line x1="110" y1="156" x2="180" y2="156"/>
+      <line x1="432" y1="156" x2="502" y2="156"/>
+    </g>
+    <text x="306" y="161" font-size="15" font-style="italic" fill="#1A1A1A" letter-spacing="8">
+      THE · SILENT · SUN
+    </text>
+  </g>
+
+  <!-- ════════ INNER SCENE (bordered landscape) ════════════ -->
+  <g clip-path="url(#innerFrame)">
+    <!-- Sky -->
+    <rect x="56" y="176" width="500" height="410" fill="url(#sky)"/>
+    <!-- Dust haze over sky -->
+    <rect x="56" y="176" width="500" height="410" fill="transparent" filter="url(#dustHaze)" opacity="0.35"/>
+
+    <!-- Dither overlay on sky -->
+    <rect x="56" y="176" width="500" height="410" fill="url(#ditherSky)" opacity="0.7"/>
+
+    <!-- Horizontal sky bands (dithered stepped gradient — Kilian rule) -->
+    <g opacity="0.12">
+      <rect x="56" y="220" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="260" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="300" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="340" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="380" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="420" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="460" width="500" height="1" fill="#1A1A1A"/>
+      <rect x="56" y="500" width="500" height="1" fill="#1A1A1A"/>
+    </g>
+
+    <!-- 3rd distant planet (far upper-right, small, in shadow) -->
+    <g>
+      <circle cx="470" cy="230" r="28" fill="url(#planetDist)"/>
+      <!-- planet ring -->
+      <ellipse cx="470" cy="230" rx="42" ry="10" fill="none" stroke="#6B3E8C" stroke-width="1.2" opacity="0.8"/>
+      <ellipse cx="470" cy="230" rx="42" ry="10" fill="none" stroke="#8B4B7E" stroke-width="0.5" opacity="0.6" transform="rotate(8 470 230)"/>
+    </g>
+
+    <!-- Big hero sun (centered, two-thirds up) -->
+    <g>
+      <!-- outer halo rings -->
+      <circle cx="306" cy="420" r="180" fill="none" stroke="#D95C2A" stroke-width="0.5" opacity="0.45"/>
+      <circle cx="306" cy="420" r="156" fill="none" stroke="#C49220" stroke-width="0.5" opacity="0.55"/>
+      <circle cx="306" cy="420" r="130" fill="none" stroke="#E9B340" stroke-width="0.6" opacity="0.7"/>
+      <!-- sun disc -->
+      <circle cx="306" cy="420" r="108" fill="url(#bigSun)"/>
+      <!-- engraved radial rays (Kilian engraving DNA) -->
+      <g stroke="#8A2C1E" stroke-width="0.6" opacity="0.35">
+        <line x1="306" y1="312" x2="306" y2="210"/>
+        <line x1="306" y1="528" x2="306" y2="630"/>
+        <line x1="198" y1="420" x2="96" y2="420"/>
+        <line x1="414" y1="420" x2="516" y2="420"/>
+        <line x1="230" y1="344" x2="158" y2="272"/>
+        <line x1="382" y1="344" x2="454" y2="272"/>
+        <line x1="230" y1="496" x2="158" y2="568"/>
+        <line x1="382" y1="496" x2="454" y2="568"/>
+      </g>
+      <!-- sun bands (silhouetted detail, Kilian multiple-suns vibe) -->
+      <g fill="#8A2C1E" opacity="0.6">
+        <rect x="198" y="400" width="216" height="3"/>
+        <rect x="198" y="416" width="216" height="2"/>
+        <rect x="198" y="432" width="216" height="2.5"/>
+        <rect x="198" y="446" width="216" height="1.5"/>
+      </g>
+    </g>
+
+    <!-- 2nd celestial body (small moon, lower-left of sun, in front) -->
+    <circle cx="180" cy="338" r="22" fill="url(#moonSm)"/>
+    <!-- crater marks -->
+    <g fill="#3E241A" opacity="0.7">
+      <circle cx="174" cy="332" r="2"/>
+      <circle cx="186" cy="340" r="1.5"/>
+      <circle cx="176" cy="346" r="1"/>
+    </g>
+
+    <!-- Mountain ridges (Kilian atmospheric depth) -->
+    <g>
+      <!-- Far desert mountains -->
+      <path d="M56,498 L86,470 L116,488 L148,460 L192,480 L230,452 L270,472 L310,448 L352,466 L392,450 L430,474 L470,452 L510,478 L556,460 L556,586 L56,586 Z" fill="url(#mtnFar)" opacity="0.82"/>
+      <!-- Mid ridge -->
+      <path d="M56,540 L90,520 L130,534 L172,510 L210,526 L254,506 L300,524 L340,506 L388,520 L430,504 L470,522 L510,506 L556,520 L556,586 L56,586 Z" fill="url(#mtnMid)"/>
+    </g>
+
+    <!-- Dune foreground (3 curves, layered) -->
+    <g>
+      <!-- distant dune wave -->
+      <path d="M56,596 Q200,566 340,598 Q440,620 556,592 L556,640 L56,640 Z" fill="#5E3A27"/>
+      <!-- mid dune -->
+      <path d="M56,640 Q180,610 316,648 Q440,672 556,636 L556,690 L56,690 Z" fill="#3E241A"/>
+      <!-- foreground dune -->
+      <path d="M56,700 Q220,660 400,706 Q490,724 556,698 L556,706 L56,706 Z" fill="url(#dunesFg)"/>
+    </g>
+
+    <!-- Tiny silhouette figure on dune crest (Kilian signature: scale) -->
+    <g fill="#050301" transform="translate(392,646)">
+      <!-- robed figure -->
+      <path d="M0,0 L-4,-12 L-2,-18 L2,-18 L4,-12 L0,0 Z"/>
+      <!-- head -->
+      <circle cx="0" cy="-20" r="2.2"/>
+      <!-- staff -->
+      <line x1="5" y1="2" x2="7" y2="-22" stroke="#050301" stroke-width="0.9"/>
+      <!-- long shadow -->
+      <path d="M-5,1 L16,3 L-3,2 Z" fill="#050301" opacity="0.55"/>
+    </g>
+
+    <!-- 2nd tiny figure below, barely visible on dune (companion) -->
+    <g fill="#050301" transform="translate(420,650)">
+      <path d="M0,0 L-2.5,-8 L2.5,-8 L0,0 Z"/>
+      <circle cx="0" cy="-10" r="1.4"/>
+    </g>
+
+    <!-- Distant worm-trail on dune (Dune nod) -->
+    <g stroke="#1A0F08" stroke-width="0.6" fill="none" opacity="0.55">
+      <path d="M140,678 Q200,684 260,678 Q320,672 380,682"/>
+    </g>
+
+    <!-- Wind-blown sand streaks -->
+    <g stroke="#C49220" stroke-width="0.4" opacity="0.4" fill="none">
+      <path d="M80,626 Q160,620 240,626"/>
+      <path d="M260,632 Q340,628 440,634"/>
+      <path d="M120,652 Q200,646 300,652"/>
+    </g>
+
+    <!-- Halftone pass over the scene (engraving/screen-print grain) -->
+    <rect x="56" y="176" width="500" height="530" fill="url(#halftoneLight)" opacity="0.45"/>
+  </g>
+
+  <!-- Inner frame border (scene box) -->
+  <rect x="56" y="176" width="500" height="530" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <rect x="62" y="182" width="488" height="518" fill="none" stroke="#1A1A1A" stroke-width="0.4"/>
+
+  <!-- Mid-ornament under scene -->
+  <g stroke="#1A1A1A" stroke-width="0.8" fill="#1A1A1A">
+    <line x1="80" y1="722" x2="250" y2="722"/>
+    <line x1="362" y1="722" x2="532" y2="722"/>
+    <circle cx="306" cy="722" r="3" fill="none"/>
+    <circle cx="306" cy="722" r="1"/>
+  </g>
+
+  <!-- ════════ TAGLINE WITH DROP CAP ═══════════════════════
+       Drop cap spans 3 lines. First-line cap-top aligns with
+       drop-cap top. 14pt italic body, 18px leading.
+  ══════════════════════════════════════════════════════════ -->
+  <g>
+    <!-- Oxblood drop cap "I" (cap height aligned to first line) -->
+    <text x="68" y="762" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#8A2C1E" font-weight="400">I</text>
+    <!-- Tagline — italic transitional serif, 3 lines, leading 18 -->
+    <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1A" font-style="italic" font-size="14">
+      <text x="98" y="748">n the silence between two suns,</text>
+      <text x="98" y="766">grain falls — grain by grain —</text>
+      <text x="98" y="784">upon an empire that forgot how to listen.</text>
+    </g>
+  </g>
+
+  <!-- ════════ CAST BILLING ════════════════════════════════ -->
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1A">
+    <text x="306" y="814" font-size="11.5" letter-spacing="2" font-weight="700">
+      KIERA DESSIN   ·   LOIC MARCHAND   ·   HIROMI ASANO
+    </text>
+  </g>
+
+  <!-- ════════ MICRO CREDITS (single line) ═════════════════ -->
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#5E3A27">
+    <text x="306" y="836" font-size="8" letter-spacing="1" font-style="italic">
+      music JONAS HILLBORG  ·  camera SHIMA ARAKAWA  ·  produced by AREL NYX  ·  MMXXVI
+    </text>
+  </g>
+
+  <!-- ════════ STUDIO EDITION MARKS (inside frame) ═════════ -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1A">
+    <text x="56" y="860" font-size="6.5" letter-spacing="1">AN ALT-MONDO EDITION  ·  №047 / 350</text>
+    <text x="556" y="860" font-size="6.5" letter-spacing="1" text-anchor="end">HAND-PULLED  ·  5 COLORS  ·  ART BY L. EN</text>
+  </g>
+
+  <!-- ════════ GLOBAL PAPER-GRAIN OVERLAY (subtle, so text stays crisp) ══ -->
+  <rect x="0" y="0" width="612" height="888" fill="transparent" filter="url(#paperGrain)" opacity="0.22"/>
+</svg>

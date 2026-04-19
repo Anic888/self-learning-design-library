@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER 4 — GAMES THEME
+  "ASHFALL: Kingdom of Ruin" — fictional soulslike dark-fantasy game
+  (FromSoftware / Sekiro adjacent)
+  612 × 888
+
+  Style profile : style-profiles/yoji-shinkawa.md
+  Trend         : docs/trends-2026.md § Dreamcore / Liminal
+
+  Why this combo:
+  - Shinkawa is THE soulslike-adjacent aesthetic — wet-brush ink on
+    rice paper, single ink-silhouette hero, minimal palette, red seal.
+    Perfect for a contemplative dark-fantasy game poster.
+  - Dreamcore adds the liminal-time mood: the ruined kingdom feels
+    FROZEN — not dramatic, eerie-still. Soft blown-out highlights,
+    time-of-day ambiguity, sparse-absent figures. The knight is the
+    only living thing in a world paused.
+  - Hybrid: Shinkawa's ink figure stays pure (high-contrast silhouette
+    with oxblood seal). The background gets a dreamcore wash — pale
+    dusty-pink + pale-cyan fog where the kingdom fades.
+
+  Shinkawa rules enforced:
+    - 60%+ negative space (rice paper dominant)
+    - Strict monochrome palette: ink black + rice paper + ONE oxblood
+    - Single-subject dominance (lone knight)
+    - Visible wet-brush strokes, splatter marks
+    - High-contrast silhouette (subject as ink shape)
+    - Red seal/stamp bottom-right
+    - Vertical scroll proportion
+
+  Dreamcore rules enforced:
+    - Liminal empty space (ruined gate in fog)
+    - Muted pastel atmosphere (pink-cyan cream wash)
+    - Slightly-wrong scale (gate huge vs knight tiny)
+    - Time-of-day ambiguity (neither day nor dusk)
+    - Sparse-absent (only ONE figure in the entire scene)
+    - Soft blown-out mist
+
+  ─── GRID PLAN ──────────────────────────────────────────
+  Outer frame: y=28 → y=860
+  Usable x: 56 → 556
+
+  Vertical anchors:
+    y=56   top meta (studio, catalog)
+    y=68   hairline
+    y=90-520  hero composition (430 tall, rice paper + knight + gate)
+    y=550  title ASHFALL (brush-heavy serif, 52pt)
+    y=600  subtitle "Kingdom of Ruin"
+    y=640-700  genre tagline block
+    y=740  platforms badges
+    y=780  release date line
+    y=820  studio line
+    y=854  footer serial
+  ─────────────────────────────────────────────────────────
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <!-- Rice paper ground (Shinkawa core) -->
+    <linearGradient id="ricePaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F5F0E2"/>
+      <stop offset="1"   stop-color="#ECE5D2"/>
+    </linearGradient>
+
+    <!-- Dreamcore wash: faint dusty-pink → pale-cyan → cream
+         Applied inside hero zone only. Very subtle, Shinkawa
+         monochrome rule is bent, not broken. -->
+    <linearGradient id="dreamWash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#E8D4D0" stop-opacity="0.75"/>
+      <stop offset="0.35" stop-color="#D9DCDC" stop-opacity="0.55"/>
+      <stop offset="0.7"  stop-color="#E6DFC8" stop-opacity="0.4"/>
+      <stop offset="1"    stop-color="#F0E9D4" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Fog/mist radial (horizon haze) -->
+    <radialGradient id="fogMist" cx="0.5" cy="0.7" r="0.7">
+      <stop offset="0"   stop-color="#F0E5E0" stop-opacity="0.8"/>
+      <stop offset="1"   stop-color="#F0E5E0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Wet ink gradient (for figure, varies density within brush stroke) -->
+    <linearGradient id="wetInk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1A1A1A"/>
+      <stop offset="0.7" stop-color="#0E0E0E"/>
+      <stop offset="1"   stop-color="#000000"/>
+    </linearGradient>
+
+    <!-- Oxblood seal gradient -->
+    <radialGradient id="oxbloodSeal" cx="0.4" cy="0.4" r="0.7">
+      <stop offset="0"   stop-color="#C43C2A"/>
+      <stop offset="0.5" stop-color="#A33020"/>
+      <stop offset="1"   stop-color="#7A1E12"/>
+    </radialGradient>
+
+    <!-- Ink-wash filter (bleeding brushstroke edges) -->
+    <filter id="inkBleed">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+
+    <!-- Heavier wet-brush bleed -->
+    <filter id="wetBrush">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+
+    <!-- Paper grain -->
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="19"/>
+      <feColorMatrix values="0 0 0 0 0.1
+                             0 0 0 0 0.08
+                             0 0 0 0 0.05
+                             0 0 0 0.11 0"/>
+    </filter>
+
+    <!-- Dreamcore haze noise (different seed for variety) -->
+    <filter id="dreamHaze">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="8"/>
+      <feColorMatrix values="0 0 0 0 0.92
+                             0 0 0 0 0.87
+                             0 0 0 0 0.85
+                             0 0 0 0.15 0"/>
+    </filter>
+
+    <!-- Clip for hero zone -->
+    <clipPath id="heroZone">
+      <rect x="56" y="90" width="500" height="430"/>
+    </clipPath>
+  </defs>
+
+  <!-- ════════ RICE PAPER GROUND ════════════════════════════ -->
+  <rect width="612" height="888" fill="url(#ricePaper)"/>
+
+  <!-- ════════ OUTER FRAME ═════════════════════════════════ -->
+  <rect x="28" y="28" width="556" height="832" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+
+  <!-- ════════ TOP META LINE ═══════════════════════════════ -->
+  <g font-family="Helvetica, 'Helvetica Neue', Arial, sans-serif" fill="#1A1A1A">
+    <text x="56"  y="56" font-size="10" letter-spacing="4" font-weight="700">ASHEN  ·  GAMES  ·  STUDIO</text>
+    <text x="556" y="56" font-size="10" letter-spacing="4" text-anchor="end">AS·2026·灰</text>
+  </g>
+  <line x1="56" y1="68" x2="556" y2="68" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- ════════ HERO ZONE: LONE KNIGHT + RUINED GATE ════════ -->
+  <g clip-path="url(#heroZone)">
+
+    <!-- Dreamcore pastel wash (very soft, Shinkawa-friendly) -->
+    <rect x="56" y="90" width="500" height="430" fill="url(#dreamWash)"/>
+
+    <!-- Fog bloom over lower-middle -->
+    <rect x="56" y="90" width="500" height="430" fill="url(#fogMist)"/>
+
+    <!-- Dreamcore haze noise -->
+    <rect x="56" y="90" width="500" height="430" filter="url(#dreamHaze)" opacity="0.45"/>
+
+    <!-- ── RUINED TORII GATE (dreamcore: liminal threshold) ──
+         Huge, fading into fog, wrong-scale for knight below.
+         Rendered in pale gray ink wash (light).
+    ──────────────────────────────────────────────────── -->
+    <g fill="none" stroke="#6A5E58" stroke-width="3.5" opacity="0.38">
+      <!-- Left pillar -->
+      <line x1="148" y1="480" x2="160" y2="170"/>
+      <!-- Right pillar (broken, leaning) -->
+      <line x1="464" y1="480" x2="444" y2="190"/>
+      <!-- Top crossbeam (sagging) -->
+      <path d="M 108,170 Q 300,155 488,188"/>
+      <!-- Secondary beam (broken, one end hanging) -->
+      <path d="M 130,200 L 290,205 L 350,240"/>
+    </g>
+    <!-- Thinner gate details -->
+    <g fill="none" stroke="#8A7C72" stroke-width="1.2" opacity="0.35">
+      <!-- Pillar striping -->
+      <line x1="151" y1="300" x2="159" y2="300"/>
+      <line x1="151" y1="340" x2="159" y2="340"/>
+      <line x1="151" y1="380" x2="159" y2="380"/>
+      <line x1="151" y1="420" x2="159" y2="420"/>
+      <line x1="453" y1="310" x2="461" y2="310"/>
+      <line x1="451" y1="350" x2="459" y2="350"/>
+      <line x1="449" y1="390" x2="457" y2="390"/>
+      <line x1="447" y1="430" x2="455" y2="430"/>
+      <!-- Crack lines down pillars -->
+      <path d="M 156,260 L 158,320 L 155,380 L 158,440"/>
+      <path d="M 458,280 L 454,340 L 457,400 L 453,460"/>
+    </g>
+
+    <!-- Distant ruined roofline in deep fog -->
+    <g fill="#9C8F85" opacity="0.22">
+      <polygon points="80,480 130,450 180,470 220,440 280,465 340,445 400,470 450,448 520,475 540,460 540,500 80,500"/>
+    </g>
+
+    <!-- Ground horizon line (very subtle) -->
+    <line x1="56" y1="488" x2="556" y2="488" stroke="#6A5E58" stroke-width="0.6" opacity="0.35"/>
+
+    <!-- ── ASH FALLING (vertical ink tick marks, light) ─────
+         Shinkawa "splatter/drip" controlled accidents.
+    ──────────────────────────────────────────────────── -->
+    <g fill="#3A3028" opacity="0.55">
+      <rect x="92" y="140" width="1" height="4"/>
+      <rect x="138" y="170" width="1" height="3"/>
+      <rect x="172" y="112" width="0.8" height="5"/>
+      <rect x="210" y="195" width="1" height="3"/>
+      <rect x="248" y="130" width="0.8" height="4"/>
+      <rect x="280" y="225" width="1" height="3"/>
+      <rect x="318" y="160" width="1" height="5"/>
+      <rect x="356" y="200" width="0.8" height="3"/>
+      <rect x="392" y="145" width="1" height="4"/>
+      <rect x="420" y="240" width="0.8" height="4"/>
+      <rect x="466" y="178" width="1" height="3"/>
+      <rect x="502" y="220" width="1" height="5"/>
+      <rect x="524" y="148" width="0.8" height="4"/>
+      <!-- denser low-zone flakes -->
+      <rect x="88" y="310" width="1" height="3"/>
+      <rect x="128" y="352" width="0.8" height="3"/>
+      <rect x="200" y="338" width="1" height="4"/>
+      <rect x="270" y="380" width="0.8" height="3"/>
+      <rect x="344" y="372" width="1" height="3"/>
+      <rect x="410" y="355" width="0.8" height="4"/>
+      <rect x="480" y="388" width="1" height="3"/>
+    </g>
+    <!-- Longer ash streaks (wet brush drip) -->
+    <g stroke="#2A1F1A" stroke-width="0.6" opacity="0.45" fill="none">
+      <line x1="196" y1="100" x2="198" y2="140"/>
+      <line x1="310" y1="100" x2="312" y2="158"/>
+      <line x1="402" y1="100" x2="404" y2="134"/>
+      <line x1="490" y1="100" x2="492" y2="144"/>
+    </g>
+
+    <!-- ── LONE KNIGHT (ink brush silhouette, center-bottom) ─
+         Kneeling warrior, sword planted in ground, cape flowing.
+         Rendered as Shinkawa would: bold gesture first,
+         deliberate-accident brush bleeds, silhouette dominant.
+    ──────────────────────────────────────────────────── -->
+    <g transform="translate(306, 488)">
+
+      <!-- Long shadow under knight (dreamcore wrong-long) -->
+      <ellipse cx="20" cy="4" rx="60" ry="6" fill="#1A1A1A" opacity="0.35" filter="url(#inkBleed)"/>
+      <path d="M 0,4 Q 40,8 90,14 Q 140,22 190,32"
+            stroke="#1A1A1A" stroke-width="3" fill="none"
+            opacity="0.32" stroke-linecap="round"/>
+
+      <!-- Cape flowing backward (torn, ashen, wet-brush) -->
+      <path d="M -18,-65
+               C -42,-70 -68,-55 -78,-25
+               C -82,-10 -74,2 -50,4
+               C -30,4 -18,-4 -14,-18
+               Z"
+            fill="url(#wetInk)" filter="url(#inkBleed)"/>
+
+      <!-- Cape torn edge flutter -->
+      <path d="M -78,-20 L -90,-12 L -82,-18 L -94,-8 L -84,-14
+               M -74,-5 L -88,2 L -80,-2"
+            stroke="#0E0E0E" stroke-width="1" fill="none" opacity="0.75"/>
+
+      <!-- Body mass (kneeling, leaning on sword) -->
+      <path d="M -10,-62
+               C -14,-50 -16,-36 -12,-22
+               C -8,-10 -4,-2 0,0
+               L 10,0
+               C 14,-4 16,-14 14,-28
+               C 12,-44 10,-58 8,-66
+               C 4,-70 -4,-70 -10,-62 Z"
+            fill="url(#wetInk)" filter="url(#inkBleed)"/>
+
+      <!-- Shoulder pauldron (bolder ink mass) -->
+      <path d="M -14,-66 C -20,-64 -24,-58 -22,-50 C -18,-46 -10,-48 -8,-54 C -6,-60 -10,-66 -14,-66 Z"
+            fill="#0E0E0E"/>
+      <path d="M 8,-66 C 16,-64 22,-58 20,-48 C 16,-44 8,-46 4,-52 C 2,-58 4,-66 8,-66 Z"
+            fill="#0E0E0E"/>
+
+      <!-- Head (helmet, slightly bowed) -->
+      <path d="M -6,-80
+               C -10,-78 -12,-72 -10,-66
+               C -4,-64 4,-64 8,-66
+               C 10,-72 8,-78 4,-80
+               C -2,-82 -6,-80 -6,-80 Z"
+            fill="url(#wetInk)"/>
+      <!-- Horn / crest on helmet (small dark vertical mark) -->
+      <path d="M 0,-82 L -2,-90 L 0,-86 L 2,-90 Z" fill="#0E0E0E"/>
+
+      <!-- Arm reaching forward, holding sword pommel -->
+      <path d="M 2,-36 C 12,-32 22,-26 30,-18 C 34,-14 36,-10 32,-8 C 26,-8 18,-14 12,-20 C 6,-26 -2,-30 2,-36 Z"
+            fill="url(#wetInk)"/>
+
+      <!-- Sword planted downward into ground -->
+      <!-- Crossguard -->
+      <rect x="22" y="-14" width="20" height="3" fill="#0E0E0E"/>
+      <!-- Blade (long, thin, planted into earth at angle) -->
+      <line x1="32" y1="-11" x2="38" y2="30" stroke="#0E0E0E" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Pommel -->
+      <circle cx="32" cy="-16" r="2.8" fill="#0E0E0E"/>
+      <!-- Hilt wrap texture -->
+      <line x1="31" y1="-14" x2="31" y2="-11" stroke="#F5F0E2" stroke-width="0.4"/>
+      <line x1="32.5" y1="-14" x2="32.5" y2="-11" stroke="#F5F0E2" stroke-width="0.4"/>
+
+      <!-- Blood / ash splatter at sword tip (oxblood accent — Shinkawa signature!) -->
+      <g fill="#A33020" opacity="0.85">
+        <ellipse cx="36" cy="31" rx="8" ry="2.5"/>
+        <circle cx="30" cy="33" r="1.3"/>
+        <circle cx="46" cy="30" r="1"/>
+        <circle cx="40" cy="36" r="0.8"/>
+        <circle cx="52" cy="33" r="0.6"/>
+        <circle cx="24" cy="36" r="0.8"/>
+      </g>
+
+      <!-- Splatter streaks (Shinkawa wet-brush "accidents") -->
+      <g stroke="#0E0E0E" stroke-width="0.8" fill="none" opacity="0.65">
+        <path d="M -20,-25 L -32,-28"/>
+        <path d="M -24,-18 L -38,-14"/>
+        <path d="M 20,-50 L 30,-54"/>
+      </g>
+
+      <!-- Ink drips below figure -->
+      <g fill="#0E0E0E" opacity="0.85">
+        <rect x="-6" y="0" width="1.5" height="8"/>
+        <rect x="4" y="0" width="1.2" height="6"/>
+        <circle cx="-7" cy="10" r="1.2"/>
+        <circle cx="5" cy="8" r="0.9"/>
+      </g>
+    </g>
+
+    <!-- Brush splatter near knight (large wet-accident drops, Shinkawa) -->
+    <g fill="#0E0E0E">
+      <circle cx="220" cy="500" r="2.5" opacity="0.7"/>
+      <circle cx="214" cy="508" r="1.5" opacity="0.6"/>
+      <circle cx="226" cy="506" r="1" opacity="0.55"/>
+      <circle cx="384" cy="498" r="2" opacity="0.65"/>
+      <circle cx="392" cy="504" r="1.2" opacity="0.5"/>
+      <path d="M 380,510 Q 382,514 385,510" stroke="#0E0E0E" stroke-width="1" fill="none" opacity="0.5"/>
+    </g>
+
+  </g>
+
+  <!-- Thin frame around hero (Shinkawa minimal) -->
+  <line x1="56" y1="90" x2="556" y2="90" stroke="#1A1A1A" stroke-width="0.6"/>
+  <line x1="56" y1="520" x2="556" y2="520" stroke="#1A1A1A" stroke-width="0.6"/>
+
+  <!-- ════════ TITLE ASHFALL ═══════════════════════════════ -->
+  <g text-anchor="middle">
+    <text x="306" y="576" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#0E0E0E" letter-spacing="6">
+      ASHFALL
+    </text>
+    <!-- Japanese kanji "灰" (ash) subtle, between title and subtitle -->
+    <text x="306" y="603" font-family="Georgia, serif" font-size="16" fill="#A33020" letter-spacing="2">灰</text>
+  </g>
+
+  <!-- Subtitle: "Kingdom of Ruin" — italic classical serif -->
+  <text x="306" y="632" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-style="italic" fill="#1A1A1A" letter-spacing="3" text-anchor="middle">
+    Kingdom of Ruin
+  </text>
+
+  <!-- Thin separator rule -->
+  <line x1="246" y1="652" x2="366" y2="652" stroke="#1A1A1A" stroke-width="0.6"/>
+
+  <!-- ════════ TAGLINE BLOCK ═══════════════════════════════ -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" fill="#1A1A1A">
+    <text x="306" y="682" font-size="13" font-style="italic">
+      When the last ember dies,
+    </text>
+    <text x="306" y="700" font-size="13" font-style="italic">
+      every path leads back to the gate.
+    </text>
+  </g>
+
+  <!-- Genre descriptor (shortened + tighter tracking to fit in frame) -->
+  <g font-family="Helvetica, 'Helvetica Neue', Arial, sans-serif" fill="#5A5A5A" text-anchor="middle">
+    <text x="306" y="730" font-size="8.5" letter-spacing="2.5" font-weight="700">
+      A CONTEMPLATIVE SOULSLIKE  ·  SINGLE PLAYER  ·  1ST / 3RD PERSON
+    </text>
+  </g>
+
+  <!-- ════════ PLATFORM BADGES (thin outline) ══════════════ -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1A1A1A" font-weight="700" text-anchor="middle">
+    <g transform="translate(146,762)">
+      <rect x="-40" y="-12" width="80" height="22" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+      <text x="0" y="4" font-size="9" letter-spacing="2.5">PS6 / PS5</text>
+    </g>
+    <g transform="translate(246,762)">
+      <rect x="-40" y="-12" width="80" height="22" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+      <text x="0" y="4" font-size="9" letter-spacing="2.5">XBOX · X</text>
+    </g>
+    <g transform="translate(346,762)">
+      <rect x="-40" y="-12" width="80" height="22" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+      <text x="0" y="4" font-size="9" letter-spacing="2.5">PC · STEAM</text>
+    </g>
+    <g transform="translate(446,762)">
+      <rect x="-40" y="-12" width="80" height="22" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+      <text x="0" y="4" font-size="9" letter-spacing="2.5">CLOUD</text>
+    </g>
+  </g>
+
+  <!-- ════════ BOTTOM BLOCK: STUDIO + DATE ═════════════════ -->
+  <line x1="56" y1="792" x2="556" y2="792" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1A1A1A">
+    <text x="56"  y="814" font-size="11" letter-spacing="3" font-weight="700">ASHEN GAMES · KYOTO</text>
+    <text x="556" y="814" font-size="11" letter-spacing="3" text-anchor="end" font-weight="700">WINTER MMXXVI</text>
+  </g>
+
+  <g font-family="Georgia, serif" fill="#5A5A5A">
+    <text x="56"  y="832" font-size="9" font-style="italic">game direction · ryūichi ikeda  ·  art direction · noa kuroda</text>
+    <text x="556" y="832" font-size="9" text-anchor="end" font-style="italic">score · mica levi</text>
+  </g>
+
+  <line x1="56" y1="844" x2="556" y2="844" stroke="#1A1A1A" stroke-width="0.2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#5A5A5A">
+    <text x="56"  y="856" font-size="6.5" letter-spacing="1.2">© MMXXVI ASHEN GAMES · PUBLISHED BY FADED CROWN</text>
+    <text x="556" y="856" font-size="6.5" letter-spacing="1.2" text-anchor="end">RATED M · MATURE</text>
+  </g>
+
+  <!-- ════════ OXBLOOD SEAL BOTTOM-RIGHT (Shinkawa signature!) ═
+       Red stamp with kanji mark, classic East Asian tradition.
+       Positioned outside hero zone, in typographic zone, subtle.
+  ══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(520,596)">
+    <rect x="-16" y="-16" width="32" height="32" fill="url(#oxbloodSeal)" stroke="#7A1E12" stroke-width="0.6"/>
+    <!-- "灰" (ash) kanji carved into seal -->
+    <text x="0" y="6" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#F5F0E2" text-anchor="middle">灰</text>
+  </g>
+
+  <!-- ════════ GLOBAL PAPER-GRAIN OVERLAY ══════════════════ -->
+  <rect x="0" y="0" width="612" height="888" filter="url(#paperGrain)" opacity="0.22"/>
+</svg>
