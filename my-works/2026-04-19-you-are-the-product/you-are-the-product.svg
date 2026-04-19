@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+  POSTER — "YOU ARE THE PRODUCT"
+  Brutalist graphic design / identity as data commodity
+  612 × 888
+
+  Structural archetype: 12 (Anti-Design Raw / Brutalism) with
+  centered rigid grid per brief — deliberately NOT Archetype 1
+  (Classical Centered Hero with hairline frame / top-meta / footer
+  split — my default that user rejected).
+
+  What's been removed vs my defaults:
+  - No outer frame rule (white edge-to-edge, no decoration)
+  - No top meta line
+  - No hero zone with divider rule below
+  - No footer split L/R with catalog number
+  - No "brutalist research annotations" (FIG. I, SUBJECT/01, etc.)
+  - No italic body text
+  - No gradients (brief explicitly forbids)
+  - No soft shadows / glow
+  - No atmospheric lighting
+  - No decorative corner marks
+
+  What remains:
+  - White matte paper ground
+  - Centered black head silhouette (pure flat fill, no rendering)
+  - Red barcode across eye region — identity REDUCED TO DATA
+  - Human-readable barcode number under the eyes (product DNA)
+  - Stacked bold-sans title flush-left, 4 lines TIGHT leading
+  - ONE price-tag style micro element (brutalist product mockery)
+  - Nothing else.
+
+  Strict 3-color palette per brief:
+  - #F4F1EA — matte off-white (not pure #FFF — print feel)
+  - #0A0A0A — near-black (not pure #000 — matches print ink)
+  - #D91A1E — blood red (single accent, ~4% area)
+
+  Catalog anchors cited (from sources/research/poster-catalog/):
+  - Lissitzky "Beat the Whites" 1919 (1920s-constructivism.md) —
+    geometric red/black/white discipline
+  - Rodchenko "Books" Lengiz Workers 1924 — centered brutal
+    typographic hierarchy, commanding address to viewer
+  - Peter Bankov recent (type-only-posters.md) — bold sans
+    restraint in brutalist typographic posters
+  - Balenciaga 2024 raw campaigns (2024-2026-contemporary.md) —
+    current anti-design minimalism
+
+  Composition: centered on x=306. Vertical rhythm:
+    y=150   head starts
+    y=340   head barcode eye zone
+    y=420   human-readable barcode digits
+    y=460   head base
+    y=548-772 stacked title block (4 lines)
+    y=830   tiny product line (single line, centered)
+================================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="612" height="888" viewBox="0 0 612 888"
+     preserveAspectRatio="xMidYMid meet">
+
+  <!-- ════════ MATTE PAPER GROUND (NO FRAME) ═══════════════ -->
+  <rect width="612" height="888" fill="#F4F1EA"/>
+
+  <!-- ════════ HEAD SILHOUETTE — centered, pure black, flat ═
+       Stylized front-view head shape. No rendering, no shading,
+       no hair detail. Just solid black shape. Brutalist restraint.
+  ══════════════════════════════════════════════════════════ -->
+  <g fill="#0A0A0A">
+    <!-- Top of head (crown, slightly squared — brutalist hard-edge feel) -->
+    <path d="M 218,160
+             L 218,150
+             Q 218,108 268,102
+             Q 306,100 344,102
+             Q 394,108 394,150
+             L 394,160
+             Z"/>
+
+    <!-- Main skull / face mass -->
+    <path d="M 218,160
+             L 218,260
+             Q 218,320 238,360
+             L 238,385
+             Q 242,420 260,440
+             L 280,465
+             Q 306,478 332,465
+             L 352,440
+             Q 370,420 374,385
+             L 374,360
+             Q 394,320 394,260
+             L 394,160
+             Z"/>
+
+    <!-- Neck (squared brutalist — not rounded) -->
+    <rect x="274" y="456" width="64" height="50"/>
+
+    <!-- Shoulders (flat heavy blocks, cropped at composition bottom) -->
+    <path d="M 168,506
+             L 168,560
+             L 444,560
+             L 444,506
+             Q 406,496 370,502
+             L 242,502
+             Q 206,496 168,506
+             Z"/>
+  </g>
+
+  <!-- ════════ EYES REPLACED BY BARCODE ═══════════════════════
+       Horizontal barcode bars across the eye region. Red accent.
+       Real UPC-style: thin + thick bars varying. This IS the
+       conceptual payload of the poster — identity → barcode.
+  ══════════════════════════════════════════════════════════════ -->
+
+  <!-- Red background strip behind barcode (brutalist blood-red band) -->
+  <rect x="234" y="275" width="144" height="42" fill="#D91A1E"/>
+
+  <!-- Barcode bars (white on red strip — like a real scanned product) -->
+  <g fill="#F4F1EA">
+    <rect x="240" y="280" width="2.5" height="32"/>
+    <rect x="244" y="280" width="1" height="32"/>
+    <rect x="247" y="280" width="3" height="32"/>
+    <rect x="252" y="280" width="1.5" height="32"/>
+    <rect x="255.5" y="280" width="1" height="32"/>
+    <rect x="258" y="280" width="4" height="32"/>
+    <rect x="263.5" y="280" width="1" height="32"/>
+    <rect x="266" y="280" width="2" height="32"/>
+    <rect x="269.5" y="280" width="3" height="32"/>
+    <rect x="274" y="280" width="1" height="32"/>
+    <rect x="276.5" y="280" width="2.5" height="32"/>
+    <rect x="280.5" y="280" width="1" height="32"/>
+    <rect x="283" y="280" width="3.5" height="32"/>
+    <rect x="288" y="280" width="1" height="32"/>
+    <rect x="290.5" y="280" width="2" height="32"/>
+    <rect x="294" y="280" width="1.5" height="32"/>
+    <rect x="297" y="280" width="3" height="32"/>
+    <rect x="301.5" y="280" width="1" height="32"/>
+    <rect x="304" y="280" width="2.5" height="32"/>
+    <rect x="308" y="280" width="1" height="32"/>
+    <rect x="310.5" y="280" width="3.5" height="32"/>
+    <rect x="315.5" y="280" width="1" height="32"/>
+    <rect x="317.5" y="280" width="2" height="32"/>
+    <rect x="321" y="280" width="1.5" height="32"/>
+    <rect x="324" y="280" width="3" height="32"/>
+    <rect x="328.5" y="280" width="1" height="32"/>
+    <rect x="331" y="280" width="2.5" height="32"/>
+    <rect x="335" y="280" width="1" height="32"/>
+    <rect x="337.5" y="280" width="4" height="32"/>
+    <rect x="343" y="280" width="1" height="32"/>
+    <rect x="345.5" y="280" width="2" height="32"/>
+    <rect x="349" y="280" width="1.5" height="32"/>
+    <rect x="352" y="280" width="3" height="32"/>
+    <rect x="356.5" y="280" width="1" height="32"/>
+    <rect x="359" y="280" width="2.5" height="32"/>
+    <rect x="363" y="280" width="1" height="32"/>
+    <rect x="365.5" y="280" width="4" height="32"/>
+    <rect x="371" y="280" width="1" height="32"/>
+    <rect x="373" y="280" width="2" height="32"/>
+  </g>
+
+  <!-- Human-readable barcode digits under the red strip (price-tag convention) -->
+  <g font-family="'Courier New', Courier, 'Andale Mono', monospace" fill="#0A0A0A" text-anchor="middle">
+    <text x="306" y="336" font-size="13" letter-spacing="6" font-weight="700">8  0 0 6 1 9 7  2 0 2 6</text>
+  </g>
+
+  <!-- Tiny price-tag corner: "NEW" label — the brutalist mockery of consumer packaging -->
+  <g>
+    <rect x="492" y="96" width="84" height="32" fill="#D91A1E"/>
+    <text x="534" y="118" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="900" fill="#F4F1EA" text-anchor="middle" letter-spacing="4">$ 0.00</text>
+  </g>
+
+  <!-- ════════ STACKED BRUTALIST TITLE ═════════════════════
+       Four lines flush-left. Tight leading. Heavy weight.
+       No tracking spectacle, no italics. Raw command.
+       Placed in lower-left area — NOT centered — breaking my
+       default-center habit per structural-variance.
+  ══════════════════════════════════════════════════════════ -->
+  <g font-family="Impact, 'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" fill="#0A0A0A">
+    <text x="56" y="600" font-size="88" letter-spacing="-3">YOU</text>
+    <text x="56" y="668" font-size="88" letter-spacing="-3">ARE</text>
+    <text x="56" y="736" font-size="88" letter-spacing="-3">THE</text>
+    <!-- PRODUCT in red (accent repetition — the word that IS the commodity) -->
+    <text x="56" y="804" font-size="88" letter-spacing="-3" fill="#D91A1E">PRODUCT.</text>
+  </g>
+
+  <!-- ════════ TINY PRODUCT METADATA ═══════════════════════
+       One single line. No split. No catalog-crutch.
+       Reads like the fine-print on a terms-of-service page.
+  ══════════════════════════════════════════════════════════ -->
+  <text x="306" y="850" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="2.5" fill="#0A0A0A" text-anchor="middle">
+    ITEM #8006192  ·  SHELF LIFE: INDEFINITE  ·  NO RETURNS
+  </text>
+</svg>
