@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="Design Library — a retrieval library of designer style profiles and design principles for LLM assistants">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f0e6"/>
+      <stop offset="50%" stop-color="#ede5d3"/>
+      <stop offset="100%" stop-color="#d8c9a8"/>
+    </linearGradient>
+    <linearGradient id="cardA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="cardB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="cardC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+    <linearGradient id="cardD" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="cardE" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="accentDl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Paper background -->
+  <rect width="1200" height="320" fill="url(#paper)"/>
+  <rect y="316" width="1200" height="4" fill="url(#accentDl)"/>
+
+  <!-- Faint grid -->
+  <g stroke="#92400e" stroke-width="0.4" stroke-opacity="0.05" fill="none">
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="300" y1="0" x2="300" y2="320"/>
+    <line x1="600" y1="0" x2="600" y2="320"/>
+    <line x1="900" y1="0" x2="900" y2="320"/>
+  </g>
+
+  <!-- Style cards (overlapping stack, like a moodboard) -->
+  <g transform="translate(70,72)">
+    <!-- Card 1: Minimal/dark — Hara -->
+    <g transform="translate(0,16) rotate(-6)">
+      <rect width="120" height="160" rx="6" fill="url(#cardA)" stroke="#0a0a0a" stroke-width="1"/>
+      <circle cx="60" cy="80" r="34" fill="#f5f0e6"/>
+      <text x="60" y="140" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#f5f0e6" letter-spacing="2">HARA</text>
+      <text x="60" y="152" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="7" fill="#a8a29e">minimalism</text>
+    </g>
+
+    <!-- Card 2: Bold red/black — Tschichold -->
+    <g transform="translate(96,4) rotate(3)">
+      <rect width="120" height="160" rx="6" fill="#f5f0e6" stroke="#0a0a0a" stroke-width="1"/>
+      <rect x="0" y="0" width="120" height="48" fill="url(#cardB)"/>
+      <text x="60" y="32" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="900" fill="#f5f0e6" letter-spacing="-1">TIPO</text>
+      <line x1="14" y1="68" x2="106" y2="68" stroke="#0a0a0a" stroke-width="2"/>
+      <text x="14" y="92" font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#0a0a0a">grid 12 col</text>
+      <text x="14" y="108" font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#0a0a0a">tracking -1</text>
+      <text x="14" y="124" font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#0a0a0a">akzidenz</text>
+      <text x="60" y="150" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#0a0a0a" letter-spacing="2">TSCHICHOLD</text>
+    </g>
+
+    <!-- Card 3: Cinema poster — Shinkawa -->
+    <g transform="translate(196,20) rotate(-2)">
+      <rect width="120" height="160" rx="6" fill="url(#cardC)" stroke="#0a0a0a" stroke-width="1"/>
+      <g stroke="#facc15" stroke-width="0.8" fill="none" opacity="0.7">
+        <path d="M 20 100 Q 40 60 80 80 Q 100 100 100 130"/>
+        <path d="M 20 116 Q 40 80 80 96 Q 100 112 100 140"/>
+        <path d="M 30 60 L 50 50 L 60 56"/>
+      </g>
+      <text x="60" y="150" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="700" fill="#facc15" letter-spacing="2">SHINKAWA</text>
+    </g>
+
+    <!-- Card 4: Yellow swiss — Brockmann -->
+    <g transform="translate(296,0) rotate(5)">
+      <rect width="120" height="160" rx="6" fill="url(#cardD)" stroke="#0a0a0a" stroke-width="1"/>
+      <circle cx="40" cy="60" r="22" fill="#0a0a0a"/>
+      <rect x="68" y="38" width="44" height="44" fill="#0a0a0a"/>
+      <rect x="14" y="100" width="92" height="3" fill="#0a0a0a"/>
+      <rect x="14" y="110" width="62" height="3" fill="#0a0a0a"/>
+      <text x="60" y="150" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="700" fill="#0a0a0a" letter-spacing="2">BROCKMANN</text>
+    </g>
+
+    <!-- Card 5: Editorial green — Carson -->
+    <g transform="translate(392,18) rotate(-4)">
+      <rect width="120" height="160" rx="6" fill="url(#cardE)" stroke="#0a0a0a" stroke-width="1"/>
+      <text x="20" y="50" font-family="serif" font-size="28" font-style="italic" fill="#f5f0e6">design</text>
+      <text x="60" y="80" font-family="ui-sans-serif, sans-serif" font-size="34" font-weight="900" fill="#facc15" transform="rotate(-3 60 80)">CHAOS</text>
+      <text x="14" y="110" font-family="ui-sans-serif, sans-serif" font-size="8" fill="#f5f0e6">break the grid</text>
+      <text x="60" y="150" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#f5f0e6" letter-spacing="2">CARSON</text>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(620,112)" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+    <text x="0" y="0" font-size="50" font-weight="800" fill="#1c1917" letter-spacing="-1.5">Design Library</text>
+    <text x="0" y="34" font-size="16" font-weight="500" fill="#78350f">Retrieval library for LLM-assisted design work.</text>
+    <text x="0" y="52" font-size="13" fill="#92400e">Designer style profiles · principles · project history.</text>
+
+    <!-- Stats row -->
+    <g transform="translate(0,80)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#1c1917">
+      <g>
+        <rect width="116" height="26" rx="4" fill="#1c1917"/>
+        <text x="58" y="17" text-anchor="middle" fill="#f5f0e6">158 references</text>
+      </g>
+      <g transform="translate(128,0)">
+        <rect width="100" height="26" rx="4" fill="#b45309"/>
+        <text x="50" y="17" text-anchor="middle" fill="#f5f0e6">12 archetypes</text>
+      </g>
+      <g transform="translate(240,0)">
+        <rect width="124" height="26" rx="4" fill="#0c4a6e"/>
+        <text x="62" y="17" text-anchor="middle" fill="#f5f0e6">7 subagents</text>
+      </g>
+    </g>
+  </g>
+</svg>
