@@ -1,10 +1,19 @@
-# Design Library
+<div align="center">
 
-<p align="center">
-  <img src="docs/images/hero-samurai.png" alt="Samurai at dawn — generated with Image Studio using Yoji Shinkawa style + Akira Kurosawa cinematography + Kodak Tri-X film stock" width="720">
-  <br>
-  <em>Generated with Image Studio: <code>--style yoji-shinkawa --director kurosawa --film-stock tri-x --lighting golden-hour</code></em>
-</p>
+<img src="docs/images/banner.svg" alt="Design Library — retrieval library for LLM-assisted design work" width="900"/>
+
+[![Release](https://img.shields.io/badge/release-v1.7-92400e.svg)](#status--april-2026)
+[![Style profiles](https://img.shields.io/badge/style_profiles-14-1c1917.svg)](./style-profiles)
+[![References](https://img.shields.io/badge/references-158-b45309.svg)](./sources/research/poster-catalog)
+[![Subagents](https://img.shields.io/badge/subagents-7-0c4a6e.svg)](./CREATOR.md)
+[![Python](https://img.shields.io/badge/python-3.11+-3776ab.svg)](./tools/check-layout.py)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
+**A retrieval library of designer style profiles, composition principles, and project history — written for LLM assistants to read at runtime.**
+
+</div>
+
+---
 
 > A structured reference library for working with LLM coding assistants on design tasks. Distilled designer style profiles, composition principles, and project history — organized so an AI assistant (Claude, GPT, local LLMs) can read relevant context on demand.
 
@@ -12,6 +21,12 @@
 **New here? Prefer manual workflow?** → [QUICKSTART.md](QUICKSTART.md) — make your first piece in 3 minutes with copy-paste recipes.
 **Want the 2026 visual language?** → [docs/trends-2026.md](docs/trends-2026.md) — 12 current design trends, how to apply, what to avoid.
 **See the proof?** → [6 themed reference posters](my-works/showcase-themed-2026/) + [7 agent-generated posters](my-works/) across 6 structural archetypes.
+
+<p align="center">
+  <img src="docs/images/hero-samurai.png" alt="Samurai at dawn — generated with Image Studio using Yoji Shinkawa style + Akira Kurosawa cinematography + Kodak Tri-X film stock" width="720">
+  <br>
+  <em>Generated with Image Studio: <code>--style yoji-shinkawa --director kurosawa --film-stock tri-x --lighting golden-hour</code></em>
+</p>
 
 ## Status — April 2026
 
@@ -38,6 +53,57 @@ This library is the references, written in a format LLMs read well:
 - **Work history** — past projects for consistency and evolution
 
 ## How it works
+
+```mermaid
+flowchart LR
+    subgraph User["👤 User"]
+        Brief["one-sentence brief"]
+    end
+
+    subgraph Lib["📚 Design Library"]
+        Profiles["style-profiles/<br/>14 designer voices"]
+        Principles["principles/<br/>5 books · drawing · photo"]
+        Research["research/<br/>158 references · trends"]
+        Palettes["palettes/<br/>Colorhunt trending"]
+        Memory["memory/<br/>winning + rejected patterns"]
+    end
+
+    subgraph Agent["🤖 design-creator agent"]
+        Compile["prompt compiler"]
+        Explore["concept-explorer × 3<br/>parallel angles"]
+        Critic["design-critic<br/>two-pass ranking"]
+        Render["SVG renderer"]
+        Verify["layout-verifier<br/>Python QA"]
+    end
+
+    subgraph Output["🖼 Output"]
+        Poster["my-works/YYYY-MM-name/<br/>verified SVG"]
+        Log["memory update<br/>(winning + rejected)"]
+    end
+
+    Brief --> Compile
+    Compile --> Profiles & Principles & Research & Palettes & Memory
+    Profiles & Principles & Research & Palettes & Memory --> Explore
+    Explore --> Critic
+    Critic --> Render
+    Render --> Verify
+    Verify -->|fail · max 3 loops| Render
+    Verify -->|pass| Poster
+    Poster --> Log
+    Log -.->|biases future runs| Memory
+
+    style Lib fill:#fef3c7,color:#1c1917,stroke:#92400e
+    style Agent fill:#1c1917,color:#facc15,stroke:#facc15
+    style Output fill:#dcfce7,color:#14532d,stroke:#16a34a
+```
+
+<div align="center">
+  <img src="docs/images/retrieval-flow.svg" alt="From brief to verified poster — pipeline of subagents, library reads, render, and Python layout verification" width="800"/>
+  <br/>
+  <sub><i>Seven stages from brief to verified poster, with a memory loop that learns over runs.</i></sub>
+</div>
+
+For manual workflows (no agent):
 
 ```
 User:   "Design a festival poster in the style of Kilian Eng."
